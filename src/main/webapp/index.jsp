@@ -25,7 +25,7 @@
 		<div class="col-md-4">
 			<img alt="java blog system" src="${pageContext.request.contextPath}/static/images/logo.png">
 		</div>
-		<div class="col-md-8">
+		<div class="col-md-8" style="padding-top:20px;">
 			<span style='float: right; display:block !important; width: 488px; text-align: center; font-family: sans-serif; font-size: 12px;'>
 			<a href='http://www.wunderground.com/cgi-bin/findweather/getForecast?query=San Francisco, CA' title='San Francisco, CA Weather Forecast'>
 			<img src='http://weathersticker.wunderground.com/weathersticker/big2_cond/language/english/US/CA/San_Francisco.gif' alt='Find more about Weather in San Francisco, CA'/></a><br>
@@ -33,26 +33,26 @@
 			</span>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row" style="padding-top:20px;">
 		<div class="col-md-12">
-			<nav class="navbar navbar-default" role="navigation">
-			  <div class="container-fluid">
+			<nav class="navbar navbar-default" role="navigation" >
+			  <div class="container-fluid" >
 			    <!-- Brand and toggle get grouped for better mobile display -->
-			    <div class="navbar-header">
+			    <div class="navbar-header" >
 			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 			        <span class="sr-only">Toggle navigation</span>
 			        <span class="icon-bar"></span>
 			        <span class="icon-bar"></span>
 			        <span class="icon-bar"></span>
 			      </button>
-			      <a class="navbar-brand" href="#"><strong>Home Page</strong></a>
+			      <a class="navbar-brand" href="#"><font color="black"><strong>Home Page</strong></font></a>
 			    </div>
 			
 			    <!-- Collect the nav links, forms, and other content for toggling -->
-			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
 			      <ul class="nav navbar-nav">
-			        <li ><a href="#"><strong>Blogger</strong></a></li>
-			        <li ><a href="#"><strong>Download Source Code</strong></a></li>
+			        <li ><a href="#"><font color="black"><strong>Author</strong></font></a></li>
+			        <li ><a href="#"><font color="black"><strong>Source Code</strong></font></a></li>
 			      </ul>
 			      <form class="navbar-form navbar-right" role="search">
 			        <div class="form-group">
@@ -171,33 +171,9 @@
 				</div>
 				<div class="datas">
 					<ul>
-						
-							<li><span><a href="/index.html?typeId=1">Java核心基础(105)</a></span></li>
-						
-							<li><span><a href="/index.html?typeId=2">Mysql(1)</a></span></li>
-						
-							<li><span><a href="/index.html?typeId=3">Tomcat(5)</a></span></li>
-						
-							<li><span><a href="/index.html?typeId=10">jsoup(1)</a></span></li>
-						
-							<li><span><a href="/index.html?typeId=7">shiro(1)</a></span></li>
-						
-							<li><span><a href="/index.html?typeId=11">hibernate(1)</a></span></li>
-						
-							<li><span><a href="/index.html?typeId=9">webservice(10)</a></span></li>
-						
-							<li><span><a href="/index.html?typeId=12">maven(1)</a></span></li>
-						
-							<li><span><a href="/index.html?typeId=4">IT之路(14)</a></span></li>
-						
-							<li><span><a href="/index.html?typeId=13">activiti(26)</a></span></li>
-						
-							<li><span><a href="/index.html?typeId=5">随心生活(11)</a></span></li>
-						
-							<li><span><a href="/index.html?typeId=14">java爬虫技术(13)</a></span></li>
-						
-							<li><span><a href="/index.html?typeId=15">网站SEO(1)</a></span></li>
-						
+						<c:forEach var="blogTypeCount" items="${blogTypeCountList}">
+							<li><span><a href="#">${blogTypeCount.typeName}(${blogTypeCount.blogCount})</a></span></li>
+						</c:forEach>
 					</ul>
 				</div>
 			</div>
@@ -209,31 +185,10 @@
 				</div>
 				<div class="datas">
 					<ul>
-						
-							<li><span><a href="/index.html?releaseDateStr=2016年12月">2016年12月(1)</a></span></li>
-						
-							<li><span><a href="/index.html?releaseDateStr=2016年11月">2016年11月(25)</a></span></li>
-						
-							<li><span><a href="/index.html?releaseDateStr=2016年10月">2016年10月(16)</a></span></li>
-						
-							<li><span><a href="/index.html?releaseDateStr=2016年09月">2016年09月(13)</a></span></li>
-						
-							<li><span><a href="/index.html?releaseDateStr=2016年08月">2016年08月(20)</a></span></li>
-						
-							<li><span><a href="/index.html?releaseDateStr=2016年07月">2016年07月(12)</a></span></li>
-						
-							<li><span><a href="/index.html?releaseDateStr=2016年06月">2016年06月(36)</a></span></li>
-						
-							<li><span><a href="/index.html?releaseDateStr=2016年05月">2016年05月(10)</a></span></li>
-						
-							<li><span><a href="/index.html?releaseDateStr=2016年04月">2016年04月(19)</a></span></li>
-						
-							<li><span><a href="/index.html?releaseDateStr=2016年03月">2016年03月(14)</a></span></li>
-						
-							<li><span><a href="/index.html?releaseDateStr=2016年02月">2016年02月(23)</a></span></li>
-						
-							<li><span><a href="/index.html?releaseDateStr=2016年01月">2016年01月(1)</a></span></li>
-						
+						<c:forEach var="blogCount" items="${blogCountList}">
+							<li><span><a href="#">${blogCount.releaseDateStr}(${blogCount.blogCount})</a></span></li>
+						</c:forEach>
+							
 					</ul>
 				</div>
 			</div>
@@ -241,7 +196,7 @@
 		
 			<div class="data_list">
 				<div class="data_list_title">
-				<img src="/static/images/link_icon.png"/>
+				<img src="${pageContext.request.contextPath}/static/images/link_icon.png"/>
 				友情链接
 				</div>
 				<div class="datas">

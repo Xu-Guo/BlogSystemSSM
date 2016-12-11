@@ -11,9 +11,12 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
-
+import com.xuguo.entity.Blog;
+import com.xuguo.entity.BlogType;
 import com.xuguo.entity.Blogger;
 import com.xuguo.entity.Link;
+import com.xuguo.service.BlogService;
+import com.xuguo.service.BlogTypeService;
 import com.xuguo.service.BloggerService;
 import com.xuguo.service.LinkService;
 
@@ -41,8 +44,17 @@ public class InitComponent implements ServletContextListener,ApplicationContextA
 		
 		LinkService linkService = (LinkService) applicationContext.getBean("linkService");
 		//查询所有友情链接信息
-		List<Link> linkList = linkService.list(null);
+		List<Link> linkList = linkService.list(null);//查询所有友情链接信息
 		application.setAttribute("linkList",linkList);
+		
+		BlogTypeService blogTypeService =(BlogTypeService) applicationContext.getBean("blogTypeService");
+		List<BlogType> blogTypeCountList=blogTypeService.countList();//查询博客类别已经博客数量
+		application.setAttribute("blogTypeCountList", blogTypeCountList);
+		
+		BlogService blogService =(BlogService) applicationContext.getBean("blogService");
+		List<Blog> blogCountList=blogService.countList();//根据日期分组查询博客
+		application.setAttribute("blogCountList", blogCountList);
+		
 	}
 	
 	
