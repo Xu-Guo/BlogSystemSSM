@@ -40,9 +40,14 @@
 		<filter-name>encodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	
 	<!-- Spring监听器 -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
+	<listener>
+		<listener-class>com.xuguo.service.impl.InitComponent</listener-class>
 	</listener>
 
 	<!-- 添加对springmvc的支持 -->

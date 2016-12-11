@@ -15,4 +15,11 @@ public interface BloggerService {
 	 * @return
 	 */
 	public Blogger getByUserName(String userName);
+	
+	
+	/**
+	 * 查询博主信息
+	 * @return
+	 */
+	public Blogger find();
 }

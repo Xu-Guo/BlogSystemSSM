@@ -18,5 +18,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from t_blogger where userName=#{userName}
 	</select>
 	
+	<select id="find" resultMap="BloggerResult">
+		select * from t_blogger where id=1
+	</select>
+	
 	
 </mapper> 

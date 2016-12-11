@@ -9,5 +9,14 @@ public interface BloggerDao {
 	 * @return
 	 */
 	public Blogger getByUserName(String userName);
+	
+	
+	/**
+	 * get blogger information
+	 * 
+	 */
+	public Blogger find();
 
+	
+	
 }

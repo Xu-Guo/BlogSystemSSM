@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" 
+           uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -51,19 +53,6 @@
 			      <ul class="nav navbar-nav">
 			        <li ><a href="#"><strong>Blogger</strong></a></li>
 			        <li ><a href="#"><strong>Download Source Code</strong></a></li>
-			        <li><a href="#">Link</a></li>
-			        <li class="dropdown">
-			          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-			          <ul class="dropdown-menu" role="menu">
-			            <li><a href="#">Action</a></li>
-			            <li><a href="#">Another action</a></li>
-			            <li><a href="#">Something else here</a></li>
-			            <li class="divider"></li>
-			            <li><a href="#">Separated link</a></li>
-			            <li class="divider"></li>
-			            <li><a href="#">One more separated link</a></li>
-			          </ul>
-			        </li>
 			      </ul>
 			      <form class="navbar-form navbar-right" role="search">
 			        <div class="form-group">
@@ -72,7 +61,7 @@
 			        <button type="submit" class="btn btn-default">Search</button>
 			      </form>
 			      <ul class="nav navbar-nav navbar-right">
-			        <li><a href="#">Link</a></li>
+<!-- 			        <li><a href="#">Link</a></li>
 			        <li class="dropdown">
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
 			          <ul class="dropdown-menu" role="menu">
@@ -82,7 +71,7 @@
 			            <li class="divider"></li>
 			            <li><a href="#">Separated link</a></li>
 			          </ul>
-			        </li>
+			        </li> -->
 			      </ul>
 			    </div><!-- /.navbar-collapse -->
 			  </div><!-- /.container-fluid -->
@@ -167,10 +156,10 @@
 					Blogger Information
 				</div>
 				<div class="user_image">
-					<img src="${pageContext.request.contextPath}/static/userImages/2.jpg"/>
+					<img src="${pageContext.request.contextPath}/static/userImages/${blogger.imageName}"/>
 				</div>
-				<div class="nickName">XuXu</div>
-				<div class="userSign">(知识改变命运，技术改变世界)</div>
+				<div class="nickName">${blogger.nickName}</div>
+				<div class="userSign">${blogger.sign}</div>
 			</div>
 		
 	
@@ -257,17 +246,9 @@
 				</div>
 				<div class="datas">
 					<ul>
-					
-						<li><span><a href="http://www.java1234.com/" target="_blank">Java知识分享网</a></span></li>
-					
-						<li><span><a href="http://pan.java1234.com/" target="_blank">百度云搜索引擎</a></span></li>
-					
-						<li><span><a href="http://www.easyicon.net/" target="_blank">小图标下载</a></span></li>
-					
-						<li><span><a href="http://tieba.baidu.com/f?kw=java" target="_blank">Java贴吧</a></span></li>
-					
-						<li><span><a href="http://www.uugai.com/" target="_blank">免费logo在线制作</a></span></li>
-					
+						<c:forEach var="link" items="${linkList}">
+							<li><span><a href="${link.linkUrl}" target="_blank">${link.linkName}</a></span></li>
+						</c:forEach>
 					</ul>
 				</div>
 			</div>
