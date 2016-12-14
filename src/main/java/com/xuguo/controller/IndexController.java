@@ -57,11 +57,11 @@ public class IndexController {
 			String blogInfo=blog.getContent();
 			//System.out.println(blogInfo);
 			Document doc=Jsoup.parse(blogInfo);
-			Elements jpgs=doc.select("img[src$=.jpg]");//后缀是。jpg的元素
+			Elements jpgs=doc.select("img[src$=.jpg]");//find all files named end with.jpg
 			for(int i=0;i<jpgs.size();i++){
 				Element jpg=jpgs.get(i);
 				imageList.add(jpg.toString());
-				if(i==2){//只显示3张图片
+				if(i==2){//only display 3 images otherwise the page will be too busy
 					break;
 				}
 			}

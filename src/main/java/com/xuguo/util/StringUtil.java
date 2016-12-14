@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 字符串工具类
+ * string uitl
  * @author 
  *
  */
 public class StringUtil {
 
 	/**
-	 * 判断是否是空
+	 * check null or ""
 	 * @param str
 	 * @return
 	 */
@@ -24,7 +24,7 @@ public class StringUtil {
 	}
 	
 	/**
-	 * 判断是否不是空
+	 * check if not null
 	 * @param str
 	 * @return
 	 */
@@ -37,7 +37,7 @@ public class StringUtil {
 	}
 	
 	/**
-	 * 格式化模糊查询
+	 * formated mohu search
 	 * @param str
 	 * @return
 	 */
@@ -50,7 +50,7 @@ public class StringUtil {
 	}
 	
 	/**
-	 * 过滤掉集合里的空格
+	 * filter " " in the list
 	 * @param list
 	 * @return
 	 */

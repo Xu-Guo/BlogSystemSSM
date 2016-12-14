@@ -12,7 +12,7 @@ import com.xuguo.entity.BlogType;
 public interface BlogTypeService {
 	
 	/**
-	 * 查询所有博客类型
+	 * search all the blogType and corresponding numbers of blogs
 	 */
 	public List<BlogType> countList();
 }

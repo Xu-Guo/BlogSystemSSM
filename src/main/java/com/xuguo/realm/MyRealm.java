@@ -29,23 +29,23 @@ public class MyRealm extends AuthorizingRealm{
 	private BloggerService bloggerService;
 	
 	
-	//授予权限和角色
+	//Authorization for granting current role and right
 	@Override
 	protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection arg0) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
-	//登陆认证
+	//login Authentication
 	@Override
 	protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
 		String userName = (String) token.getPrincipal();
-		//通过用户名获得实体（数据库封装实体）
+		//get user entity from database by username
 		Blogger blogger = bloggerService.getByUserName(userName);
 		if(blogger!=null){
 			//password or userName can be wrong
-			//通过shiro提供的方法获取session
-			SecurityUtils.getSubject().getSession().setAttribute("currentUser", blogger);//保存当前用户信息到session
+			//get session using method defined by shiro
+			SecurityUtils.getSubject().getSession().setAttribute("currentUser", blogger);//store current user information into session
 			AuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(blogger.getUserName(),blogger.getPassword(),"");
 			return authenticationInfo;
 		}else{		

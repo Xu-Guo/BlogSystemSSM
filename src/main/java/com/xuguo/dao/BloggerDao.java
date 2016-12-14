@@ -4,7 +4,7 @@ import com.xuguo.entity.Blogger;
 
 public interface BloggerDao {
 	/**
-	 * 通过用户名查找用户
+	 * get user by username
 	 * @param userName
 	 * @return
 	 */

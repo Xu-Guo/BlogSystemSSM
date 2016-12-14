@@ -11,7 +11,7 @@ import com.xuguo.dao.BlogDao;
 import com.xuguo.entity.Blog;
 import com.xuguo.service.BlogService;
 /**
- * 博客Service实现类
+ * blog Service implementation
  * @author xu
  *
  */

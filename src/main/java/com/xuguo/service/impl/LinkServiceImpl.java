@@ -18,7 +18,7 @@ import com.xuguo.service.LinkService;
 
 
 /**
- * ”—«È¡¥Ω”Service implementation
+ * friend link Service implementation
  * @author xu
  *
  */

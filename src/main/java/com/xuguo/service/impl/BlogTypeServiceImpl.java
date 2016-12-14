@@ -14,7 +14,7 @@ import com.xuguo.service.BlogTypeService;
 import com.xuguo.service.BloggerService;
 
 /**
- * 博客类型Service实现类
+ * BlogTypeService implementation
  * @author xu
  *
  */

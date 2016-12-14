@@ -6,13 +6,13 @@ import java.util.Map;
 import com.xuguo.entity.Link;
 
 /**
- * 友情链接DAO
+ * friend link dao interface
  * @author xu
  *
  */
 public interface LinkDao {
 	/**
-	 * 查找友情链接信息
+	 * find friend link information in database
 	 * @param map
 	 * @return
 	 */

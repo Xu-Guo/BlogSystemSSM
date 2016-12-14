@@ -6,21 +6,21 @@ import java.util.Map;
 import com.xuguo.entity.Blog;
 
 /**
- * 博客DAO接口
+ * Blog DAO interface
  * @author xu
  *
  */
 public interface BlogDao {
 
 	/**
-	 * 根据日期分月分组查询
+	 * group search by month in date
 	 * @return
 	 */
 	public List<Blog> countList();
 	
 	
 	/**
-	 * 分页查询博客
+	 * search by page
 	 * @return
 	 */
 	public List<Blog> list(Map<String, Object> map);
@@ -28,7 +28,7 @@ public interface BlogDao {
 	
 	
 	/**
-	 * 获取总记录数
+	 * get total number of pages
 	 * @param map
 	 * @return
 	 */

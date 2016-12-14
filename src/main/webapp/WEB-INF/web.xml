@@ -5,12 +5,12 @@
     <welcome-file>a.jsp</welcome-file>
   </welcome-file-list>
   
-  <!-- shiro过滤器定义 -->
+
 	<filter>  
 	    <filter-name>shiroFilter</filter-name>  
 	    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>  
     <init-param>  
-    <!-- 该值缺省为false,表示生命周期由SpringApplicationContext管理,设置为true则表示由ServletContainer管理 -->  
+
     <param-name>targetFilterLifecycle</param-name>  
     <param-value>true</param-value>  
     </init-param>  
@@ -21,12 +21,12 @@
 	</filter-mapping>
 	
 	
-    <!-- Spring配置文件 -->
+
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:applicationContext.xml</param-value>
 	</context-param>
-	<!-- 编码过滤器 -->
+
 	<filter>
 		<filter-name>encodingFilter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -41,7 +41,7 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 	
-	<!-- Spring监听器 -->
+
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
@@ -50,7 +50,7 @@
 		<listener-class>com.xuguo.service.impl.InitComponent</listener-class>
 	</listener>
 
-	<!-- 添加对springmvc的支持 -->
+
 	<servlet>
 		<servlet-name>springMVC</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>

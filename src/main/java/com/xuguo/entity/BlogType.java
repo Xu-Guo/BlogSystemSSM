@@ -2,7 +2,7 @@ package com.xuguo.entity;
 
 
 /**
- * ²©¿ÍtypeÊµÌå
+ * blogtype entity
  * @author xu
  *
  */

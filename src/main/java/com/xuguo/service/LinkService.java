@@ -13,7 +13,7 @@ import com.xuguo.entity.Link;
 public interface LinkService {
 	
 	/**
-	 * 查找友情链接信息
+	 * find friend link information in database
 	 * @param map
 	 * @return
 	 */

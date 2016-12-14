@@ -1,5 +1,9 @@
 package com.xuguo.entity;
-
+/**
+ * blogger entity
+ * @author xu
+ *
+ */
 public class Blogger {
 	private Integer id;
 	private String userName;

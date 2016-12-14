@@ -22,13 +22,13 @@ public class BloggerController {
 	
 	@RequestMapping("/login")
 	public String login(Blogger blogger,HttpServletRequest request){
-		System.out.println("%%%%%login Controller!!%%%%%%");
-		//获取当前登录的用户
+//		System.out.println("%%%%%login Controller!!%%%%%%");
+		//get current user subject
 		Subject subject = SecurityUtils.getSubject();
-		//生成token
+		//generate token
 		UsernamePasswordToken token = new UsernamePasswordToken(blogger.getUserName(), CryptographyUtil.md5(blogger.getPassword(), "java1234"));
 		try{
-			subject.login(token);//登陆验证，调用Myrealm中的方法
+			subject.login(token);//login check with the method defined in MyRealm
 			return "redirect:/admin/main.jsp";
 		}catch(Exception e){
 			e.printStackTrace();

@@ -8,11 +8,11 @@ package com.xuguo.util;
 public class PageUtil {
 
 	/**
-	 * 生成分页代码
-	 * @param targetUrl //目标地址
+	 * paging code
+	 * @param targetUrl // target url
 	 * @param totalNum 	//
-	 * @param currentPage //当前页数
-	 * @param pageSize //每页显示博客数量
+	 * @param currentPage //current page number
+	 * @param pageSize //number og records per page
 	 * @return
 	 */
 	public static String genPagination(String targetUrl,long totalNum,int currentPage,int pageSize,String param){
@@ -22,16 +22,16 @@ public class PageUtil {
 			return "No data found!";
 		}else{
 			StringBuffer pageCode=new StringBuffer();
-			pageCode.append("<li><a href='"+targetUrl+"?page=1&"+param+"'>Home</a></li>");//添加首页链接
+			pageCode.append("<li><a href='"+targetUrl+"?page=1&"+param+"'>Home</a></li>");//add homepage link
 			
-			//处理Pre标签
+			//handle Pre tag
 			if(currentPage>1){
 				pageCode.append("<li><a href='"+targetUrl+"?page="+(currentPage-1)+"&"+param+"'>Next</a></li>");			
 			}else{
-				pageCode.append("<li class='disabled'><a href='"+targetUrl+"?page="+(currentPage-1)+"&"+param+"'>Pre</a></li>");//当前页<=1，不存在上一也，disable “pre”		
+				pageCode.append("<li class='disabled'><a href='"+targetUrl+"?page="+(currentPage-1)+"&"+param+"'>Pre</a></li>");//current page <=1，no pre，disable “pre”		
 			}
 			
-			//不显示所有页码，只显示当前页的前后2个页码，总共5页页码
+			//only display 5 page (page-2, page-1, page, page+1, page+2)
 			for(int i=currentPage-2;i<=currentPage+2;i++){
 				
 				if(i<1||i>totalPage){//check if the current page is 1st or the last
@@ -44,13 +44,13 @@ public class PageUtil {
 				}
 			}
 			
-			//处理Next标签
+			//handle Next tag
 			if(currentPage<totalPage){//has next page, current page is not last page
 				pageCode.append("<li><a href='"+targetUrl+"?page="+(currentPage+1)+"&"+param+"'>Next</a></li>");		
 			}else{
-				pageCode.append("<li class='disabled'><a href='"+targetUrl+"?page="+(currentPage+1)+"&"+param+"'>Next</a></li>"); //当前页大于等于总页数，不存在下一也next， disable “next”.
+				pageCode.append("<li class='disabled'><a href='"+targetUrl+"?page="+(currentPage+1)+"&"+param+"'>Next</a></li>"); //current page >=total page，no next， disable “next”.
 			}
-			pageCode.append("<li><a href='"+targetUrl+"?page="+totalPage+"&"+param+"'>Last</a></li>");//添加尾页链接
+			pageCode.append("<li><a href='"+targetUrl+"?page="+totalPage+"&"+param+"'>Last</a></li>");//add next page link
 			return pageCode.toString();
 		}
 	}

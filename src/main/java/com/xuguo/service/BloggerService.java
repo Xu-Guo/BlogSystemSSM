@@ -3,14 +3,14 @@ package com.xuguo.service;
 import com.xuguo.entity.Blogger;
 
 /**
- * 博主Dao接口
+ * Blogger service interface
  * @author Administrator
  *
  */
 public interface BloggerService {
 
 	/**
-	 * 通过用户名查询用户
+	 * get user entity by username
 	 * @param userName
 	 * @return
 	 */
@@ -18,7 +18,7 @@ public interface BloggerService {
 	
 	
 	/**
-	 * 查询博主信息
+	 * get blogger information
 	 * @return
 	 */
 	public Blogger find();

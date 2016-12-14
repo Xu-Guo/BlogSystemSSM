@@ -1,15 +1,15 @@
 package com.xuguo.entity;
 
 /**
- * 分页Model类
+ * paging Model class
  * @author 
  *
  */
 public class PageBean {
 
-	private int page; // 第几页
-	private int pageSize; // 每页记录数
-	private int start;  // 起始页
+	private int page; // page number
+	private int pageSize; // number of record within one page
+	private int start;  // number of start page
 	
 	
 	public PageBean(int page, int pageSize) {

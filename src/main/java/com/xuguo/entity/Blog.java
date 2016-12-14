@@ -16,14 +16,14 @@ public class Blog {
 	private Integer replyHit;
 	private String content;
 	
-	private BlogType blogType; //博客类型
+	private BlogType blogType; 
 	
-	private String keyWord; //关键字 空格隔开	
+	private String keyWord; //keyWord divided with space
 
-	private Integer blogCount; //数量 非博客实际属性，根据发布日期归档查询数量是用到
-	private String releaseDateStr; //发布日期的字符串，只存年和月
+	private Integer blogCount; //numbers of blogs， not a blog entity property, used when search the numbers of blogs grouped by releaseDate
+	private String releaseDateStr; //string of releaseDate, year and month only
 	
-	private List<String> imageList=new LinkedList<String>(); // 博客里存在的图片，主要用于列表展示的缩略图
+	private List<String> imageList=new LinkedList<String>(); // url of images included in the blog
 
 	public Integer getId() {
 		return id;

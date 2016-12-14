@@ -5,21 +5,21 @@ import java.util.List;
 import com.xuguo.entity.BlogType;
 
 /**
- * 博客类型DAO接口
+ * BlogType DAO interface
  * @author xu
  *
  */
 public interface BlogTypeDao {
 	
 	/**
-	 * 查询所有博客类型，已经对应的博客数量
+	 *  search all the blogType and corresponding numbers of blogs
 	 */
 	public List<BlogType> countList();
 	
 	
 	
 	/**
-	 * 通过ID查找博客类型实体
+	 * get BlogType by Id
 	 * @param id
 	 * @return
 	 */

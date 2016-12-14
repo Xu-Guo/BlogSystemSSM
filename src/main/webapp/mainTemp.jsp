@@ -47,7 +47,7 @@
 			<div class="data_list">
 				<div class="data_list_title">
 					<img src="${pageContext.request.contextPath}/static/images/byType_icon.png"/>
-					按日志类别
+					Group by Type
 				</div>
 				<div class="datas">
 					<ul>
@@ -61,7 +61,7 @@
 			<div class="data_list">
 				<div class="data_list_title">
 					<img src="${pageContext.request.contextPath}/static/images/byDate_icon.png"/>
-					按日志日期
+					Group by Publish date
 				</div>
 				<div class="datas">
 					<ul>
@@ -77,7 +77,7 @@
 			<div class="data_list">
 				<div class="data_list_title">
 				<img src="${pageContext.request.contextPath}/static/images/link_icon.png"/>
-				友情链接
+				Friend Link
 				</div>
 				<div class="datas">
 					<ul>

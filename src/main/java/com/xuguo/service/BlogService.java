@@ -12,7 +12,7 @@ import com.xuguo.entity.Blog;
  */
 public interface BlogService {
 	/**
-	 * 根据日期分月分组查询
+	 * group search by month in date
 	 * @return
 	 */
 	public List<Blog> countList();
@@ -20,7 +20,7 @@ public interface BlogService {
 	
 	
 	/**
-	 * 分页查询博客
+	 * search by page
 	 * @return
 	 */
 	public List<Blog> list(Map<String, Object> map);
@@ -28,7 +28,7 @@ public interface BlogService {
 	
 	
 	/**
-	 * 获取总记录数
+	 * get total number of pages
 	 * @param map
 	 * @return
 	 */

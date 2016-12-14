@@ -3,7 +3,7 @@ package com.xuguo.util;
 import org.apache.shiro.crypto.hash.Md5Hash;
 
 /**
- * 加密工具
+ * MD5 tool
  * @author Administrator
  *
  */
@@ -11,7 +11,7 @@ public class CryptographyUtil {
 
 	
 	/**
-	 * Md5加密
+	 * Md5 
 	 * @param str
 	 * @param salt
 	 * @return
@@ -24,6 +24,6 @@ public class CryptographyUtil {
 //		
 //		String password="123456";
 //		
-//		System.out.println("Md5加密："+CryptographyUtil.md5(password, "java1234"));
+//		System.out.println("Md5encrypt："+CryptographyUtil.md5(password, "java1234"));
 //	}
 }

@@ -34,38 +34,38 @@ public class InitComponent implements ServletContextListener,ApplicationContextA
 	public void contextInitialized(ServletContextEvent sce) {
 		// TODO Auto-generated method stub
 		
-		//通过ServletContextEvent获取application上下文
+		//get applicationContext using ServletContextEvent
 		ServletContext application = sce.getServletContext();	
 		BloggerService bloggerService = (BloggerService) applicationContext.getBean("bloggerService");	
-		Blogger blogger = bloggerService.find();//获取博主信息	
-		blogger.setPassword(null);//清空密码信息
-		application.setAttribute("blogger", blogger);//添加博主信息到application中
+		Blogger blogger = bloggerService.find();//get blogger information
+		blogger.setPassword(null);//reset password
+		application.setAttribute("blogger", blogger);//add blogger information into application
 		
 		
 		LinkService linkService = (LinkService) applicationContext.getBean("linkService");
-		//查询所有友情链接信息
-		List<Link> linkList = linkService.list(null);//查询所有友情链接信息
+		//find all friend link information
+		List<Link> linkList = linkService.list(null);// search all friend link information
 		application.setAttribute("linkList",linkList);
 		
 		BlogTypeService blogTypeService =(BlogTypeService) applicationContext.getBean("blogTypeService");
-		List<BlogType> blogTypeCountList=blogTypeService.countList();//查询博客类别已经博客数量
+		List<BlogType> blogTypeCountList=blogTypeService.countList();//find blogType and numbers of blogs
 		application.setAttribute("blogTypeCountList", blogTypeCountList);
 		
 		BlogService blogService =(BlogService) applicationContext.getBean("blogService");
-		List<Blog> blogCountList=blogService.countList();//根据日期分组查询博客
+		List<Blog> blogCountList=blogService.countList();//find blogs grouped by releaseDate
 		application.setAttribute("blogCountList", blogCountList);
 		
 	}
 	
 	
-	//销毁
+	//destroyed
 	public void contextDestroyed(ServletContextEvent sce) {
 		// TODO Auto-generated method stub
 		
 	}
 	
 	
-	//获取全局application
+	//get application
 	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
 		// TODO Auto-generated method stub
 		this.applicationContext = applicationContext;
