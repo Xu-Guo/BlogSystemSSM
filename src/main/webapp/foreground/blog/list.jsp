@@ -13,10 +13,12 @@
 					<span class="date"><a href="${pageContext.request.contextPath}/blog/articles/229.html"><fmt:formatDate value="${blog.releaseDate}" type="date" pattern="yyyy/MM/dd"></fmt:formatDate></a></span>
 				  	<span class="title"><a href="${pageContext.request.contextPath}/blog/articles/229.html">${blog.title}</a></span>
 				  	<span class="summary">Summary:${blog.summary}...</span>
-<%-- 				  		<c:forEach var="image" items="${blog.imageList }">
+			  		<span class="img">
+				  		<c:forEach var="image" items="${blog.imageList }">
 							  		<a href="/blog/articles/52.html">${image}</a>
 							  		&nbsp;&nbsp;
-						</c:forEach> --%>
+						</c:forEach>
+					</span>
 				  	<span class="info">Published:<fmt:formatDate value="${blog.releaseDate}" type="date" pattern="yyyy-MM-dd HH:mm"></fmt:formatDate> Read(${blog.clickHit}) Reply(${blog.replyHit})</span>
 				</li>
 				<hr style="height:5px;border:none;border-top:1px dashed gray;padding-bottom:  10px;" />
@@ -28,7 +30,7 @@
 <div>
 	<nav>
 	  <ul class="pagination pagination-sm">
-	  	${pageCode }
+	  	${pageCode}
 	  </ul>
 	</nav>
 </div>

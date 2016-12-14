@@ -19,12 +19,7 @@ public class Blog {
 	private BlogType blogType; //博客类型
 	
 	private String keyWord; //关键字 空格隔开	
-	public List<String> getImageList() {
-		return imageList;
-	}
-	public void setImageList(List<String> imageList) {
-		this.imageList = imageList;
-	}
+
 	private Integer blogCount; //数量 非博客实际属性，根据发布日期归档查询数量是用到
 	private String releaseDateStr; //发布日期的字符串，只存年和月
 	
@@ -95,5 +90,12 @@ public class Blog {
 	}
 	public void setReleaseDateStr(String releaseDateStr) {
 		this.releaseDateStr = releaseDateStr;
+	}
+	
+	public List<String> getImageList() {
+		return imageList;
+	}
+	public void setImageList(List<String> imageList) {
+		this.imageList = imageList;
 	}
 }

@@ -46,22 +46,22 @@ public class IndexController {
 		if(StringUtil.isEmpty(page)){
 			page="1";
 		}
-		System.out.println(page);
 		PageBean pageBean= new PageBean(Integer.parseInt(page), 10);
 		Map<String, Object> map =new HashMap<String, Object>();
 		map.put("start", pageBean.getStart());
 		map.put("size", pageBean.getPageSize());
-		List<Blog> blogList = blogService.list(map);	
+		List<Blog> blogList = blogService.list(map);
+		
 		for(Blog blog:blogList){
-			List<String> imageList=blog.getImageList();
+			List<String> imageList=blog.getImageList();//get imageName list
 			String blogInfo=blog.getContent();
 			//System.out.println(blogInfo);
 			Document doc=Jsoup.parse(blogInfo);
-			Elements jpgs=doc.select("img[src$=.jpg]");
+			Elements jpgs=doc.select("img[src$=.jpg]");//后缀是。jpg的元素
 			for(int i=0;i<jpgs.size();i++){
 				Element jpg=jpgs.get(i);
 				imageList.add(jpg.toString());
-				if(i==2){
+				if(i==2){//只显示3张图片
 					break;
 				}
 			}
@@ -69,9 +69,10 @@ public class IndexController {
 		
 		
 		modelAndView.addObject("blogList", blogList);
+		
 		StringBuffer param=new StringBuffer();
-
 		modelAndView.addObject("pageCode", PageUtil.genPagination(request.getContextPath()+"/index.html", blogService.getTotal(map), Integer.parseInt(page), 10, param.toString()));
+		
 		modelAndView.addObject("pageTitle", "java open source blog system");
 		modelAndView.addObject("mainPage", "foreground/blog/list.jsp");
 		modelAndView.setViewName("mainTemp");
