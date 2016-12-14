@@ -5,7 +5,7 @@
   <artifactId>BlogSystemSSM</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>Blog Maven Webapp</name>
+  <name>BlogMavenWebapp</name>
   <url>http://maven.apache.org</url>
    <dependencies>
   <!-- 添加Servlet支持 -->
@@ -223,6 +223,14 @@
 		<artifactId>druid</artifactId>
 		<version>1.0.16</version>
 	</dependency>
+	
+	<!-- jsoup https://mvnrepository.com/artifact/org.jsoup/jsoup -->
+	<dependency>
+	    <groupId>org.jsoup</groupId>
+	    <artifactId>jsoup</artifactId>
+	    <version>1.9.2</version>
+	</dependency>
+	
 	
 	
   </dependencies>

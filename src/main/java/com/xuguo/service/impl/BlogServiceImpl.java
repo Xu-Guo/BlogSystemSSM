@@ -1,6 +1,7 @@
 package com.xuguo.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
@@ -26,5 +27,16 @@ public class BlogServiceImpl implements BlogService{
 		// TODO Auto-generated method stub
 		return blogDao.countList();
 	}
+
+	public List<Blog> list(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return blogDao.list(map);
+	}
+
+	public Long getTotal(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return blogDao.getTotal(map);
+	}
+
 
 }

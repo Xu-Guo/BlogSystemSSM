@@ -44,9 +44,8 @@ public class MyRealm extends AuthorizingRealm{
 		Blogger blogger = bloggerService.getByUserName(userName);
 		if(blogger!=null){
 			//password or userName can be wrong
-			//保存当前用户信息到session钟
 			//通过shiro提供的方法获取session
-			SecurityUtils.getSubject().getSession().setAttribute("currentUser", blogger);
+			SecurityUtils.getSubject().getSession().setAttribute("currentUser", blogger);//保存当前用户信息到session
 			AuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(blogger.getUserName(),blogger.getPassword(),"");
 			return authenticationInfo;
 		}else{		

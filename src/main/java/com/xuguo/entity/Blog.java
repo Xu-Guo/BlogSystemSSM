@@ -1,6 +1,8 @@
 package com.xuguo.entity;
 
 import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
 
 //blog entity
 public class Blog {
@@ -11,16 +13,23 @@ public class Blog {
 	private String summary;
 	private Date releaseDate;
 	private Integer clickHit;
-	private Integer replayHit;
+	private Integer replyHit;
 	private String content;
 	
 	private BlogType blogType; //博客类型
 	
 	private String keyWord; //关键字 空格隔开	
+	public List<String> getImageList() {
+		return imageList;
+	}
+	public void setImageList(List<String> imageList) {
+		this.imageList = imageList;
+	}
 	private Integer blogCount; //数量 非博客实际属性，根据发布日期归档查询数量是用到
 	private String releaseDateStr; //发布日期的字符串，只存年和月
 	
-	
+	private List<String> imageList=new LinkedList<String>(); // 博客里存在的图片，主要用于列表展示的缩略图
+
 	public Integer getId() {
 		return id;
 	}
@@ -51,11 +60,11 @@ public class Blog {
 	public void setClickHit(Integer clickHit) {
 		this.clickHit = clickHit;
 	}
-	public Integer getReplayHit() {
-		return replayHit;
+	public Integer getReplyHit() {
+		return replyHit;
 	}
-	public void setReplayHit(Integer replayHit) {
-		this.replayHit = replayHit;
+	public void setReplyHit(Integer replayHit) {
+		this.replyHit = replayHit;
 	}
 	public String getContent() {
 		return content;
