@@ -10,12 +10,12 @@
 		<ul>
 			<c:forEach var="blog" items="${blogList}">
 				<li style="margin-bottom: 30px">
-					<span class="date"><a href="${pageContext.request.contextPath}/blog/articles/229.html"><fmt:formatDate value="${blog.releaseDate}" type="date" pattern="yyyy/MM/dd"></fmt:formatDate></a></span>
-				  	<span class="title"><a href="${pageContext.request.contextPath}/blog/articles/229.html">${blog.title}</a></span>
+					<span class="date"><a href="${pageContext.request.contextPath}/blog/articles/${blog.id }.html"><fmt:formatDate value="${blog.releaseDate}" type="date" pattern="yyyy/MM/dd"></fmt:formatDate></a></span>
+				  	<span class="title"><a href="${pageContext.request.contextPath}/blog/articles/${blog.id }.html">${blog.title}</a></span>
 				  	<span class="summary">Summary:${blog.summary}...</span>
 			  		<span class="img">
 				  		<c:forEach var="image" items="${blog.imageList }">
-							  		<a href="/blog/articles/52.html">${image}</a>
+							  		<a href="/blog/articles/${blog.id }.html">${image}</a>
 							  		&nbsp;&nbsp;
 						</c:forEach>
 					</span>

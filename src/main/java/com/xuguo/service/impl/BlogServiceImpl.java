@@ -38,5 +38,15 @@ public class BlogServiceImpl implements BlogService{
 		return blogDao.getTotal(map);
 	}
 
+	public Blog findById(Integer id) {
+		// TODO Auto-generated method stub
+		return blogDao.findById(id);
+	}
+
+	public Integer update(Blog blog) {
+		// TODO Auto-generated method stub
+		return blogDao.update(blog);
+	}
+
 
 }

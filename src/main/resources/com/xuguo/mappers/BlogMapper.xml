@@ -50,4 +50,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		</where>
 	</select>
 	
+	<select id="findById" parameterType="Integer" resultMap="BlogResult">
+	select * from t_blog where id=#{id}
+	</select>
+	
+	<update id="update" parameterType="Blog">
+		update t_blog
+		<set>
+			<if test="clickHit!=null">
+				clickHit=#{clickHit},
+			</if>
+		</set>
+		where id=#{id}
+	</update>
+		
 </mapper> 

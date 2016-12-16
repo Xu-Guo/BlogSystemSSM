@@ -33,4 +33,19 @@ public interface BlogService {
 	 * @return
 	 */
 	public Long getTotal(Map<String, Object> map);
+	
+	
+	/**
+	 * get blog entity by id
+	 * @param id
+	 * @return
+	 */
+	public Blog findById(Integer id);
+	
+	/**
+	 * update blog information
+	 * @param blog
+	 * @return
+	 */
+	public Integer update(Blog blog);
 }
