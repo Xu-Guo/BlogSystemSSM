@@ -8,6 +8,7 @@ import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.xuguo.entity.Blogger;
 import com.xuguo.service.BloggerService;
@@ -36,5 +37,19 @@ public class BloggerController {
 			request.setAttribute("errorInfo", "Username or password is wrong!!");
 			return "login";	
 		}
+	}
+	
+	/**
+	 * Blogger information 
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping("/aboutMe")
+	public ModelAndView aboutMe() throws Exception{
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("mainPage","foreground/blogger/info.jsp");
+		modelAndView.addObject("pageTitle","Blogger Information");
+		modelAndView.setViewName("mainTemp");
+		return modelAndView;
 	}
 }

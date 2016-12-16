@@ -90,4 +90,20 @@ public class IndexController {
 		
 		return modelAndView;
 	}
+	
+	
+	
+	/**
+	 * source code download
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping("/download")
+	public ModelAndView download() throws Exception{
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("mainPage","foreground/system/download.jsp");
+		modelAndView.addObject("pageTitle","Source code download");
+		modelAndView.setViewName("mainTemp");
+		return modelAndView;
+	}
 }
