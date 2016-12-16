@@ -40,7 +40,10 @@ public class IndexController {
 	 * @return
 	 */
 	@RequestMapping("/index")
-	public ModelAndView index(@RequestParam(value="page",required=false)String page,HttpServletRequest request)throws Exception{
+	public ModelAndView index(@RequestParam(value="page",required=false)String page,
+			@RequestParam(value="typeId",required=false)String typeId,
+			@RequestParam(value="releaseDateStr",required=false)String releaseDateStr,HttpServletRequest request)throws Exception{
+		
 		ModelAndView modelAndView =new ModelAndView();
 		
 		if(StringUtil.isEmpty(page)){
@@ -50,6 +53,8 @@ public class IndexController {
 		Map<String, Object> map =new HashMap<String, Object>();
 		map.put("start", pageBean.getStart());
 		map.put("size", pageBean.getPageSize());
+		map.put("typeId", typeId);
+		map.put("releaseDateStr", releaseDateStr);
 		List<Blog> blogList = blogService.list(map);
 		
 		for(Blog blog:blogList){
@@ -71,6 +76,12 @@ public class IndexController {
 		modelAndView.addObject("blogList", blogList);
 		
 		StringBuffer param=new StringBuffer();
+		if(StringUtil.isNotEmpty(typeId)){
+			param.append("tpyeId="+typeId+"&");
+		}
+		if(StringUtil.isNotEmpty(releaseDateStr)){
+			param.append("releaseDateStr="+releaseDateStr+"&");
+		}
 		modelAndView.addObject("pageCode", PageUtil.genPagination(request.getContextPath()+"/index.html", blogService.getTotal(map), Integer.parseInt(page), 10, param.toString()));
 		
 		modelAndView.addObject("pageTitle", "java open source blog system");

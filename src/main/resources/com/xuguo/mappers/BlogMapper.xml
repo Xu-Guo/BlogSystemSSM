@@ -24,6 +24,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<select id="list" parameterType="Map" resultMap="BlogResult">
 		select * from t_blog
+		<where>
+			<if test="typeId!=null and typeId!='' ">
+				and typeId=#{typeId}
+			</if>
+			<if test="releaseDateStr!=null and releaseDateStr!='' ">
+				and DATE_FORMAT(releaseDate,'%Y/%m')=#{releaseDateStr}
+			</if>
+		</where>
 		order by releaseDate desc
 		<if test="start!=null and size!=null">
 			limit #{start},#{size}
@@ -31,7 +39,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<select id="getTotal" parameterType="Map" resultType="Long">
-		select count(*) from t_blog 
+		select count(*) from t_blog
+		<where>
+			<if test="typeId!=null and typeId!='' ">
+				and typeId=#{typeId}
+			</if>
+			<if test="releaseDateStr!=null and releaseDateStr!='' ">
+				and DATE_FORMAT(releaseDate,'%Y/%m')=#{releaseDateStr}
+			</if>
+		</where>
 	</select>
 	
 </mapper> 

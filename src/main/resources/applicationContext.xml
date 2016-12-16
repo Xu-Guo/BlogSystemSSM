@@ -99,7 +99,7 @@
     </tx:advice>  
   
 
-    <aop:config>  
+    <aop:config>
         <aop:pointcut id="serviceOperation"  
             expression="execution(* com.xuguo.service.*.*(..))" />  
         <aop:advisor advice-ref="txAdvice" pointcut-ref="serviceOperation" />  

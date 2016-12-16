@@ -47,12 +47,12 @@
 			<div class="data_list">
 				<div class="data_list_title">
 					<img src="${pageContext.request.contextPath}/static/images/byType_icon.png"/>
-					Group by Type
+					Group by BlogType
 				</div>
 				<div class="datas">
 					<ul>
 						<c:forEach var="blogTypeCount" items="${blogTypeCountList}">
-							<li><span><a href="#">${blogTypeCount.typeName}(${blogTypeCount.blogCount})</a></span></li>
+							<li><span><a href="${pageContext.request.contextPath}/index.html?typeId=${blogTypeCount.id}">${blogTypeCount.typeName}(${blogTypeCount.blogCount})</a></span></li>
 						</c:forEach>
 					</ul>
 				</div>
@@ -66,9 +66,8 @@
 				<div class="datas">
 					<ul>
 						<c:forEach var="blogCount" items="${blogCountList}">
-							<li><span><a href="#">${blogCount.releaseDateStr}(${blogCount.blogCount})</a></span></li>
-						</c:forEach>
-							
+							<li><span><a href="${pageContext.request.contextPath}/index.html?releaseDateStr=${blogCount.releaseDateStr}">${blogCount.releaseDateStr}(${blogCount.blogCount})</a></span></li>
+						</c:forEach>						
 					</ul>
 				</div>
 			</div>

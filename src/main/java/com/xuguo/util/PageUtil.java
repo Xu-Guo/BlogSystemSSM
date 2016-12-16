@@ -12,13 +12,13 @@ public class PageUtil {
 	 * @param targetUrl // target url
 	 * @param totalNum 	//
 	 * @param currentPage //current page number
-	 * @param pageSize //number og records per page
+	 * @param pageSize //number of records per page
 	 * @return
 	 */
 	public static String genPagination(String targetUrl,long totalNum,int currentPage,int pageSize,String param){
 		long totalPage=totalNum%pageSize==0?totalNum/pageSize:totalNum/pageSize+1;
 		if(totalPage==0){
-			System.out.println("No data found!");
+			//System.out.println("No data found!");
 			return "No data found!";
 		}else{
 			StringBuffer pageCode=new StringBuffer();
@@ -26,7 +26,7 @@ public class PageUtil {
 			
 			//handle Pre tag
 			if(currentPage>1){
-				pageCode.append("<li><a href='"+targetUrl+"?page="+(currentPage-1)+"&"+param+"'>Next</a></li>");			
+				pageCode.append("<li><a href='"+targetUrl+"?page="+(currentPage-1)+"&"+param+"'>Pre</a></li>");			
 			}else{
 				pageCode.append("<li class='disabled'><a href='"+targetUrl+"?page="+(currentPage-1)+"&"+param+"'>Pre</a></li>");//current page <=1£¬no pre£¬disable ¡°pre¡±		
 			}
