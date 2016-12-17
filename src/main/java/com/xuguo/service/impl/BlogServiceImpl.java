@@ -48,5 +48,15 @@ public class BlogServiceImpl implements BlogService{
 		return blogDao.update(blog);
 	}
 
+	public Blog getLastBlog(Integer id) {
+		// TODO Auto-generated method stub
+		return blogDao.getLastBlog(id);
+	}
+
+	public Blog getNextBlog(Integer id) {
+		// TODO Auto-generated method stub
+		return blogDao.getNextBlog(id);
+	}
+
 
 }

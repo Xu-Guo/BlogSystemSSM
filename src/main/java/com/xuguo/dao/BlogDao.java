@@ -48,5 +48,19 @@ public interface BlogDao {
 	 */
 	public Integer update(Blog blog);
 	
+	/**
+	 * get Last blog
+	 * @param id
+	 * @return
+	 */
+	public Blog getLastBlog(Integer id);
+	
+	
+	/**
+	 * get next blog
+	 * @param id
+	 * @return
+	 */
+	public Blog getNextBlog(Integer id);
 	
 }
