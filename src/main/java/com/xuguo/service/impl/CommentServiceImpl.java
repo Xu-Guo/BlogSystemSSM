@@ -22,7 +22,7 @@ import com.xuguo.service.CommentService;
 public class CommentServiceImpl implements CommentService{
 	
 	@Resource
-	CommentDao commentDao;
+	private CommentDao commentDao;
 	
 	
 	/**
@@ -32,6 +32,15 @@ public class CommentServiceImpl implements CommentService{
 	 */
 	public List<Comment> list(Map<String, Object> map) {
 		return commentDao.list(map);
+	}
+
+	/**
+	 * add comment
+	 * @param comment
+	 * @return
+	 */
+	public int add(Comment comment) {
+		return commentDao.add(comment);
 	}
 
 }

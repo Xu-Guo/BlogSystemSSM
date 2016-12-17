@@ -7,6 +7,29 @@
     function showOtherComment(){
     	$(".otherComment").show();
     }
+    
+    function loadimage(){
+		document.getElementById("randImage").src="${pageContext.request.contextPath}/image.jsp?"+Math.random();
+	}
+    
+    function submitData(){
+    	var content=$("#content").val();
+    	var imageCode=$("#imageCode").val();
+    	if(content==null||content==""){
+    		alert("Please input reply!");
+    	}else if(imageCode==null||imageCode==""){
+    		alert("Please input verify code!");
+    	}else{
+    		$.post("${pageContext.request.contextPath}/comment/save.do",{"content":content,'imageCode':imageCode,'blog.id':'${blog.id}'},function(result){
+    			if(result.success){
+    				alert("Commit submit success and will be displayed when pass the check!");
+    			}else{
+    				alert(result.errorInfo);
+    			}
+    		},"json");
+    	}
+    }
+
 </script>
 
 <script type="text/javascript">var switchTo5x=true;</script>
@@ -86,5 +109,25 @@
 				</c:forEach>
 			</c:otherwise>
 		</c:choose>
+	</div>
+</div>
+
+
+<div class="data_list" >
+	<div class="data_list_title">
+		<img src="/static/images/publish_comment_icon.png"/>
+		Publish comment
+	</div>
+	<div class="publish_comment">
+			<div>
+				<textarea style="width: 100%" rows="3" id="content" name="content" placeholder="Say something..."></textarea>
+			</div>
+			<div class="verCode">
+				Code：<input type="text" value="" name="imageCode"  id="imageCode" size="10" onkeydown= "if(event.keyCode==13)form1.submit()"/>&nbsp;<img onclick="javascript:loadimage();"  title="Refresh" name="randImage" id="randImage" src="/image.jsp" width="60" height="20" border="1" align="absmiddle"> 
+			</div>
+			<div class="publishButton">
+				<button class="btn btn-primary" type="button" onclick="submitData()">Publish comment</button>
+			</div>
+		</form>
 	</div>
 </div>

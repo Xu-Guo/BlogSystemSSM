@@ -20,4 +20,11 @@ public interface CommentService {
 	 * @return
 	 */
 	public List<Comment> list(Map<String, Object> map);
+	
+	/**
+	 * add comment
+	 * @param comment
+	 * @return
+	 */
+	public int add(Comment comment);
 }

@@ -15,21 +15,18 @@ public class Comment {
 	private Blog blog;//blog that be commented
 	private Date commentDate;
 	private Integer state;//Blogger check state: 0:waiting, 1:pass, 2:failed check
-	
-	
-	public String getUserIp() {
-		return userIp;
-	}
-	public void setUserIp(String userIp) {
-		this.userIp = userIp;
-	}
 	public Integer getId() {
 		return id;
 	}
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
+	public String getUserIp() {
+		return userIp;
+	}
+	public void setUserIp(String userIp) {
+		this.userIp = userIp;
+	}
 	public String getContent() {
 		return content;
 	}
@@ -54,6 +51,9 @@ public class Comment {
 	public void setState(Integer state) {
 		this.state = state;
 	}
+	
+	
+
 	
 	
 }

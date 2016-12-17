@@ -145,3 +145,20 @@
 .data_list .commentDatas .otherComment{
 	display: none;
 }
+
+.data_list .publish_comment{
+	padding-top: 10px;
+	padding-bottom: 50px;
+}
+
+.data_list .publish_comment .publishButton{
+	padding-top:10px;
+	float: right;
+}
+
+
+.data_list .verCode{
+	padding-top:10px;
+	padding-left:10px;
+	float: left;
+}
