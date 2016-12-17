@@ -1,17 +1,23 @@
 package com.xuguo.controller;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.xuguo.entity.Blog;
+import com.xuguo.entity.Comment;
 import com.xuguo.service.BlogService;
+import com.xuguo.service.CommentService;
 import com.xuguo.util.StringUtil;
 
 /**
@@ -25,6 +31,10 @@ public class BlogController {
 	
 	@Resource
 	private BlogService blogService;
+	
+	@Resource
+	private CommentService commentService;
+	
 	
 	/**
 	 * request blog detail information
@@ -51,6 +61,12 @@ public class BlogController {
 		blog.setClickHit(blog.getClickHit()+1);
 		blogService.update(blog);
 		
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("blogId", blog.getId());
+		map.put("state", 1);
+		List<Comment> list = commentService.list(map);
+
+		modelAndView.addObject("commentList",commentService.list(map));
 		modelAndView.addObject("pageCode",this.getUpAndDownPageCode(blogService.getLastBlog(id),blogService.getNextBlog(id),request.getServletContext().getContextPath()));
 		modelAndView.addObject("pageTitle", blog.getTitle()+"java open source blog system");
 		modelAndView.addObject("mainPage", "foreground/blog/view.jsp");

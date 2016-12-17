@@ -5,7 +5,7 @@ import java.util.List;
 import com.xuguo.entity.BlogType;
 
 /**
- * 博客类型Service接口
+ * blog type Service interface
  * @author xu
  *
  */
