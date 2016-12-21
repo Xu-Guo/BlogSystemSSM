@@ -2,7 +2,7 @@
  * Created with JetBrains PhpStorm.
  * User: taoqili
  * Date: 12-6-12
- * Time: ÏÂÎç6:57
+ * Time: ä¸‹åˆ6:57
  * To change this template use File | Settings | File Templates.
  */
 UE.I18N['en'] = {
@@ -31,9 +31,9 @@ UE.I18N['en'] = {
         'num':'1,2,3...',
         'num1':'1),2),3)...',
         'num2':'(1),(2),(3)...',
-        'cn':'Ò»,¶ş,Èı....',
-        'cn1':'Ò»),¶ş),Èı)....',
-        'cn2':'(Ò»),(¶ş),(Èı)....',
+        'cn':'ä¸€,äºŒ,ä¸‰....',
+        'cn1':'ä¸€),äºŒ),ä¸‰)....',
+        'cn2':'(ä¸€),(äºŒ),(ä¸‰)....',
         'decimal':'1,2,3...',
         'lower-alpha':'a,b,c...',
         'lower-roman':'i,ii,iii...',
@@ -41,11 +41,11 @@ UE.I18N['en'] = {
         'upper-roman':'I,II,III...'
     },
     'insertunorderedlist':{
-        'circle':'¡ğ Circle',
-        'disc':'¡ñ Circle dot',
-        'square':'¡ö Rectangle ',
-        'dash' :'£­ Dash',
-        'dot' : '¡£dot'
+        'circle':'â—‹ Circle',
+        'disc':'â— Circle dot',
+        'square':'â–  Rectangle ',
+        'dash' :'ï¼ Dash',
+        'dot' : 'ã€‚dot'
     },
     'paragraph':{'p':'Paragraph', 'h1':'Title 1', 'h2':'Title 2', 'h3':'Title 3', 'h4':'Title 4', 'h5':'Title 5', 'h6':'Title 6'},
     'fontfamily':{
@@ -249,7 +249,7 @@ UE.I18N['en'] = {
             'lang_background_position':'Position',
             'repeatType':{'options':["Center", "Repeat-x", "Repeat-y", "Tile","Custom"]}
         },
-        'noUploadImage':"No pictures has been uploaded£¡",
+        'noUploadImage':"No pictures has been uploadedï¼",
         'toggleSelect':'Change the active state by click!\n Image Size: '
     },
     //===============dialog i18N=======================
@@ -305,7 +305,7 @@ UE.I18N['en'] = {
         'remoteLockError':"Cannot Lock the Proportion between width and height",
         'numError':"Please enter the correct Num. e.g 123,400",
         'imageUrlError':"The image format may be wrong!",
-        'imageLoadError':"Error,please check the network or URL£¡",
+        'imageLoadError':"Error,please check the network or URLï¼",
         'searchRemind':"Enter the search keyword!",
         'searchLoading':"Image is loading,please wait...",
         'searchRetry':" Sorry,can't find the image,please try again!"
@@ -371,7 +371,7 @@ UE.I18N['en'] = {
         'default':"Default",
         'block':"Display in block",
         'urlError':"The video url format may be wrong!",
-        'loading':" &nbsp;The video is loading, please wait¡­",
+        'loading':" &nbsp;The video is loading, please waitâ€¦",
         'clickToSelect':"Click to select",
         'goToSource':'Visit source video ',
         'noVideo':" &nbsp; &nbsp;Sorry,can't find the video,please try again!",
@@ -386,18 +386,18 @@ UE.I18N['en'] = {
         'fileUploadReady':'Wait for uploading...',
         'delUploadQueue':'Remove from the uploading queue ',
         'limitPrompt1':'Can not choose more than single',
-        'limitPrompt2':'file(s)£¡Please choose again£¡',
+        'limitPrompt2':'file(s)ï¼Please choose againï¼',
         'delFailFile':'Remove failure file',
-        'fileSizeLimit':'File size exceeds the limit£¡',
-        'emptyFile':'Can not upload an empty file£¡',
-        'fileTypeError':'File type error£¡',
-        'unknownError':'Unknown error£¡',
+        'fileSizeLimit':'File size exceeds the limitï¼',
+        'emptyFile':'Can not upload an empty fileï¼',
+        'fileTypeError':'File type errorï¼',
+        'unknownError':'Unknown errorï¼',
         'fileUploading':'Uploading,please wait...',
         'cancelUpload':'Cancel upload',
         'netError':'Network error',
         'failUpload':'Upload failed',
-        'serverIOError':'Server IO error£¡',
-        'noAuthority':'No Permission£¡',
+        'serverIOError':'Server IO errorï¼',
+        'noAuthority':'No Permissionï¼',
         'fileNumLimit':'Upload limit to the number',
         'failCheck':'Authentication fails, the upload is skipped!',
         'fileCanceling':'Cancel, please wait...',
@@ -490,10 +490,10 @@ UE.I18N['en'] = {
             'lang_chart_y_title': 'Y-axis title:',
             'lang_chart_tip': 'Prompt',
             'lang_cahrt_tip_prefix': 'prefix:',
-            'lang_cahrt_tip_description': '½ö±ıÍ¼ÓĞĞ§£¬ µ±Êó±êÒÆ¶¯µ½±ıÍ¼ÖĞÏàÓ¦µÄ¿éÉÏÊ±£¬ÌáÊ¾¿òÄÚµÄÎÄ×ÖµÄÇ°×º',
+            'lang_cahrt_tip_description': 'ä»…é¥¼å›¾æœ‰æ•ˆï¼Œ å½“é¼ æ ‡ç§»åŠ¨åˆ°é¥¼å›¾ä¸­ç›¸åº”çš„å—ä¸Šæ—¶ï¼Œæç¤ºæ¡†å†…çš„æ–‡å­—çš„å‰ç¼€',
             'lang_chart_data_unit': 'Unit',
             'lang_chart_data_unit_title': 'unit:',
-            'lang_chart_data_unit_description': 'ÏÔÊ¾ÔÚÃ¿¸öÊı¾İµãÉÏµÄÊı¾İµÄµ¥Î»£¬ ±ÈÈç£º ÎÂ¶ÈµÄµ¥Î» ¡æ',
+            'lang_chart_data_unit_description': 'æ˜¾ç¤ºåœ¨æ¯ä¸ªæ•°æ®ç‚¹ä¸Šçš„æ•°æ®çš„å•ä½ï¼Œ æ¯”å¦‚ï¼š æ¸©åº¦çš„å•ä½ â„ƒ',
             'lang_chart_type': 'Chart type:',
             'lang_prev_btn': 'Previous',
             'lang_next_btn': 'Next'
@@ -540,22 +540,22 @@ UE.I18N['en'] = {
     },
     insertframe:{
         'static':{
-            'lang_input_address':'Address£º',
-            'lang_input_width':'Width£º',
-            'lang_input_height':'height£º',
-            'lang_input_isScroll':'Enable scrollbars£º',
-            'lang_input_frameborder':'Show frame border£º',
-            'lang_input_alignMode':'Alignment£º',
+            'lang_input_address':'Addressï¼š',
+            'lang_input_width':'Widthï¼š',
+            'lang_input_height':'heightï¼š',
+            'lang_input_isScroll':'Enable scrollbarsï¼š',
+            'lang_input_frameborder':'Show frame borderï¼š',
+            'lang_input_alignMode':'Alignmentï¼š',
             'align':{title:"Alignment", options:["Default", "Left", "Right", "Center"]}
         },
         'enterAddress':'Please enter an address!'
     },
     link:{
         'static':{
-            'lang_input_text':'Text£º',
-            'lang_input_url':'URL£º',
-            'lang_input_title':'Title£º',
-            'lang_input_target':'open in new window£º'
+            'lang_input_text':'Textï¼š',
+            'lang_input_url':'URLï¼š',
+            'lang_input_title':'Titleï¼š',
+            'lang_input_target':'open in new windowï¼š'
         },
         'validLink':'Supports only effective when a link is selected',
         'httpPrompt':'The hyperlink you enter should start with "http|https|ftp://"!'

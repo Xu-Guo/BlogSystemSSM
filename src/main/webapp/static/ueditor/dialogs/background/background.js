@@ -8,7 +8,7 @@
         initColorSelector();
     };
 
-    /* ³õÊ¼»¯tab±êÇ© */
+    /* åˆå§‹åŒ–tabæ ‡ç­¾ */
     function initTabs(){
         var tabs = $G('tabHeads').children;
         for (var i = 0; i < tabs.length; i++) {
@@ -31,7 +31,7 @@
         }
     }
 
-    /* ³õÊ¼»¯ÑÕÉ«ÉèÖÃ */
+    /* åˆå§‹åŒ–é¢œè‰²è®¾ç½® */
     function initColorSelector () {
         var obj = editor.queryCommandValue('background');
         if (obj) {
@@ -73,12 +73,12 @@
         initColorPicker();
     }
 
-    /* ³õÊ¼»¯ÑÕÉ«Ñ¡ÔñÆ÷ */
+    /* åˆå§‹åŒ–é¢œè‰²é€‰æ‹©å™¨ */
     function initColorPicker() {
         var me = editor,
             cp = $G("colorPicker");
 
-        /* Éú³ÉÑÕÉ«Ñ¡ÔñÆ÷ui¶ÔÏó */
+        /* ç”Ÿæˆé¢œè‰²é€‰æ‹©å™¨uiå¯¹è±¡ */
         var popup = new UE.ui.Popup({
             content: new UE.ui.ColorPicker({
                 noColorText: me.getLang("clearColor"),
@@ -99,7 +99,7 @@
             }
         });
 
-        /* ÉèÖÃÑÕÉ«Ñ¡ÔñÆ÷ */
+        /* è®¾ç½®é¢œè‰²é€‰æ‹©å™¨ */
         domUtils.on(cp, "click", function () {
             popup.showAnchor(this);
         });
@@ -112,12 +112,12 @@
         });
     }
 
-    /* ³õÊ¼»¯ÔÚÏßÍ¼Æ¬ÁĞ±í */
+    /* åˆå§‹åŒ–åœ¨çº¿å›¾ç‰‡åˆ—è¡¨ */
     function initImagePanel() {
         onlineImage = onlineImage || new OnlineImage('imageList');
     }
 
-    /* ¸üĞÂ±³¾°É«ÉèÖÃÃæ°å */
+    /* æ›´æ–°èƒŒæ™¯è‰²è®¾ç½®é¢æ¿ */
     function updateFormState (radio, color, url, align, x, y) {
         var nocolorRadio = $G('nocolorRadio'),
             coloredRadio = $G('coloredRadio');
@@ -154,7 +154,7 @@
         $G('custom').style.display = coloredRadio.checked && $G('url').value && $G('repeatType').value == 'self' ? '':'none';
     }
 
-    /* ¸üĞÂ±³¾°ÑÕÉ« */
+    /* æ›´æ–°èƒŒæ™¯é¢œè‰² */
     function updateBackground () {
         if ($G('coloredRadio').checked) {
             var color = domUtils.getStyle($G("colorPicker"), "background-color"),
@@ -180,7 +180,7 @@
     }
 
 
-    /* ÔÚÏßÍ¼Æ¬ */
+    /* åœ¨çº¿å›¾ç‰‡ */
     function OnlineImage(target) {
         this.container = utils.isString(target) ? document.getElementById(target) : target;
         this.init();
@@ -190,7 +190,7 @@
             this.reset();
             this.initEvents();
         },
-        /* ³õÊ¼»¯ÈİÆ÷ */
+        /* åˆå§‹åŒ–å®¹å™¨ */
         initContainer: function () {
             this.container.innerHTML = '';
             this.list = document.createElement('ul');
@@ -203,18 +203,18 @@
             this.list.appendChild(this.clearFloat);
             this.container.appendChild(this.list);
         },
-        /* ³õÊ¼»¯¹ö¶¯ÊÂ¼ş,¹ö¶¯µ½µØ²½×Ô¶¯À­È¡Êı¾İ */
+        /* åˆå§‹åŒ–æ»šåŠ¨äº‹ä»¶,æ»šåŠ¨åˆ°åœ°æ­¥è‡ªåŠ¨æ‹‰å–æ•°æ® */
         initEvents: function () {
             var _this = this;
 
-            /* ¹ö¶¯À­È¡Í¼Æ¬ */
+            /* æ»šåŠ¨æ‹‰å–å›¾ç‰‡ */
             domUtils.on($G('imageList'), 'scroll', function(e){
                 var panel = this;
                 if (panel.scrollHeight - (panel.offsetHeight + panel.scrollTop) < 10) {
                     _this.getImageData();
                 }
             });
-            /* Ñ¡ÖĞÍ¼Æ¬ */
+            /* é€‰ä¸­å›¾ç‰‡ */
             domUtils.on(this.container, 'click', function (e) {
                 var target = e.target || e.srcElement,
                     li = target.parentNode,
@@ -234,24 +234,24 @@
                 }
             });
         },
-        /* ³õÊ¼»¯µÚÒ»´ÎµÄÊı¾İ */
+        /* åˆå§‹åŒ–ç¬¬ä¸€æ¬¡çš„æ•°æ® */
         initData: function () {
 
-            /* À­È¡Êı¾İĞèÒªÊ¹ÓÃµÄÖµ */
+            /* æ‹‰å–æ•°æ®éœ€è¦ä½¿ç”¨çš„å€¼ */
             this.state = 0;
             this.listSize = editor.getOpt('imageManagerListSize');
             this.listIndex = 0;
             this.listEnd = false;
 
-            /* µÚÒ»´ÎÀ­È¡Êı¾İ */
+            /* ç¬¬ä¸€æ¬¡æ‹‰å–æ•°æ® */
             this.getImageData();
         },
-        /* ÖØÖÃ½çÃæ */
+        /* é‡ç½®ç•Œé¢ */
         reset: function() {
             this.initContainer();
             this.initData();
         },
-        /* ÏòºóÌ¨À­È¡Í¼Æ¬ÁĞ±íÊı¾İ */
+        /* å‘åå°æ‹‰å–å›¾ç‰‡åˆ—è¡¨æ•°æ® */
         getImageData: function () {
             var _this = this;
 
@@ -294,7 +294,7 @@
                 });
             }
         },
-        /* Ìí¼ÓÍ¼Æ¬µ½ÁĞ±í½çÃæÉÏ */
+        /* æ·»åŠ å›¾ç‰‡åˆ°åˆ—è¡¨ç•Œé¢ä¸Š */
         pushData: function (list) {
             var i, item, img, icon, _this = this,
                 urlPrefix = editor.getOpt('imageManagerUrlPrefix');
@@ -320,7 +320,7 @@
                 }
             }
         },
-        /* ¸Ä±äÍ¼Æ¬´óĞ¡ */
+        /* æ”¹å˜å›¾ç‰‡å¤§å° */
         scale: function (img, w, h, type) {
             var ow = img.width,
                 oh = img.height;

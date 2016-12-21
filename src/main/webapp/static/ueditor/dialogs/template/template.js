@@ -2,7 +2,7 @@
  * Created with JetBrains PhpStorm.
  * User: xuheng
  * Date: 12-8-8
- * Time: ÏÂÎç2:09
+ * Time: ä¸‹åˆ2:09
  * To change this template use File | Settings | File Templates.
  */
 (function () {

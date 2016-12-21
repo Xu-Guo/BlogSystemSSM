@@ -1,5 +1,5 @@
-@charset "gbk";
-/* dialogÑùÊ½ */
+@charset "utf-8";
+/* dialogæ ·å¼ */
 .wrapper {
     zoom: 1;
     width: 630px;
@@ -11,7 +11,7 @@
     font-family: sans-serif;
 }
 
-/*tabÑùÊ½¿ò´óĞ¡*/
+/*tabæ ·å¼æ¡†å¤§å°*/
 .tabhead {
     float:left;
 }
@@ -37,7 +37,7 @@
     display: block;
 }
 
-/* Í¼Æ¬¶ÔÆë·½Ê½ */
+/* å›¾ç‰‡å¯¹é½æ–¹å¼ */
 .alignBar{
     float:right;
     margin-top: 5px;
@@ -94,7 +94,7 @@
 
 
 
-/* Ô¶³ÌÍ¼Æ¬ÑùÊ½ */
+/* è¿œç¨‹å›¾ç‰‡æ ·å¼ */
 #remote {
     z-index: 200;
 }
@@ -192,7 +192,7 @@
     overflow: hidden;
 }
 
-/* ÉÏ´«Í¼Æ¬ */
+/* ä¸Šä¼ å›¾ç‰‡ */
 .tabbody #upload.panel {
     width: 0;
     height: 0;
@@ -632,7 +632,7 @@
 
 
 
-/* Í¼Æ¬¹ÜÀíÑùÊ½ */
+/* å›¾ç‰‡ç®¡ç†æ ·å¼ */
 #online {
     width: 100%;
     height: 336px;
@@ -706,7 +706,7 @@
 }
 
 
-/* Í¼Æ¬ËÑË÷ÑùÊ½ */
+/* å›¾ç‰‡æœç´¢æ ·å¼ */
 #search .searchBar {
     width: 100%;
     height: 30px;

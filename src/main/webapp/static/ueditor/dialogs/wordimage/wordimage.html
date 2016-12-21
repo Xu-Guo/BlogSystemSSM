@@ -3,7 +3,7 @@
 <html>
 <head>
     <title></title>
-    <meta http-equiv="Content-Type" content="text/html;charset=gbk"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <script type="text/javascript" src="../internal.js"></script>
     <style type="text/css">
         .wrapper{width: 600px;padding: 10px;height: 352px;overflow: hidden;position: relative;border-bottom: 1px solid #d7d7d7}
@@ -38,69 +38,69 @@
             maxImageSideLength:900
         });
 
-            //È«¾Ö±äÁ¿
-        var imageUrls = [],          //ÓÃÓÚ±£´æ´Ó·şÎñÆ÷·µ»ØµÄÍ¼Æ¬ĞÅÏ¢Êı×é
-            selectedImageCount = 0,  //µ±Ç°ÒÑÑ¡ÔñµÄµ«Î´ÉÏ´«µÄÍ¼Æ¬ÊıÁ¿
+            //å…¨å±€å˜é‡
+        var imageUrls = [],          //ç”¨äºä¿å­˜ä»æœåŠ¡å™¨è¿”å›çš„å›¾ç‰‡ä¿¡æ¯æ•°ç»„
+            selectedImageCount = 0,  //å½“å‰å·²é€‰æ‹©çš„ä½†æœªä¸Šä¼ çš„å›¾ç‰‡æ•°é‡
             optImageUrl = editor.getActionUrl(editor.getOpt('imageActionName')),
             optImageFieldName = editor.getOpt('imageFieldName'),
             optImageCompressBorder = editor.getOpt('imageCompressEnable') ? editor.getOpt('imageCompressBorder'):null,
             maxSize = editor.getOpt('imageMaxSize') / 1024,
             extension = editor.getOpt('imageAllowFiles').join(';').replace(/\./g, '*.');
 
-        /* Ìí¼Ó¶îÍâµÄGET²ÎÊı */
+        /* æ·»åŠ é¢å¤–çš„GETå‚æ•° */
         var params = utils.serializeParam(editor.queryCommandValue('serverparam')) || '',
             urlWidthParams = optImageUrl + (optImageUrl.indexOf('?') == -1 ? '?':'&') + params;
 
         utils.domReady(function(){
-            //´´½¨FlashÏà¹ØµÄ²ÎÊı¼¯ºÏ
+            //åˆ›å»ºFlashç›¸å…³çš„å‚æ•°é›†åˆ
             var flashOptions = {
-                container:"flashContainer",                                                    //flashÈİÆ÷id
-                url:urlWidthParams,                                           // ÉÏ´«´¦ÀíÒ³ÃæµÄurlµØÖ·
-                ext:editor.queryCommandValue('serverParam') || {},                                 //¿ÉÏò·şÎñÆ÷Ìá½»µÄ×Ô¶¨Òå²ÎÊıÁĞ±í
-                fileType:'{"description":"'+lang.fileType+'", "extension":"' + extension + '"}',     //ÉÏ´«ÎÄ¼ş¸ñÊ½ÏŞÖÆ
-                flashUrl:'imageUploader.swf',                                                  //ÉÏ´«ÓÃµÄflash×é¼şµØÖ·
-                width:600,          //flashµÄ¿í¶È
-                height:272,         //flashµÄ¸ß¶È
-                gridWidth:120,     // Ã¿Ò»¸öÔ¤ÀÀÍ¼Æ¬ËùÕ¼µÄ¿í¶È
-                gridHeight:120,    // Ã¿Ò»¸öÔ¤ÀÀÍ¼Æ¬ËùÕ¼µÄ¸ß¶È
-                picWidth:100,      // µ¥ÕÅÔ¤ÀÀÍ¼Æ¬µÄ¿í¶È
-                picHeight:100,     // µ¥ÕÅÔ¤ÀÀÍ¼Æ¬µÄ¸ß¶È
-                uploadDataFieldName: optImageFieldName,    // POSTÇëÇóÖĞÍ¼Æ¬Êı¾İµÄkey
-                picDescFieldName:'pictitle',      // POSTÇëÇóÖĞÍ¼Æ¬ÃèÊöµÄkey
-                maxSize: maxSize,                         // ÎÄ¼şµÄ×î´óÌå»ı,µ¥Î»M
-                compressSize:1,                   // ÉÏ´«Ç°Èç¹ûÍ¼Æ¬Ìå»ı³¬¹ı¸ÃÖµ£¬»áÏÈÑ¹Ëõ,µ¥Î»M
-                maxNum:32,                         // µ¥´Î×î´ó¿ÉÉÏ´«¶àÉÙ¸öÎÄ¼ş
-                compressSide: 0,                 //µÈ±ÈÑ¹ËõµÄ»ù×¼£¬0Îª°´ÕÕ×î³¤±ß£¬1Îª°´ÕÕ¿í¶È£¬2Îª°´ÕÕ¸ß¶È
-                compressLength: optImageCompressBorder        //ÄÜ½ÓÊÜµÄ×î´ó±ß³¤£¬³¬¹ı¸ÃÖµFlash»á×Ô¶¯µÈ±ÈÑ¹Ëõ
+                container:"flashContainer",                                                    //flashå®¹å™¨id
+                url:urlWidthParams,                                           // ä¸Šä¼ å¤„ç†é¡µé¢çš„urlåœ°å€
+                ext:editor.queryCommandValue('serverParam') || {},                                 //å¯å‘æœåŠ¡å™¨æäº¤çš„è‡ªå®šä¹‰å‚æ•°åˆ—è¡¨
+                fileType:'{"description":"'+lang.fileType+'", "extension":"' + extension + '"}',     //ä¸Šä¼ æ–‡ä»¶æ ¼å¼é™åˆ¶
+                flashUrl:'imageUploader.swf',                                                  //ä¸Šä¼ ç”¨çš„flashç»„ä»¶åœ°å€
+                width:600,          //flashçš„å®½åº¦
+                height:272,         //flashçš„é«˜åº¦
+                gridWidth:120,     // æ¯ä¸€ä¸ªé¢„è§ˆå›¾ç‰‡æ‰€å çš„å®½åº¦
+                gridHeight:120,    // æ¯ä¸€ä¸ªé¢„è§ˆå›¾ç‰‡æ‰€å çš„é«˜åº¦
+                picWidth:100,      // å•å¼ é¢„è§ˆå›¾ç‰‡çš„å®½åº¦
+                picHeight:100,     // å•å¼ é¢„è§ˆå›¾ç‰‡çš„é«˜åº¦
+                uploadDataFieldName: optImageFieldName,    // POSTè¯·æ±‚ä¸­å›¾ç‰‡æ•°æ®çš„key
+                picDescFieldName:'pictitle',      // POSTè¯·æ±‚ä¸­å›¾ç‰‡æè¿°çš„key
+                maxSize: maxSize,                         // æ–‡ä»¶çš„æœ€å¤§ä½“ç§¯,å•ä½M
+                compressSize:1,                   // ä¸Šä¼ å‰å¦‚æœå›¾ç‰‡ä½“ç§¯è¶…è¿‡è¯¥å€¼ï¼Œä¼šå…ˆå‹ç¼©,å•ä½M
+                maxNum:32,                         // å•æ¬¡æœ€å¤§å¯ä¸Šä¼ å¤šå°‘ä¸ªæ–‡ä»¶
+                compressSide: 0,                 //ç­‰æ¯”å‹ç¼©çš„åŸºå‡†ï¼Œ0ä¸ºæŒ‰ç…§æœ€é•¿è¾¹ï¼Œ1ä¸ºæŒ‰ç…§å®½åº¦ï¼Œ2ä¸ºæŒ‰ç…§é«˜åº¦
+                compressLength: optImageCompressBorder        //èƒ½æ¥å—çš„æœ€å¤§è¾¹é•¿ï¼Œè¶…è¿‡è¯¥å€¼Flashä¼šè‡ªåŠ¨ç­‰æ¯”å‹ç¼©
             };
-            //»Øµ÷º¯Êı¼¯ºÏ£¬Ö§³Ö´«µİº¯ÊıÃûµÄ×Ö·û´®¡¢º¯Êı¾ä±úÒÔ¼°º¯Êı±¾ÉíÈıÖÖÀàĞÍ
+            //å›è°ƒå‡½æ•°é›†åˆï¼Œæ”¯æŒä¼ é€’å‡½æ•°åçš„å­—ç¬¦ä¸²ã€å‡½æ•°å¥æŸ„ä»¥åŠå‡½æ•°æœ¬èº«ä¸‰ç§ç±»å‹
             var callbacks={
-                selectFileCallback: function(selectFiles){                // Ñ¡ÔñÎÄ¼şµÄ»Øµ÷
+                selectFileCallback: function(selectFiles){                // é€‰æ‹©æ–‡ä»¶çš„å›è°ƒ
                     selectedImageCount += selectFiles.length;
                     if(selectedImageCount) baidu.g("upload").style.display = "";
-                    dialog.buttons[0].setDisabled(true); //³õÊ¼»¯Ê±ÖÃ»ÒÈ·¶¨°´Å¥
+                    dialog.buttons[0].setDisabled(true); //åˆå§‹åŒ–æ—¶ç½®ç°ç¡®å®šæŒ‰é’®
                 },
-                deleteFileCallback: function(delFiles){                 // É¾³ıÎÄ¼şµÄ»Øµ÷
+                deleteFileCallback: function(delFiles){                 // åˆ é™¤æ–‡ä»¶çš„å›è°ƒ
                     selectedImageCount -= delFiles.length;
                     if (!selectedImageCount) {
                         baidu.g("upload").style.display = "none";
-                        dialog.buttons[0].setDisabled(false);         //Ã»ÓĞÑ¡ÔñÍ¼Æ¬Ê±ÖØĞÂµãÁÁ°´Å¥
+                        dialog.buttons[0].setDisabled(false);         //æ²¡æœ‰é€‰æ‹©å›¾ç‰‡æ—¶é‡æ–°ç‚¹äº®æŒ‰é’®
                     }
                 },
-                uploadCompleteCallback: function(data){               // µ¥¸öÎÄ¼şÉÏ´«Íê³ÉµÄ»Øµ÷
+                uploadCompleteCallback: function(data){               // å•ä¸ªæ–‡ä»¶ä¸Šä¼ å®Œæˆçš„å›è°ƒ
                     try{var info = eval("(" + data.info + ")");
                     info && imageUrls.push(info);
                     selectedImageCount--;
                     }catch(e){}
                 },
-                uploadErrorCallback: function (data){         // µ¥¸öÎÄ¼şÉÏ´«Ê§°ÜµÄ»Øµ÷,
+                uploadErrorCallback: function (data){         // å•ä¸ªæ–‡ä»¶ä¸Šä¼ å¤±è´¥çš„å›è°ƒ,
                     console && console.log(data);
                 },
-                allCompleteCallback: function(){              // È«²¿ÉÏ´«Íê³ÉÊ±µÄ»Øµ÷
-                    dialog.buttons[0].setDisabled(false);    //ÉÏ´«Íê±ÏºóµãÁÁ°´Å¥
+                allCompleteCallback: function(){              // å…¨éƒ¨ä¸Šä¼ å®Œæˆæ—¶çš„å›è°ƒ
+                    dialog.buttons[0].setDisabled(false);    //ä¸Šä¼ å®Œæ¯•åç‚¹äº®æŒ‰é’®
                 }
-                //exceedFileCallback: 'exceedFileCallback',   // ÎÄ¼ş³¬³öÏŞÖÆµÄ×î´óÌå»ıÊ±µÄ»Øµ÷
-                //startUploadCallback: startUploadCallback    // ¿ªÊ¼ÉÏ´«Ä³¸öÎÄ¼şÊ±µÄ»Øµ÷
+                //exceedFileCallback: 'exceedFileCallback',   // æ–‡ä»¶è¶…å‡ºé™åˆ¶çš„æœ€å¤§ä½“ç§¯æ—¶çš„å›è°ƒ
+                //startUploadCallback: startUploadCallback    // å¼€å§‹ä¸Šä¼ æŸä¸ªæ–‡ä»¶æ—¶çš„å›è°ƒ
             };
             wordImage.init(flashOptions,callbacks);
         });

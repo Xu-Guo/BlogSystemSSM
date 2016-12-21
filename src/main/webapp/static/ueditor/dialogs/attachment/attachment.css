@@ -1,5 +1,5 @@
-@charset "gbk";
-/* dialogÑùÊ½ */
+@charset "utf-8";
+/* dialogæ ·å¼ */
 .wrapper {
     zoom: 1;
     width: 630px;
@@ -11,7 +11,7 @@
     font-family: sans-serif;
 }
 
-/*tabÑùÊ½¿ò´óĞ¡*/
+/*tabæ ·å¼æ¡†å¤§å°*/
 .tabhead {
     float:left;
 }
@@ -37,7 +37,7 @@
     display: block;
 }
 
-/* ÉÏ´«¸½¼ş */
+/* ä¸Šä¼ é™„ä»¶ */
 .tabbody #upload.panel {
     width: 0;
     height: 0;
@@ -485,7 +485,7 @@
 
 
 
-/* Í¼Æ¬¹ÜÀíÑùÊ½ */
+/* å›¾ç‰‡ç®¡ç†æ ·å¼ */
 #online {
     width: 100%;
     height: 336px;
@@ -582,7 +582,7 @@
 }
 
 
-/* ÔÚÏßÎÄ¼şµÄÎÄ¼şÔ¤ÀÀÍ¼±ê */
+/* åœ¨çº¿æ–‡ä»¶çš„æ–‡ä»¶é¢„è§ˆå›¾æ ‡ */
 i.file-preview {
     display: block;
     margin: 10px auto;

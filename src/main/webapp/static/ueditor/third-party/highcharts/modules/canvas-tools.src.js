@@ -2911,7 +2911,7 @@ if (CanvasRenderingContext2D) {
  * @license Highcharts JS v3.0.6 (2013-10-04)
  * CanVGRenderer Extension module
  *
- * (c) 2011-2012 Torstein H  nsi, Erik Olsson
+ * (c) 2011-2012 Torstein Hønsi, Erik Olsson
  *
  * License: www.highcharts.com/license
  */

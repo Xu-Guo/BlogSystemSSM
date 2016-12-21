@@ -2,27 +2,27 @@
  * Created with JetBrains PhpStorm.
  * User: xuheng
  * Date: 12-9-26
- * Time: ÏÂÎç12:29
+ * Time: ä¸‹åˆ12:29
  * To change this template use File | Settings | File Templates.
  */
 
-//Çå¿ÕÉÏ´Î²éÑ¡µÄºÛ¼£
+//æ¸…ç©ºä¸Šæ¬¡æŸ¥é€‰çš„ç—•è¿¹
 editor.firstForSR = 0;
 editor.currentRangeForSR = null;
-//¸øtab×¢²áÇĞ»»ÊÂ¼ş
+//ç»™tabæ³¨å†Œåˆ‡æ¢äº‹ä»¶
 /**
- * tabµã»÷´¦ÀíÊÂ¼ş
+ * tabç‚¹å‡»å¤„ç†äº‹ä»¶
  * @param tabHeads
  * @param tabBodys
  * @param obj
  */
 function clickHandler( tabHeads,tabBodys,obj ) {
-    //headÑùÊ½¸ü¸Ä
+    //headæ ·å¼æ›´æ”¹
     for ( var k = 0, len = tabHeads.length; k < len; k++ ) {
         tabHeads[k].className = "";
     }
     obj.className = "focus";
-    //bodyÏÔÒş
+    //bodyæ˜¾éš
     var tabSrc = obj.getAttribute( "tabSrc" );
     for ( var j = 0, length = tabBodys.length; j < length; j++ ) {
         var body = tabBodys[j],
@@ -37,8 +37,8 @@ function clickHandler( tabHeads,tabBodys,obj ) {
 }
 
 /**
- * TABÇĞ»»
- * @param tabParentId  tabµÄ¸¸½ÚµãID»òÕß¶ÔÏó±¾Éí
+ * TABåˆ‡æ¢
+ * @param tabParentId  tabçš„çˆ¶èŠ‚ç‚¹IDæˆ–è€…å¯¹è±¡æœ¬èº«
  */
 function switchTab( tabParentId ) {
     var tabElements = $G( tabParentId ).children,
@@ -57,11 +57,11 @@ $G('searchtab').onmousedown = function(){
     $G('search-msg').innerHTML = '';
     $G('replace-msg').innerHTML = ''
 }
-//ÊÇ·ñÇø·Ö´óĞ¡Ğ´
+//æ˜¯å¦åŒºåˆ†å¤§å°å†™
 function getMatchCase(id) {
     return $G(id).checked ? true : false;
 }
-//²éÕÒ
+//æŸ¥æ‰¾
 $G("nextFindBtn").onclick = function (txt, dir, mcase) {
     var findtxt = $G("findtxt").value, obj;
     if (!findtxt) {
@@ -118,7 +118,7 @@ $G("preReplaceBtn").onclick = function (txt, dir, mcase) {
     };
     frCommond(obj);
 };
-//Ìæ»»
+//æ›¿æ¢
 $G("repalceBtn").onclick = function () {
     var findtxt = $G("findtxt1").value.replace(/^\s|\s$/g, ""), obj,
         replacetxt = $G("replacetxt").value.replace(/^\s|\s$/g, "");
@@ -136,7 +136,7 @@ $G("repalceBtn").onclick = function () {
     };
     frCommond(obj);
 };
-//È«²¿Ìæ»»
+//å…¨éƒ¨æ›¿æ¢
 $G("repalceAllBtn").onclick = function () {
     var findtxt = $G("findtxt1").value.replace(/^\s|\s$/g, ""), obj,
         replacetxt = $G("replacetxt").value.replace(/^\s|\s$/g, "");
@@ -157,7 +157,7 @@ $G("repalceAllBtn").onclick = function () {
         $G('replace-msg').innerHTML = lang.countMsg.replace("{#count}", num);
     }
 };
-//Ö´ĞĞ
+//æ‰§è¡Œ
 var frCommond = function (obj) {
     return editor.execCommand("searchreplace", obj);
 };

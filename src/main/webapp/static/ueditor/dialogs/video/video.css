@@ -1,4 +1,4 @@
-@charset "gbk";
+@charset "utf-8";
 .wrapper{ width: 570px;_width:575px;margin: 10px auto; zoom:1;position: relative}
 .tabbody{height: 335px;}
 .tabbody .panel {
@@ -27,7 +27,7 @@
 #videoSearchTxt{margin-left:15px;background: #FFF;width:200px;height:21px;line-height:21px;border: 1px solid #d7d7d7;}
 #searchList{width: 570px;overflow: auto;zoom:1;height: 270px;}
 #searchList div{float: left;width: 120px;height: 135px;margin: 5px 15px;}
-#searchList img{margin: 2px 8px;cursor: pointer;border: 2px solid #fff} /*²»ÓÃËõÂÔÍ¼*/
+#searchList img{margin: 2px 8px;cursor: pointer;border: 2px solid #fff} /*ä¸ç”¨ç¼©ç•¥å›¾*/
 #searchList p{margin-left: 10px;}
 #videoType{
     width: 65px;
@@ -536,7 +536,7 @@ span.view{display: inline-block;width: 30px;float: right;cursor: pointer;color: 
 }
 
 
-/* ÔÚÏßÎÄ¼şµÄÎÄ¼şÔ¤ÀÀÍ¼±ê */
+/* åœ¨çº¿æ–‡ä»¶çš„æ–‡ä»¶é¢„è§ˆå›¾æ ‡ */
 i.file-preview {
     display: block;
     margin: 10px auto;

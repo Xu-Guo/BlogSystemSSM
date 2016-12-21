@@ -2,7 +2,7 @@
 <html>
 <head>
     <title></title>
-    <meta http-equiv="Content-Type" content="text/html;charset=gbk"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <script type="text/javascript" src="../internal.js"></script>
     <style type="text/css">
         .wrapper{width: 540px; margin: 10px auto;}
@@ -15,18 +15,18 @@
         <div id="appShow"></div>
     </div>
     <script type="text/javascript">
-        //´Ë´¦ÅäÖÃÄúÔÚ°Ù¶ÈÉÏÉêÇëµ½µÄappkey¡£
+        //æ­¤å¤„é…ç½®æ‚¨åœ¨ç™¾åº¦ä¸Šç”³è¯·åˆ°çš„appkeyã€‚
         var apikey = editor.options.webAppKey;
         if ( apikey && apikey.length == 24 ) {
             var searchConfig = {
-                container:'appShow', //ÈİÆ÷ID
-                tips:"", //¸ÃÖµÓÃÓÚ×Ô¶¯Çå¿Õ
-                search:1, //ÊÇ·ñÏÔÊ¾ËÑË÷¿ò
-                ps:12, //Ã¿Ò³ÏÔÊ¾µÄÌõÊı
-                suggest:1, //ÊÇ·ñ¿ªÆôËÑË÷×Ô¶¯Íê³É
-                limit:0, //ËÑË÷½á¹ûÏÔÊ¾ÌõÊı£¬0±íÊ¾ÎŞÏŞÖÆ
-                searchNow:0, //ÊÇ·ñÔÚ³õÊ¼»¯Íê³ÉÊ±Á¢¼´ËÑË÷
-                apikey:apikey, //Ã¿ÈËµÃ
+                container:'appShow', //å®¹å™¨ID
+                tips:"", //è¯¥å€¼ç”¨äºè‡ªåŠ¨æ¸…ç©º
+                search:1, //æ˜¯å¦æ˜¾ç¤ºæœç´¢æ¡†
+                ps:12, //æ¯é¡µæ˜¾ç¤ºçš„æ¡æ•°
+                suggest:1, //æ˜¯å¦å¼€å¯æœç´¢è‡ªåŠ¨å®Œæˆ
+                limit:0, //æœç´¢ç»“æœæ˜¾ç¤ºæ¡æ•°ï¼Œ0è¡¨ç¤ºæ— é™åˆ¶
+                searchNow:0, //æ˜¯å¦åœ¨åˆå§‹åŒ–å®Œæˆæ—¶ç«‹å³æœç´¢
+                apikey:apikey, //æ¯äººå¾—
                 pager:1,
                 cid:7134562,
                 outputHTML:1

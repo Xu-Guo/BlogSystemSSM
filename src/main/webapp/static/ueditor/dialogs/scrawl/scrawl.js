@@ -2,7 +2,7 @@
  * Created with JetBrains PhpStorm.
  * User: xuheng
  * Date: 12-5-22
- * Time: ÉÏÎç11:38
+ * Time: ä¸Šåˆ11:38
  * To change this template use File | Settings | File Templates.
  */
 var scrawl = function (options) {
@@ -11,44 +11,44 @@ var scrawl = function (options) {
 (function () {
     var canvas = $G("J_brushBoard"),
         context = canvas.getContext('2d'),
-        drawStep = [], //undo redo´æ´¢
-        drawStepIndex = 0; //undo redoÖ¸Õë
+        drawStep = [], //undo redoå­˜å‚¨
+        drawStepIndex = 0; //undo redoæŒ‡é’ˆ
 
     scrawl.prototype = {
-        isScrawl:false, //ÊÇ·ñÍ¿Ñ»
-        brushWidth:-1, //»­±Ê´ÖÏ¸
-        brushColor:"", //»­±ÊÑÕÉ«
+        isScrawl:false, //æ˜¯å¦æ¶‚é¸¦
+        brushWidth:-1, //ç”»ç¬”ç²—ç»†
+        brushColor:"", //ç”»ç¬”é¢œè‰²
 
         initOptions:function (options) {
             var me = this;
-            me.originalState(options);//³õÊ¼Ò³Ãæ×´Ì¬
-            me._buildToolbarColor(options.colorList);//¶¯Ì¬Éú³ÉÑÕÉ«Ñ¡Ôñ¼¯ºÏ
+            me.originalState(options);//åˆå§‹é¡µé¢çŠ¶æ€
+            me._buildToolbarColor(options.colorList);//åŠ¨æ€ç”Ÿæˆé¢œè‰²é€‰æ‹©é›†åˆ
 
-            me._addBoardListener(options.saveNum);//Ìí¼Ó»­°å´¦Àí
-            me._addOPerateListener(options.saveNum);//Ìí¼Óundo redo clearBoard´¦Àí
-            me._addColorBarListener();//Ìí¼ÓÑÕÉ«Ñ¡Ôñ´¦Àí
-            me._addBrushBarListener();//Ìí¼Ó»­±Ê´óĞ¡´¦Àí
-            me._addEraserBarListener();//Ìí¼ÓÏğÆ¤´óĞ¡´¦Àí
-            me._addAddImgListener();//Ìí¼ÓÔöÌí±³¾°Í¼Æ¬´¦Àí
-            me._addRemoveImgListenter();//É¾³ı±³¾°Í¼Æ¬´¦Àí
-            me._addScalePicListenter();//Ìí¼ÓËõ·Å´¦Àí
-            me._addClearSelectionListenter();//Ìí¼ÓÇå³şÑ¡ÖĞ×´Ì¬´¦Àí
+            me._addBoardListener(options.saveNum);//æ·»åŠ ç”»æ¿å¤„ç†
+            me._addOPerateListener(options.saveNum);//æ·»åŠ undo redo clearBoardå¤„ç†
+            me._addColorBarListener();//æ·»åŠ é¢œè‰²é€‰æ‹©å¤„ç†
+            me._addBrushBarListener();//æ·»åŠ ç”»ç¬”å¤§å°å¤„ç†
+            me._addEraserBarListener();//æ·»åŠ æ©¡çš®å¤§å°å¤„ç†
+            me._addAddImgListener();//æ·»åŠ å¢æ·»èƒŒæ™¯å›¾ç‰‡å¤„ç†
+            me._addRemoveImgListenter();//åˆ é™¤èƒŒæ™¯å›¾ç‰‡å¤„ç†
+            me._addScalePicListenter();//æ·»åŠ ç¼©æ”¾å¤„ç†
+            me._addClearSelectionListenter();//æ·»åŠ æ¸…æ¥šé€‰ä¸­çŠ¶æ€å¤„ç†
 
-            me._originalColorSelect(options.drawBrushColor);//³õÊ¼»¯ÑÕÉ«Ñ¡ÖĞ
-            me._originalBrushSelect(options.drawBrushSize);//³õÊ¼»¯»­±ÊÑ¡ÖĞ
-            me._clearSelection();//Çå³şÑ¡ÖĞ×´Ì¬
+            me._originalColorSelect(options.drawBrushColor);//åˆå§‹åŒ–é¢œè‰²é€‰ä¸­
+            me._originalBrushSelect(options.drawBrushSize);//åˆå§‹åŒ–ç”»ç¬”é€‰ä¸­
+            me._clearSelection();//æ¸…æ¥šé€‰ä¸­çŠ¶æ€
         },
 
         originalState:function (options) {
             var me = this;
 
-            me.brushWidth = options.drawBrushSize;//Í¬²½»­±Ê´ÖÏ¸
-            me.brushColor = options.drawBrushColor;//Í¬²½»­±ÊÑÕÉ«
+            me.brushWidth = options.drawBrushSize;//åŒæ­¥ç”»ç¬”ç²—ç»†
+            me.brushColor = options.drawBrushColor;//åŒæ­¥ç”»ç¬”é¢œè‰²
 
-            context.lineWidth = me.brushWidth;//³õÊ¼»­±Ê´óĞ¡
-            context.strokeStyle = me.brushColor;//³õÊ¼»­±ÊÑÕÉ«
-            context.fillStyle = "transparent";//³õÊ¼»­²¼±³¾°ÑÕÉ«
-            context.lineCap = "round";//È¥³ı¾â³İ
+            context.lineWidth = me.brushWidth;//åˆå§‹ç”»ç¬”å¤§å°
+            context.strokeStyle = me.brushColor;//åˆå§‹ç”»ç¬”é¢œè‰²
+            context.fillStyle = "transparent";//åˆå§‹ç”»å¸ƒèƒŒæ™¯é¢œè‰²
+            context.lineCap = "round";//å»é™¤é”¯é½¿
             context.fill();
         },
         _buildToolbarColor:function (colorList) {
@@ -92,7 +92,7 @@ var scrawl = function (options) {
                         isMouseUp = false;
                         isMouseMove = false;
                         me.isScrawl = true;
-                        startX = e.clientX - margin;//10ÎªÍâ±ß¾à×ÜºÍ
+                        startX = e.clientX - margin;//10ä¸ºå¤–è¾¹è·æ€»å’Œ
                         startY = e.clientY - margin;
                         context.beginPath();
                         break;
@@ -101,7 +101,7 @@ var scrawl = function (options) {
                             return;
                         }
                         if (!flag && button) {
-                            startX = e.clientX - margin;//10ÎªÍâ±ß¾à×ÜºÍ
+                            startX = e.clientX - margin;//10ä¸ºå¤–è¾¹è·æ€»å’Œ
                             startY = e.clientY - margin;
                             context.beginPath();
                             flag = 1;
@@ -388,7 +388,7 @@ var scrawl = function (options) {
                 context.drawImage(img, x, y, img.width, img.height);
             } else {
                 context.globalCompositeOperation = "destination-atop";
-                context.fillStyle = "#fff";//ÖØÖÃ»­²¼±³¾°°×É«
+                context.fillStyle = "#fff";//é‡ç½®ç”»å¸ƒèƒŒæ™¯ç™½è‰²
                 context.fillRect(0, 0, canvas.width, canvas.height);
             }
             try {
@@ -566,13 +566,13 @@ var ScaleBoy = function () {
     };
 })();
 
-//ºóÌ¨»Øµ÷
+//åå°å›è°ƒ
 function ue_callback(url, state) {
     var doc = document,
         picBorard = $G("J_picBoard"),
         img = doc.createElement("img");
 
-    //Í¼Æ¬Ëõ·Å
+    //å›¾ç‰‡ç¼©æ”¾
     function scale(img, max, oWidth, oHeight) {
         var width = 0, height = 0, percent, ow = img.width || oWidth, oh = img.height || oHeight;
         if (ow > max || oh > max) {
@@ -592,9 +592,9 @@ function ue_callback(url, state) {
         }
     }
 
-    //ÒÆ³ıÕÚÕÖ²ã
+    //ç§»é™¤é®ç½©å±‚
     removeMaskLayer();
-    //×´Ì¬ÏìÓ¦
+    //çŠ¶æ€å“åº”
     if (state == "SUCCESS") {
         picBorard.innerHTML = "";
         img.onload = function () {
@@ -611,21 +611,21 @@ function ue_callback(url, state) {
         alert(state);
     }
 }
-//È¥µôÕÚÕÖ²ã
+//å»æ‰é®ç½©å±‚
 function removeMaskLayer() {
     var maskLayer = $G("J_maskLayer");
     maskLayer.className = "maskLayerNull";
     maskLayer.innerHTML = "";
     dialog.buttons[0].setDisabled(false);
 }
-//Ìí¼ÓÕÚÕÖ²ã
+//æ·»åŠ é®ç½©å±‚
 function addMaskLayer(html) {
     var maskLayer = $G("J_maskLayer");
     dialog.buttons[0].setDisabled(true);
     maskLayer.className = "maskLayer";
     maskLayer.innerHTML = html;
 }
-//Ö´ĞĞÈ·ÈÏ°´Å¥·½·¨
+//æ‰§è¡Œç¡®è®¤æŒ‰é’®æ–¹æ³•
 function exec(scrawlObj) {
     if (scrawlObj.isScrawl) {
         addMaskLayer(lang.scrawlUpLoading);

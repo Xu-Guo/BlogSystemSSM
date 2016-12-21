@@ -62,16 +62,16 @@ function switchTab( index ) {
         emotion.tabExist[index] = 1;
         createTab( 'tab' + index );
     }
-    //»ñÈ¡³ÊÏÖÔªËØ¾ä±úÊı×é
+    //è·å–å‘ˆç°å…ƒç´ å¥æŸ„æ•°ç»„
     var tabHeads = $G( "tabHeads" ).getElementsByTagName( "span" ),
             tabBodys = $G( "tabBodys" ).getElementsByTagName( "div" ),
             i = 0, L = tabHeads.length;
-    //Òş²ØËùÓĞ³ÊÏÖÔªËØ
+    //éšè—æ‰€æœ‰å‘ˆç°å…ƒç´ 
     for ( ; i < L; i++ ) {
         tabHeads[i].className = "";
         tabBodys[i].style.display = "none";
     }
-    //ÏÔÊ¾¶ÔÓ¦³ÊÏÖÔªËØ
+    //æ˜¾ç¤ºå¯¹åº”å‘ˆç°å…ƒç´ 
     tabHeads[index].className = "focus";
     tabBodys[index].style.display = "block";
 }
@@ -115,12 +115,12 @@ function autoHeight( index ) {
 
 
 function createTab( tabName ) {
-    var faceVersion = "?v=1.1", //°æ±¾ºÅ
-            tab = $G( tabName ), //»ñÈ¡½«ÒªÉú³ÉµÄDiv¾ä±ú
-            imagePath = emotion.SmileyPath + emotion.imageFolders[tabName], //»ñÈ¡ÏÔÊ¾±íÇéºÍÔ¤ÀÀ±íÇéµÄÂ·¾¶
-            positionLine = 11 / 2, //ÖĞ¼äÊı
-            iWidth = iHeight = 35, //Í¼Æ¬³¤¿í
-            iColWidth = 3, //±í¸ñÊ£Óà¿Õ¼äµÄÏÔÊ¾±ÈÀı
+    var faceVersion = "?v=1.1", //ç‰ˆæœ¬å·
+            tab = $G( tabName ), //è·å–å°†è¦ç”Ÿæˆçš„Divå¥æŸ„
+            imagePath = emotion.SmileyPath + emotion.imageFolders[tabName], //è·å–æ˜¾ç¤ºè¡¨æƒ…å’Œé¢„è§ˆè¡¨æƒ…çš„è·¯å¾„
+            positionLine = 11 / 2, //ä¸­é—´æ•°
+            iWidth = iHeight = 35, //å›¾ç‰‡é•¿å®½
+            iColWidth = 3, //è¡¨æ ¼å‰©ä½™ç©ºé—´çš„æ˜¾ç¤ºæ¯”ä¾‹
             tableCss = emotion.imageCss[tabName],
             cssOffset = emotion.imageCssOffset[tabName],
             textHTML = ['<table class="smileytable">'],
