@@ -1,8 +1,23 @@
-# Java Blog System
-*  Spring4
-*  SpringMVC
-*  MyBatis
-*  Shiro
-*  Maven3
-*  MySQL
+# Java Blog System project
+
+This project is Java blog demo system developed following the tutorial from www.java1234.com, many thanks to the author XiaoFeng, if you want to see a complete demo system with open source code, please visit blog.java1234.com.
+
+The project includes technologies list below:
+*  Strucure: Spring4 + SpringMVC + MyBatis
+*  Securety framework : Shiro 
+*  Open-source search engin : Apache Lucene
+*  Blog editor : Baidu Ueditor
+*  Datebase : MySQL database
+
+### Why use SSM?
+SpringMVC：
+Powerful web MVC framework, more flexiable then struts, with springMVC, requests are easily dispatched to controllers and handled by calling functions and with ModelAndView object data models and views are easily returned to front end. Aop is also supported by SpringMVC.
+
+Spring：
+Power application framework implements inversion of control container and aop for the Java platform. Spring helps store and manage Java beans and transfors the controll from programmer to the framework itself. With aop, those application which handles large amount of object are also easily handled by the framework.
+
+MyBatis：如果你问我它跟鼎鼎大名的Hibernate有什么区别？我只想说，他更符合我的需求。第一，它能自由控制sql，这会让有数据库经验的人（当然不是说我啦~捂脸~）编写的代码能搞提升数据库访问的效率。第二，它可以使用xml的方式来组织管理我们的sql，因为一般程序出错很多情况下是sql出错，别人接手代码后能快速找到出错地方，甚至可以优化原来写的sql。
+At the same layer with Hibernate, the difference between then is that Mybatis matches customized requiements more than Hibernate. 
+1. Customized SQL and help increase the efficiency of accessing database.
+
 
