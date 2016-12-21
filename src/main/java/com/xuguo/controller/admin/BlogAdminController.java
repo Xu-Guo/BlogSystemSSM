@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 
 import com.xuguo.entity.Blog;
+import com.xuguo.lucene.BlogIndex;
 import com.xuguo.service.BlogService;
 import com.xuguo.util.ResponseUtil;
 
@@ -24,11 +25,15 @@ public class BlogAdminController {
 	@Resource
 	private BlogService blogService;
 	
+	private BlogIndex blogIndex = new BlogIndex();
+	
 	@RequestMapping("/save")
 	public String save(Blog blog, HttpServletResponse response) throws Exception{
 		int resultTotal = 0;
 		if(blog.getId()==null){
 			resultTotal = blogService.add(blog);
+			blogIndex.addIndex(blog);
+			
 		}else{
 			
 		}

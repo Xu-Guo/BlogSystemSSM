@@ -33,15 +33,21 @@
 		}else if(content == null || content == ''){
 			alert("Please write some content!");
 		}else{
-			$.post("${pageContext.request.contextPath}/admin/blog/save.do",{'title':title,'blogType.id':blogTypeId,
-			'content':content,'summary':UE.getEditor('editor').getContentTxt().substr(0,155),'keyWord':keyWord},function(result){
-			if(result.success){
-				alert("Publish blog success!");
-			}else{
-				alert("Publish blog failed!");
-				resultValue();
-			}
-			},"json");
+			$.post("${pageContext.request.contextPath}/admin/blog/save.do",{
+			'title':title,
+			'blogType.id':blogTypeId,
+			'contentNoTag':UE.getEditor('editor').getContentTxt(),
+			'content':content,
+			'summary':UE.getEditor('editor').getContentTxt().substr(0,155),
+			'keyWord':keyWord},
+			function(result){
+				if(result.success){
+					alert("Publish blog success!");
+				}else{
+					alert("Publish blog failed!");
+					resultValue();
+				}
+				},"json");
 		}
 	}
 	
