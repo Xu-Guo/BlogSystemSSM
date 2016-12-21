@@ -58,5 +58,10 @@ public class BlogServiceImpl implements BlogService{
 		return blogDao.getNextBlog(id);
 	}
 
+	public Integer add(Blog blog) {
+		// TODO Auto-generated method stub
+		return blogDao.add(blog);
+	}
+
 
 }

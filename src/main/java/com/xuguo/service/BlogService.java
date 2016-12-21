@@ -63,4 +63,11 @@ public interface BlogService {
 	 * @return
 	 */
 	public Blog getNextBlog(Integer id);
+	
+	/**
+	 * Add new blog
+	 * @param blog
+	 * @return
+	 */
+	public Integer add(Blog blog);
 }
