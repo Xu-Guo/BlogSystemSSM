@@ -19,7 +19,8 @@ Power application framework implements inversion of control container and aop fo
 
 MyBatis:
 At the same layer with Hibernate, the difference between then is that Mybatis matches customized requiements more than Hibernate. 
-* 1. Customized SQL and help increase the efficiency of accessing database.
-* 2. Manage SQL with xml, easy for debug and optimize.
+*  Customized SQL and help increase the efficiency of accessing database.
+*  Manage SQL with xml, easy for debug and optimize.
+
 ---
 
