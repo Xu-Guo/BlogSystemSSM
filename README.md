@@ -8,7 +8,7 @@ The project includes technologies list below:
 *  Open-source search engin : Apache Lucene
 *  Blog editor : Baidu Ueditor
 *  Datebase : MySQL database
----
+
 
 ### Why use SSM?
 SpringMVC:
@@ -22,5 +22,4 @@ At the same layer with Hibernate, the difference between then is that Mybatis ma
 *  Customized SQL and help increase the efficiency of accessing database.
 *  Manage SQL with xml, easy for debug and optimize.
 
----
 
