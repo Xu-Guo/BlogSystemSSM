@@ -10,6 +10,7 @@ The project includes technologies list below:
 *  Datebase : MySQL database
 
 
+
 ### Why use SSM?
 SpringMVC:
 Powerful web MVC framework, more flexiable then struts, with springMVC, requests are easily dispatched to controllers and handled by calling functions and with ModelAndView object data models and views are easily returned to front end. Aop is also supported by SpringMVC.
@@ -19,7 +20,7 @@ Power application framework implements inversion of control container and aop fo
 
 MyBatis:
 At the same layer with Hibernate, the difference between then is that Mybatis matches customized requiements more than Hibernate. 
+
 *  Customized SQL and help increase the efficiency of accessing database.
 *  Manage SQL with xml, easy for debug and optimize.
-
 

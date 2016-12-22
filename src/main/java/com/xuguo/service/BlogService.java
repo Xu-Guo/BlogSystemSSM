@@ -6,7 +6,7 @@ import java.util.Map;
 import com.xuguo.entity.Blog;
 
 /**
- * ²©¿ÍService½Ó¿Ú
+ * Blog service interface
  * @author xu
  *
  */
@@ -63,4 +63,11 @@ public interface BlogService {
 	 * @return
 	 */
 	public Blog getNextBlog(Integer id);
+	
+	/**
+	 * Add new blog
+	 * @param blog
+	 * @return
+	 */
+	public Integer add(Blog blog);
 }

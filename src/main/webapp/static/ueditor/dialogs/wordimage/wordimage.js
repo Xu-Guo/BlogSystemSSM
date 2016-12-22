@@ -2,7 +2,7 @@
  * Created by JetBrains PhpStorm.
  * User: taoqili
  * Date: 12-1-30
- * Time: ÏÂÎç12:50
+ * Time: ä¸‹åˆ12:50
  * To change this template use File | Settings | File Templates.
  */
 
@@ -37,7 +37,7 @@ function addOkListener() {
 			for (var j = 0,url; url = imageUrls[j++];) {
 				if (src.indexOf(url.original.replace(" ","")) != -1) {
 					img.src = urlPrefix + url.url;
-					img.setAttribute("_src", urlPrefix + url.url);  //Í¬Ê±ĞŞ¸Ä"_src"ÊôĞÔ
+					img.setAttribute("_src", urlPrefix + url.url);  //åŒæ—¶ä¿®æ”¹"_src"å±æ€§
 					img.setAttribute("title",url.title);
                     domUtils.removeAttributes(img, ["word_img","style","width","height"]);
 					editor.fireEvent("selectionchange");
@@ -54,7 +54,7 @@ function addOkListener() {
 }
 
 /**
- * °ó¶¨¿ªÊ¼ÉÏ´«ÊÂ¼ş
+ * ç»‘å®šå¼€å§‹ä¸Šä¼ äº‹ä»¶
  */
 function addUploadListener() {
 	g("upload").onclick = function () {
@@ -64,7 +64,7 @@ function addUploadListener() {
 }
 
 function showLocalPath(id) {
-    //µ¥ÕÅ±à¼­
+    //å•å¼ ç¼–è¾‘
     var img = editor.selection.getRange().getClosedNode();
     var images = editor.execCommand('wordimage');
     if(images.length==1 || img && img.tagName == 'IMG'){
@@ -72,7 +72,7 @@ function showLocalPath(id) {
         return;
     }
 	var path = images[0];
-    var leftSlashIndex  = path.lastIndexOf("/")||0,  //²»Í¬°æ±¾µÄdocºÍä¯ÀÀÆ÷¶¼¿ÉÄÜÓ°Ïìµ½Õâ¸ö·ûºÅ£¬¹ÊÖ±½ÓÅĞ¶ÏÁ½ÖÖ
+    var leftSlashIndex  = path.lastIndexOf("/")||0,  //ä¸åŒç‰ˆæœ¬çš„docå’Œæµè§ˆå™¨éƒ½å¯èƒ½å½±å“åˆ°è¿™ä¸ªç¬¦å·ï¼Œæ•…ç›´æ¥åˆ¤æ–­ä¸¤ç§
         rightSlashIndex = path.lastIndexOf("\\")||0,
         separater = leftSlashIndex > rightSlashIndex ? "/":"\\" ;
 
@@ -81,9 +81,9 @@ function showLocalPath(id) {
 }
 
 function createFlashUploader(opt, callbacks) {
-    //ÓÉÓÚlang.flashI18nÊÇ¾²Ì¬ÊôĞÔ£¬²»¿ÉÒÔÖ±½Ó½øĞĞĞŞ¸Ä£¬·ñÔò»áÓ°Ïìµ½ºóĞøÄÚÈİ
+    //ç”±äºlang.flashI18næ˜¯é™æ€å±æ€§ï¼Œä¸å¯ä»¥ç›´æ¥è¿›è¡Œä¿®æ”¹ï¼Œå¦åˆ™ä¼šå½±å“åˆ°åç»­å†…å®¹
     var i18n = utils.extend({},lang.flashI18n);
-    //´¦ÀíÍ¼Æ¬×ÊÔ´µØÖ·µÄ±àÂë£¬²¹È«µÈÎÊÌâ
+    //å¤„ç†å›¾ç‰‡èµ„æºåœ°å€çš„ç¼–ç ï¼Œè¡¥å…¨ç­‰é—®é¢˜
     for(var i in i18n){
         if(!(i in {"lang":1,"uploadingTF":1,"imageTF":1,"textEncoding":1}) && i18n[i]){
             i18n[i] = encodeURIComponent(editor.options.langPath + editor.options.lang + "/images/" + i18n[i]);

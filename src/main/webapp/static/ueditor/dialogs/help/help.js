@@ -2,22 +2,22 @@
  * Created with JetBrains PhpStorm.
  * User: xuheng
  * Date: 12-9-26
- * Time: ÏÂÎç1:06
+ * Time: ä¸‹åˆ1:06
  * To change this template use File | Settings | File Templates.
  */
 /**
- * tabµã»÷´¦ÀíÊÂ¼ş
+ * tabç‚¹å‡»å¤„ç†äº‹ä»¶
  * @param tabHeads
  * @param tabBodys
  * @param obj
  */
 function clickHandler( tabHeads,tabBodys,obj ) {
-    //headÑùÊ½¸ü¸Ä
+    //headæ ·å¼æ›´æ”¹
     for ( var k = 0, len = tabHeads.length; k < len; k++ ) {
         tabHeads[k].className = "";
     }
     obj.className = "focus";
-    //bodyÏÔÒş
+    //bodyæ˜¾éš
     var tabSrc = obj.getAttribute( "tabSrc" );
     for ( var j = 0, length = tabBodys.length; j < length; j++ ) {
         var body = tabBodys[j],
@@ -35,8 +35,8 @@ function clickHandler( tabHeads,tabBodys,obj ) {
 }
 
 /**
- * TABÇĞ»»
- * @param tabParentId  tabµÄ¸¸½ÚµãID»òÕß¶ÔÏó±¾Éí
+ * TABåˆ‡æ¢
+ * @param tabParentId  tabçš„çˆ¶èŠ‚ç‚¹IDæˆ–è€…å¯¹è±¡æœ¬èº«
  */
 function switchTab( tabParentId ) {
     var tabElements = $G( tabParentId ).children,

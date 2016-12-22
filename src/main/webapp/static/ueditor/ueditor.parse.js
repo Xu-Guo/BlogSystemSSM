@@ -1,7 +1,7 @@
 /*!
  * UEditor
  * version: ueditor
- * build: Tue Aug 25 2015 15:27:37 GMT+0800 (CST)
+ * build: Wed Aug 10 2016 11:06:16 GMT+0800 (CST)
  */
 
 (function(){
@@ -9,7 +9,7 @@
 (function(){
     UE = window.UE || {};
     var isIE = !!window.ActiveXObject;
-    //¶¨Òåutils¹¤¾ß
+    //å®šä¹‰utilså·¥å…·
     var utils = {
             removeLastbs : function(url){
                 return url.replace(/\/$/,'')
@@ -382,7 +382,7 @@ UE.parse.register('table', function (utils) {
         tables = root.getElementsByTagName('table');
     if (tables.length) {
         var selector = this.selector;
-        //×·¼ÓÄ¬ÈÏµÄ±í¸ñÑùÊ½
+        //è¿½åŠ é»˜è®¤çš„è¡¨æ ¼æ ·å¼
         utils.cssRule('table',
             selector + ' table.noBorderTable td,' +
                 selector + ' table.noBorderTable th,' +
@@ -399,7 +399,7 @@ UE.parse.register('table', function (utils) {
                 selector + ' tr.ue-table-interlace-color-double td{ background: #f7faff; }' +
                 selector + ' td p{margin:0;padding:0;}',
             document);
-        //Ìî³ä¿ÕµÄµ¥Ôª¸ñ
+        //å¡«å……ç©ºçš„å•å…ƒæ ¼
 
         utils.each('td th caption'.split(' '), function (tag) {
             var cells = root.getElementsByTagName(tag);
@@ -411,7 +411,7 @@ UE.parse.register('table', function (utils) {
             })
         });
 
-        //±í¸ñ¿ÉÅÅĞò
+        //è¡¨æ ¼å¯æ’åº
         var tables = root.getElementsByTagName('table');
         utils.each(tables, function (table) {
             if (/\bsortEnabled\b/.test(table.className)) {
@@ -429,7 +429,7 @@ UE.parse.register('table', function (utils) {
             }
         });
 
-        //°´ÕÕ±êÇ©Ãû²éÕÒ¸¸½Úµã
+        //æŒ‰ç…§æ ‡ç­¾åæŸ¥æ‰¾çˆ¶èŠ‚ç‚¹
         function findParentByTagName(target, tagNames) {
             var i, current = target;
             tagNames = utils.isArray(tagNames) ? tagNames:[tagNames];
@@ -441,7 +441,7 @@ UE.parse.register('table', function (utils) {
             }
             return null;
         }
-        //±í¸ñÅÅĞò
+        //è¡¨æ ¼æ’åº
         function sortTable(table, sortByCellIndex, compareFn) {
             var rows = table.rows,
                 trArray = [],
@@ -482,10 +482,10 @@ UE.parse.register('table', function (utils) {
                 }
             };
 
-            //¶Ô±í¸ñÉèÖÃÅÅĞòµÄ±ê¼Çdata-sort-type
+            //å¯¹è¡¨æ ¼è®¾ç½®æ’åºçš„æ ‡è®°data-sort-type
             table.setAttribute('data-sort-type', compareFn && typeof compareFn === "string" && Fn[compareFn] ? compareFn:'');
 
-            //th²»²ÎÓëÅÅĞò
+            //thä¸å‚ä¸æ’åº
             flag && trArray.splice(0, 1);
             trArray = sort(trArray,function (tr1, tr2) {
                 var result;
@@ -511,7 +511,7 @@ UE.parse.register('table', function (utils) {
                 tbody.insertBefore(fragment,rows[lastRowIndex- range.endRowIndex + range.beginRowIndex - 1])
             }
         }
-        //Ã°ÅİÅÅĞò
+        //å†’æ³¡æ’åº
         function sort(array, compareFn){
             compareFn = compareFn || function(item1, item2){ return item1.localeCompare(item2);};
             for(var i= 0,len = array.length; i<len; i++){
@@ -525,9 +525,9 @@ UE.parse.register('table', function (utils) {
             }
             return array;
         }
-        //¸üĞÂ±í¸ñ
+        //æ›´æ–°è¡¨æ ¼
         function updateTable(table) {
-            //¸øµÚÒ»ĞĞÉèÖÃfirstRowµÄÑùÊ½Ãû³Æ,ÔÚÅÅĞòÍ¼±êµÄÑùÊ½ÉÏÊ¹ÓÃµ½
+            //ç»™ç¬¬ä¸€è¡Œè®¾ç½®firstRowçš„æ ·å¼åç§°,åœ¨æ’åºå›¾æ ‡çš„æ ·å¼ä¸Šä½¿ç”¨åˆ°
             if(!utils.hasClass(table.rows[0], "firstRow")) {
                 for(var i = 1; i< table.rows.length; i++) {
                     utils.removeClass(table.rows[i], "firstRow");
@@ -544,7 +544,7 @@ UE.parse.register('charts',function( utils ){
         containers = this.root,
         sources = null;
 
-    //²»´æÔÚÖ¸¶¨µÄ¸ùÂ·¾¶£¬ ÔòÖ±½ÓÍË³ö
+    //ä¸å­˜åœ¨æŒ‡å®šçš„æ ¹è·¯å¾„ï¼Œ åˆ™ç›´æ¥é€€å‡º
     if ( !resourceRoot ) {
         return;
     }
@@ -567,7 +567,7 @@ UE.parse.register('charts',function( utils ){
     }
 
     /**
-     * ÌáÈ¡Êı¾İ
+     * æå–æ•°æ®
      */
     function extractChartData ( rootNode ) {
 
@@ -594,7 +594,7 @@ UE.parse.register('charts',function( utils ){
             metaConfig = {},
             data = [];
 
-        //ÌáÈ¡tableÊı¾İ
+        //æå–tableæ•°æ®
         for ( var i = 0, row; row = tableNode.rows[ i ]; i++ ) {
 
             var rowData = [];
@@ -610,7 +610,7 @@ UE.parse.register('charts',function( utils ){
 
         }
 
-        //½âÎöÔªĞÅÏ¢
+        //è§£æå…ƒä¿¡æ¯
         meta = meta.split( ";" );
         for ( var i = 0, metaData; metaData = meta[ i ]; i++ ) {
 
@@ -628,7 +628,7 @@ UE.parse.register('charts',function( utils ){
 
     }
 
-    //¼ÓÔØ×ÊÔ´
+    //åŠ è½½èµ„æº
     function loadResources () {
 
         loadJQuery();
@@ -637,7 +637,7 @@ UE.parse.register('charts',function( utils ){
 
     function loadJQuery () {
 
-        //²»´æÔÚjquery£¬ Ôò¼ÓÔØjquery
+        //ä¸å­˜åœ¨jqueryï¼Œ åˆ™åŠ è½½jquery
         if ( !window.jQuery ) {
 
             utils.loadFile(document,{
@@ -661,7 +661,7 @@ UE.parse.register('charts',function( utils ){
 
     function loadHighcharts () {
 
-        //²»´æÔÚHighcharts£¬ Ôò¼ÓÔØHighcharts
+        //ä¸å­˜åœ¨Highchartsï¼Œ åˆ™åŠ è½½Highcharts
         if ( !window.Highcharts ) {
 
             utils.loadFile(document,{
@@ -683,7 +683,7 @@ UE.parse.register('charts',function( utils ){
 
     }
 
-    //¼ÓÔØÍ¼±í²îÒì»¯ÅäÖÃÎÄ¼ş
+    //åŠ è½½å›¾è¡¨å·®å¼‚åŒ–é…ç½®æ–‡ä»¶
     function loadTypeConfig () {
 
         utils.loadFile(document,{
@@ -699,7 +699,7 @@ UE.parse.register('charts',function( utils ){
 
     }
 
-    //äÖÈ¾Í¼±í
+    //æ¸²æŸ“å›¾è¡¨
     function render () {
 
         var config = null,
@@ -722,10 +722,10 @@ UE.parse.register('charts',function( utils ){
     }
 
     /**
-     * äÖÈ¾Í¼±í
-     * @param container Í¼±íÈİÆ÷½Úµã¶ÔÏó
-     * @param typeConfig Í¼±íÀàĞÍÅäÖÃ
-     * @param config Í¼±íÍ¨ÓÃÅäÖÃ
+     * æ¸²æŸ“å›¾è¡¨
+     * @param container å›¾è¡¨å®¹å™¨èŠ‚ç‚¹å¯¹è±¡
+     * @param typeConfig å›¾è¡¨ç±»å‹é…ç½®
+     * @param config å›¾è¡¨é€šç”¨é…ç½®
      * */
     function renderChart ( container, typeConfig, config ) {
 
@@ -779,8 +779,8 @@ UE.parse.register('charts',function( utils ){
     }
 
     /**
-     * ´´½¨Í¼±íµÄÈİÆ÷
-     * ĞÂ´´½¨µÄÈİÆ÷»áÌæ»»µô¶ÔÓ¦µÄtable¶ÔÏó
+     * åˆ›å»ºå›¾è¡¨çš„å®¹å™¨
+     * æ–°åˆ›å»ºçš„å®¹å™¨ä¼šæ›¿æ¢æ‰å¯¹åº”çš„tableå¯¹è±¡
      * */
     function createContainer ( tableNode ) {
 
@@ -793,17 +793,17 @@ UE.parse.register('charts',function( utils ){
 
     }
 
-    //¸ù¾İconfig½âÎö³öÕıÈ·µÄÀà±ğºÍÍ¼±íÊı¾İĞÅÏ¢
+    //æ ¹æ®configè§£æå‡ºæ­£ç¡®çš„ç±»åˆ«å’Œå›¾è¡¨æ•°æ®ä¿¡æ¯
     function analysisConfig ( config ) {
 
         var series = [],
-        //Êı¾İÀà±ğ
+        //æ•°æ®ç±»åˆ«
             categories = [],
             result = [],
             data = config.data,
             meta = config.meta;
 
-        //Êı¾İ¶ÔÆë·½Ê½ÎªÏà·´µÄ·½Ê½£¬ ĞèÒª·´×ªÊı¾İ
+        //æ•°æ®å¯¹é½æ–¹å¼ä¸ºç›¸åçš„æ–¹å¼ï¼Œ éœ€è¦åè½¬æ•°æ®
         if ( meta.dataFormat != "1" ) {
 
             for ( var i = 0, len = data.length; i < len ; i++ ) {
@@ -826,7 +826,7 @@ UE.parse.register('charts',function( utils ){
 
         result = {};
 
-        //ÆÕÍ¨Í¼±í
+        //æ™®é€šå›¾è¡¨
         if ( meta.chartType != typeConfig.length - 1 ) {
 
             categories = data[ 0 ].slice( 1 );
@@ -856,7 +856,7 @@ UE.parse.register('charts',function( utils ){
 
             }
 
-            //±ıÍ¼
+            //é¥¼å›¾
             series[ 0 ] = {
                 type: 'pie',
                 name: meta.tip,
@@ -887,7 +887,7 @@ UE.parse.register('background', function (utils) {
         }
     }
 
-    //×·¼ÓÄ¬ÈÏµÄ±í¸ñÑùÊ½
+    //è¿½åŠ é»˜è®¤çš„è¡¨æ ¼æ ·å¼
     styles && utils.cssRule('ueditor_background', me.selector + '{' + styles + '}', document);
 });
 UE.parse.register('list',function(utils){

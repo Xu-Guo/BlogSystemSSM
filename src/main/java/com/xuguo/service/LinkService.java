@@ -6,7 +6,7 @@ import java.util.Map;
 import com.xuguo.entity.Link;
 
 /**
- * ”—«È¡¥Ω”Service≤„
+ * friend link Service interface
  * @author xu
  *
  */

@@ -60,6 +60,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			<if test="clickHit!=null">
 				clickHit=#{clickHit},
 			</if>
+			<if test="replyHit!=null">
+				replyHit=#{replyHit},
+			</if>
 		</set>
 		where id=#{id}
 	</update>
@@ -72,6 +75,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from t_blog where id&gt;#{id} order by id asc limit 1;
 	</select>
 	
+	<insert id="add" useGeneratedKeys="true" keyProperty="id"  parameterType="Blog" >
+		insert into t_blog values(null,#{title},#{summary},now(),0,0,#{content},#{blogType.id},#{keyWord})
+	</insert>
 	
 	
 		

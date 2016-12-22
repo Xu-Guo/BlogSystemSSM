@@ -12,13 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
  /**
- * @namespace T TangramÆßÇÉ°å
+ * @namespace T Tangramä¸ƒå·§æ¿
  * @name T
  * @version 1.6.0
 */
 
 /**
- * ÉùÃ÷baidu°ü
+ * å£°æ˜baiduåŒ…
  * @author: allstar, erik, meizz, berg
  */
 var T,
@@ -27,29 +27,29 @@ baidu.guid = "$BAIDU$";
 baidu.$$ = window[baidu.guid] = window[baidu.guid] || {global:{}};
 
 /**
- * Ê¹ÓÃflash×ÊÔ´·â×°µÄÒ»Ğ©¹¦ÄÜ
+ * ä½¿ç”¨flashèµ„æºå°è£…çš„ä¸€äº›åŠŸèƒ½
  * @namespace baidu.flash
  */
 baidu.flash = baidu.flash || {};
 
 /**
- * ²Ù×÷domµÄ·½·¨
+ * æ“ä½œdomçš„æ–¹æ³•
  * @namespace baidu.dom 
  */
 baidu.dom = baidu.dom || {};
 
 
 /**
- * ´ÓÎÄµµÖĞ»ñÈ¡Ö¸¶¨µÄDOMÔªËØ
+ * ä»æ–‡æ¡£ä¸­è·å–æŒ‡å®šçš„DOMå…ƒç´ 
  * @name baidu.dom.g
  * @function
  * @grammar baidu.dom.g(id)
- * @param {string|HTMLElement} id ÔªËØµÄid»òDOMÔªËØ.
+ * @param {string|HTMLElement} id å…ƒç´ çš„idæˆ–DOMå…ƒç´ .
  * @shortcut g,T.G
  * @meta standard
  * @see baidu.dom.q
  *
- * @return {HTMLElement|null} »ñÈ¡µÄÔªËØ£¬²éÕÒ²»µ½Ê±·µ»Ønull,Èç¹û²ÎÊı²»ºÏ·¨£¬Ö±½Ó·µ»Ø²ÎÊı.
+ * @return {HTMLElement|null} è·å–çš„å…ƒç´ ï¼ŒæŸ¥æ‰¾ä¸åˆ°æ—¶è¿”å›null,å¦‚æœå‚æ•°ä¸åˆæ³•ï¼Œç›´æ¥è¿”å›å‚æ•°.
  */
 baidu.dom.g = function(id) {
     if (!id) return null;
@@ -64,7 +64,7 @@ baidu.g = baidu.G = baidu.dom.g;
 
 
 /**
- * ²Ù×÷Êı×éµÄ·½·¨
+ * æ“ä½œæ•°ç»„çš„æ–¹æ³•
  * @namespace baidu.array
  */
 
@@ -72,19 +72,19 @@ baidu.array = baidu.array || {};
 
 
 /**
- * ±éÀúÊı×éÖĞËùÓĞÔªËØ
+ * éå†æ•°ç»„ä¸­æ‰€æœ‰å…ƒç´ 
  * @name baidu.array.each
  * @function
  * @grammar baidu.array.each(source, iterator[, thisObject])
- * @param {Array} source ĞèÒª±éÀúµÄÊı×é
- * @param {Function} iterator ¶ÔÃ¿¸öÊı×éÔªËØ½øĞĞµ÷ÓÃµÄº¯Êı£¬¸Ãº¯ÊıÓĞÁ½¸ö²ÎÊı£¬µÚÒ»¸öÎªÊı×éÔªËØ£¬µÚ¶ş¸öÎªÊı×éË÷ÒıÖµ£¬function (item, index)¡£
- * @param {Object} [thisObject] º¯Êıµ÷ÓÃÊ±µÄthisÖ¸Õë£¬Èç¹ûÃ»ÓĞ´Ë²ÎÊı£¬Ä¬ÈÏÊÇµ±Ç°±éÀúµÄÊı×é
+ * @param {Array} source éœ€è¦éå†çš„æ•°ç»„
+ * @param {Function} iterator å¯¹æ¯ä¸ªæ•°ç»„å…ƒç´ è¿›è¡Œè°ƒç”¨çš„å‡½æ•°ï¼Œè¯¥å‡½æ•°æœ‰ä¸¤ä¸ªå‚æ•°ï¼Œç¬¬ä¸€ä¸ªä¸ºæ•°ç»„å…ƒç´ ï¼Œç¬¬äºŒä¸ªä¸ºæ•°ç»„ç´¢å¼•å€¼ï¼Œfunction (item, index)ã€‚
+ * @param {Object} [thisObject] å‡½æ•°è°ƒç”¨æ—¶çš„thisæŒ‡é’ˆï¼Œå¦‚æœæ²¡æœ‰æ­¤å‚æ•°ï¼Œé»˜è®¤æ˜¯å½“å‰éå†çš„æ•°ç»„
  * @remark
- * each·½·¨²»Ö§³Ö¶ÔObjectµÄ±éÀú,¶ÔObjectµÄ±éÀúÊ¹ÓÃbaidu.object.each ¡£
+ * eachæ–¹æ³•ä¸æ”¯æŒå¯¹Objectçš„éå†,å¯¹Objectçš„éå†ä½¿ç”¨baidu.object.each ã€‚
  * @shortcut each
  * @meta standard
  *             
- * @returns {Array} ±éÀúµÄÊı×é
+ * @returns {Array} éå†çš„æ•°ç»„
  */
  
 baidu.each = baidu.array.forEach = baidu.array.each = function (source, iterator, thisObject) {
@@ -104,38 +104,38 @@ baidu.each = baidu.array.forEach = baidu.array.each = function (source, iterator
 };
 
 /**
- * ¶ÔÓïÑÔ²ãÃæµÄ·â×°£¬°üÀ¨ÀàĞÍÅĞ¶Ï¡¢Ä£¿éÀ©Õ¹¡¢¼Ì³Ğ»ùÀàÒÔ¼°¶ÔÏó×Ô¶¨ÒåÊÂ¼şµÄÖ§³Ö¡£
+ * å¯¹è¯­è¨€å±‚é¢çš„å°è£…ï¼ŒåŒ…æ‹¬ç±»å‹åˆ¤æ–­ã€æ¨¡å—æ‰©å±•ã€ç»§æ‰¿åŸºç±»ä»¥åŠå¯¹è±¡è‡ªå®šä¹‰äº‹ä»¶çš„æ”¯æŒã€‚
  * @namespace baidu.lang
  */
 baidu.lang = baidu.lang || {};
 
 
 /**
- * ÅĞ¶ÏÄ¿±ê²ÎÊıÊÇ·ñÎªfunction»òFunctionÊµÀı
+ * åˆ¤æ–­ç›®æ ‡å‚æ•°æ˜¯å¦ä¸ºfunctionæˆ–Functionå®ä¾‹
  * @name baidu.lang.isFunction
  * @function
  * @grammar baidu.lang.isFunction(source)
- * @param {Any} source Ä¿±ê²ÎÊı
+ * @param {Any} source ç›®æ ‡å‚æ•°
  * @version 1.2
  * @see baidu.lang.isString,baidu.lang.isObject,baidu.lang.isNumber,baidu.lang.isArray,baidu.lang.isElement,baidu.lang.isBoolean,baidu.lang.isDate
  * @meta standard
- * @returns {boolean} ÀàĞÍÅĞ¶Ï½á¹û
+ * @returns {boolean} ç±»å‹åˆ¤æ–­ç»“æœ
  */
 baidu.lang.isFunction = function (source) {
     return '[object Function]' == Object.prototype.toString.call(source);
 };
 
 /**
- * ÅĞ¶ÏÄ¿±ê²ÎÊıÊÇ·ñstringÀàĞÍ»òString¶ÔÏó
+ * åˆ¤æ–­ç›®æ ‡å‚æ•°æ˜¯å¦stringç±»å‹æˆ–Stringå¯¹è±¡
  * @name baidu.lang.isString
  * @function
  * @grammar baidu.lang.isString(source)
- * @param {Any} source Ä¿±ê²ÎÊı
+ * @param {Any} source ç›®æ ‡å‚æ•°
  * @shortcut isString
  * @meta standard
  * @see baidu.lang.isObject,baidu.lang.isNumber,baidu.lang.isArray,baidu.lang.isElement,baidu.lang.isBoolean,baidu.lang.isDate
  *             
- * @returns {boolean} ÀàĞÍÅĞ¶Ï½á¹û
+ * @returns {boolean} ç±»å‹åˆ¤æ–­ç»“æœ
  */
 baidu.lang.isString = function (source) {
     return '[object String]' == Object.prototype.toString.call(source);
@@ -144,47 +144,47 @@ baidu.isString = baidu.lang.isString;
 
 
 /**
- * ÅĞ¶Ïä¯ÀÀÆ÷ÀàĞÍºÍÌØĞÔµÄÊôĞÔ
+ * åˆ¤æ–­æµè§ˆå™¨ç±»å‹å’Œç‰¹æ€§çš„å±æ€§
  * @namespace baidu.browser
  */
 baidu.browser = baidu.browser || {};
 
 
 /**
- * ÅĞ¶ÏÊÇ·ñÎªoperaä¯ÀÀÆ÷
- * @property opera opera°æ±¾ºÅ
+ * åˆ¤æ–­æ˜¯å¦ä¸ºoperaæµè§ˆå™¨
+ * @property opera operaç‰ˆæœ¬å·
  * @grammar baidu.browser.opera
  * @meta standard
  * @see baidu.browser.ie,baidu.browser.firefox,baidu.browser.safari,baidu.browser.chrome
- * @returns {Number} opera°æ±¾ºÅ
+ * @returns {Number} operaç‰ˆæœ¬å·
  */
 
 /**
- * opera ´Ó10¿ªÊ¼²»ÊÇÓÃoperaºóÃæµÄ×Ö·û´®½øĞĞ°æ±¾µÄÅĞ¶Ï
- * ÔÚBrowser identification×îºóÌí¼ÓVersion + Êı×Ö½øĞĞ°æ±¾±êÊ¶
- * operaºóÃæµÄÊı×Ö±£³ÖÔÚ9.80²»±ä
+ * opera ä»10å¼€å§‹ä¸æ˜¯ç”¨operaåé¢çš„å­—ç¬¦ä¸²è¿›è¡Œç‰ˆæœ¬çš„åˆ¤æ–­
+ * åœ¨Browser identificationæœ€åæ·»åŠ Version + æ•°å­—è¿›è¡Œç‰ˆæœ¬æ ‡è¯†
+ * operaåé¢çš„æ•°å­—ä¿æŒåœ¨9.80ä¸å˜
  */
 baidu.browser.opera = /opera(\/| )(\d+(\.\d+)?)(.+?(version\/(\d+(\.\d+)?)))?/i.test(navigator.userAgent) ?  + ( RegExp["\x246"] || RegExp["\x242"] ) : undefined;
 
 
 /**
- * ÔÚÄ¿±êÔªËØµÄÖ¸¶¨Î»ÖÃ²åÈëHTML´úÂë
+ * åœ¨ç›®æ ‡å…ƒç´ çš„æŒ‡å®šä½ç½®æ’å…¥HTMLä»£ç 
  * @name baidu.dom.insertHTML
  * @function
  * @grammar baidu.dom.insertHTML(element, position, html)
- * @param {HTMLElement|string} element Ä¿±êÔªËØ»òÄ¿±êÔªËØµÄid
- * @param {string} position ²åÈëhtmlµÄÎ»ÖÃĞÅÏ¢£¬È¡ÖµÎªbeforeBegin,afterBegin,beforeEnd,afterEnd
- * @param {string} html Òª²åÈëµÄhtml
+ * @param {HTMLElement|string} element ç›®æ ‡å…ƒç´ æˆ–ç›®æ ‡å…ƒç´ çš„id
+ * @param {string} position æ’å…¥htmlçš„ä½ç½®ä¿¡æ¯ï¼Œå–å€¼ä¸ºbeforeBegin,afterBegin,beforeEnd,afterEnd
+ * @param {string} html è¦æ’å…¥çš„html
  * @remark
  * 
- * ¶ÔÓÚposition²ÎÊı£¬´óĞ¡Ğ´²»Ãô¸Ğ<br>
- * ²ÎÊıµÄÒâË¼£ºbeforeBegin&lt;span&gt;afterBegin   this is span! beforeEnd&lt;/span&gt; afterEnd <br />
- * ´ËÍâ£¬Èç¹ûÊ¹ÓÃ±¾º¯Êı²åÈë´øÓĞscript±êÇ©µÄHTML×Ö·û´®£¬script±êÇ©¶ÔÓ¦µÄ½Å±¾½«²»»á±»Ö´ĞĞ¡£
+ * å¯¹äºpositionå‚æ•°ï¼Œå¤§å°å†™ä¸æ•æ„Ÿ<br>
+ * å‚æ•°çš„æ„æ€ï¼šbeforeBegin&lt;span&gt;afterBegin   this is span! beforeEnd&lt;/span&gt; afterEnd <br />
+ * æ­¤å¤–ï¼Œå¦‚æœä½¿ç”¨æœ¬å‡½æ•°æ’å…¥å¸¦æœ‰scriptæ ‡ç­¾çš„HTMLå­—ç¬¦ä¸²ï¼Œscriptæ ‡ç­¾å¯¹åº”çš„è„šæœ¬å°†ä¸ä¼šè¢«æ‰§è¡Œã€‚
  * 
  * @shortcut insertHTML
  * @meta standard
  *             
- * @returns {HTMLElement} Ä¿±êÔªËØ
+ * @returns {HTMLElement} ç›®æ ‡å…ƒç´ 
  */
 baidu.dom.insertHTML = function (element, position, html) {
     element = baidu.dom.g(element);
@@ -210,17 +210,17 @@ baidu.dom.insertHTML = function (element, position, html) {
 baidu.insertHTML = baidu.dom.insertHTML;
 
 /**
- * ²Ù×÷flash¶ÔÏóµÄ·½·¨£¬°üÀ¨´´½¨flash¶ÔÏó¡¢»ñÈ¡flash¶ÔÏóÒÔ¼°ÅĞ¶Ïflash²å¼şµÄ°æ±¾ºÅ
+ * æ“ä½œflashå¯¹è±¡çš„æ–¹æ³•ï¼ŒåŒ…æ‹¬åˆ›å»ºflashå¯¹è±¡ã€è·å–flashå¯¹è±¡ä»¥åŠåˆ¤æ–­flashæ’ä»¶çš„ç‰ˆæœ¬å·
  * @namespace baidu.swf
  */
 baidu.swf = baidu.swf || {};
 
 
 /**
- * ä¯ÀÀÆ÷Ö§³ÖµÄflash²å¼ş°æ±¾
- * @property version ä¯ÀÀÆ÷Ö§³ÖµÄflash²å¼ş°æ±¾
+ * æµè§ˆå™¨æ”¯æŒçš„flashæ’ä»¶ç‰ˆæœ¬
+ * @property version æµè§ˆå™¨æ”¯æŒçš„flashæ’ä»¶ç‰ˆæœ¬
  * @grammar baidu.swf.version
- * @return {String} °æ±¾ºÅ
+ * @return {String} ç‰ˆæœ¬å·
  * @meta standard
  */
 baidu.swf.version = (function () {
@@ -246,25 +246,25 @@ baidu.swf.version = (function () {
 })();
 
 /**
- * ²Ù×÷×Ö·û´®µÄ·½·¨
+ * æ“ä½œå­—ç¬¦ä¸²çš„æ–¹æ³•
  * @namespace baidu.string
  */
 baidu.string = baidu.string || {};
 
 
 /**
- * ¶ÔÄ¿±ê×Ö·û´®½øĞĞhtml±àÂë
+ * å¯¹ç›®æ ‡å­—ç¬¦ä¸²è¿›è¡Œhtmlç¼–ç 
  * @name baidu.string.encodeHTML
  * @function
  * @grammar baidu.string.encodeHTML(source)
- * @param {string} source Ä¿±ê×Ö·û´®
+ * @param {string} source ç›®æ ‡å­—ç¬¦ä¸²
  * @remark
- * ±àÂë×Ö·ûÓĞ5¸ö£º&<>"'
+ * ç¼–ç å­—ç¬¦æœ‰5ä¸ªï¼š&<>"'
  * @shortcut encodeHTML
  * @meta standard
  * @see baidu.string.decodeHTML
  *             
- * @returns {string} html±àÂëºóµÄ×Ö·û´®
+ * @returns {string} htmlç¼–ç åçš„å­—ç¬¦ä¸²
  */
 baidu.string.encodeHTML = function (source) {
     return String(source)
@@ -278,39 +278,39 @@ baidu.string.encodeHTML = function (source) {
 baidu.encodeHTML = baidu.string.encodeHTML;
 
 /**
- * ´´½¨flash¶ÔÏóµÄhtml×Ö·û´®
+ * åˆ›å»ºflashå¯¹è±¡çš„htmlå­—ç¬¦ä¸²
  * @name baidu.swf.createHTML
  * @function
  * @grammar baidu.swf.createHTML(options)
  * 
- * @param {Object} 	options 					´´½¨flashµÄÑ¡Ïî²ÎÊı
- * @param {string} 	options.id 					Òª´´½¨µÄflashµÄ±êÊ¶
- * @param {string} 	options.url 				flashÎÄ¼şµÄurl
- * @param {String} 	options.errorMessage 		Î´°²×°flash player»òflash player°æ±¾ºÅ¹ıµÍÊ±µÄÌáÊ¾
- * @param {string} 	options.ver 				×îµÍĞèÒªµÄflash player°æ±¾ºÅ
- * @param {string} 	options.width 				flashµÄ¿í¶È
- * @param {string} 	options.height 				flashµÄ¸ß¶È
- * @param {string} 	options.align 				flashµÄ¶ÔÆë·½Ê½£¬ÔÊĞíÖµ£ºmiddle/left/right/top/bottom
- * @param {string} 	options.base 				ÉèÖÃÓÃÓÚ½âÎöswfÎÄ¼şÖĞµÄËùÓĞÏà¶ÔÂ·¾¶Óï¾äµÄ»ù±¾Ä¿Â¼»òURL
- * @param {string} 	options.bgcolor 			swfÎÄ¼şµÄ±³¾°É«
- * @param {string} 	options.salign 				ÉèÖÃËõ·ÅµÄswfÎÄ¼şÔÚÓÉwidthºÍheightÉèÖÃ¶¨ÒåµÄÇøÓòÄÚµÄÎ»ÖÃ¡£ÔÊĞíÖµ£ºl/r/t/b/tl/tr/bl/br
- * @param {boolean} options.menu 				ÊÇ·ñÏÔÊ¾ÓÒ¼ü²Ëµ¥£¬ÔÊĞíÖµ£ºtrue/false
- * @param {boolean} options.loop 				²¥·Åµ½×îºóÒ»Ö¡Ê±ÊÇ·ñÖØĞÂ²¥·Å£¬ÔÊĞíÖµ£º true/false
- * @param {boolean} options.play 				flashÊÇ·ñÔÚä¯ÀÀÆ÷¼ÓÔØÊ±¾Í¿ªÊ¼²¥·Å¡£ÔÊĞíÖµ£ºtrue/false
- * @param {string} 	options.quality 			ÉèÖÃflash²¥·ÅµÄ»­ÖÊ£¬ÔÊĞíÖµ£ºlow/medium/high/autolow/autohigh/best
- * @param {string} 	options.scale 				ÉèÖÃflashÄÚÈİÈçºÎËõ·ÅÀ´ÊÊÓ¦ÉèÖÃµÄ¿í¸ß¡£ÔÊĞíÖµ£ºshowall/noborder/exactfit
- * @param {string} 	options.wmode 				ÉèÖÃflashµÄÏÔÊ¾Ä£Ê½¡£ÔÊĞíÖµ£ºwindow/opaque/transparent
- * @param {string} 	options.allowscriptaccess 	ÉèÖÃflashÓëÒ³ÃæµÄÍ¨ĞÅÈ¨ÏŞ¡£ÔÊĞíÖµ£ºalways/never/sameDomain
- * @param {string} 	options.allownetworking 	ÉèÖÃswfÎÄ¼şÖĞÔÊĞíÊ¹ÓÃµÄÍøÂçAPI¡£ÔÊĞíÖµ£ºall/internal/none
- * @param {boolean} options.allowfullscreen 	ÊÇ·ñÔÊĞíflashÈ«ÆÁ¡£ÔÊĞíÖµ£ºtrue/false
- * @param {boolean} options.seamlesstabbing 	ÔÊĞíÉèÖÃÖ´ĞĞÎŞ·ìÌø¸ñ£¬´Ó¶øÊ¹ÓÃ»§ÄÜÌø³öflashÓ¦ÓÃ³ÌĞò¡£¸Ã²ÎÊıÖ»ÄÜÔÚ°²×°Flash7¼°¸ü¸ß°æ±¾µÄWindowsÖĞÊ¹ÓÃ¡£ÔÊĞíÖµ£ºtrue/false
- * @param {boolean} options.devicefont 			ÉèÖÃ¾²Ì¬ÎÄ±¾¶ÔÏóÊÇ·ñÒÔÉè±¸×ÖÌå³ÊÏÖ¡£ÔÊĞíÖµ£ºtrue/false
- * @param {boolean} options.swliveconnect 		µÚÒ»´Î¼ÓÔØflashÊ±ä¯ÀÀÆ÷ÊÇ·ñÓ¦Æô¶¯Java¡£ÔÊĞíÖµ£ºtrue/false
- * @param {Object} 	options.vars 				Òª´«µİ¸øflashµÄ²ÎÊı£¬Ö§³ÖJSON»òstringÀàĞÍ¡£
+ * @param {Object} 	options 					åˆ›å»ºflashçš„é€‰é¡¹å‚æ•°
+ * @param {string} 	options.id 					è¦åˆ›å»ºçš„flashçš„æ ‡è¯†
+ * @param {string} 	options.url 				flashæ–‡ä»¶çš„url
+ * @param {String} 	options.errorMessage 		æœªå®‰è£…flash playeræˆ–flash playerç‰ˆæœ¬å·è¿‡ä½æ—¶çš„æç¤º
+ * @param {string} 	options.ver 				æœ€ä½éœ€è¦çš„flash playerç‰ˆæœ¬å·
+ * @param {string} 	options.width 				flashçš„å®½åº¦
+ * @param {string} 	options.height 				flashçš„é«˜åº¦
+ * @param {string} 	options.align 				flashçš„å¯¹é½æ–¹å¼ï¼Œå…è®¸å€¼ï¼šmiddle/left/right/top/bottom
+ * @param {string} 	options.base 				è®¾ç½®ç”¨äºè§£æswfæ–‡ä»¶ä¸­çš„æ‰€æœ‰ç›¸å¯¹è·¯å¾„è¯­å¥çš„åŸºæœ¬ç›®å½•æˆ–URL
+ * @param {string} 	options.bgcolor 			swfæ–‡ä»¶çš„èƒŒæ™¯è‰²
+ * @param {string} 	options.salign 				è®¾ç½®ç¼©æ”¾çš„swfæ–‡ä»¶åœ¨ç”±widthå’Œheightè®¾ç½®å®šä¹‰çš„åŒºåŸŸå†…çš„ä½ç½®ã€‚å…è®¸å€¼ï¼šl/r/t/b/tl/tr/bl/br
+ * @param {boolean} options.menu 				æ˜¯å¦æ˜¾ç¤ºå³é”®èœå•ï¼Œå…è®¸å€¼ï¼štrue/false
+ * @param {boolean} options.loop 				æ’­æ”¾åˆ°æœ€åä¸€å¸§æ—¶æ˜¯å¦é‡æ–°æ’­æ”¾ï¼Œå…è®¸å€¼ï¼š true/false
+ * @param {boolean} options.play 				flashæ˜¯å¦åœ¨æµè§ˆå™¨åŠ è½½æ—¶å°±å¼€å§‹æ’­æ”¾ã€‚å…è®¸å€¼ï¼štrue/false
+ * @param {string} 	options.quality 			è®¾ç½®flashæ’­æ”¾çš„ç”»è´¨ï¼Œå…è®¸å€¼ï¼šlow/medium/high/autolow/autohigh/best
+ * @param {string} 	options.scale 				è®¾ç½®flashå†…å®¹å¦‚ä½•ç¼©æ”¾æ¥é€‚åº”è®¾ç½®çš„å®½é«˜ã€‚å…è®¸å€¼ï¼šshowall/noborder/exactfit
+ * @param {string} 	options.wmode 				è®¾ç½®flashçš„æ˜¾ç¤ºæ¨¡å¼ã€‚å…è®¸å€¼ï¼šwindow/opaque/transparent
+ * @param {string} 	options.allowscriptaccess 	è®¾ç½®flashä¸é¡µé¢çš„é€šä¿¡æƒé™ã€‚å…è®¸å€¼ï¼šalways/never/sameDomain
+ * @param {string} 	options.allownetworking 	è®¾ç½®swfæ–‡ä»¶ä¸­å…è®¸ä½¿ç”¨çš„ç½‘ç»œAPIã€‚å…è®¸å€¼ï¼šall/internal/none
+ * @param {boolean} options.allowfullscreen 	æ˜¯å¦å…è®¸flashå…¨å±ã€‚å…è®¸å€¼ï¼štrue/false
+ * @param {boolean} options.seamlesstabbing 	å…è®¸è®¾ç½®æ‰§è¡Œæ— ç¼è·³æ ¼ï¼Œä»è€Œä½¿ç”¨æˆ·èƒ½è·³å‡ºflashåº”ç”¨ç¨‹åºã€‚è¯¥å‚æ•°åªèƒ½åœ¨å®‰è£…Flash7åŠæ›´é«˜ç‰ˆæœ¬çš„Windowsä¸­ä½¿ç”¨ã€‚å…è®¸å€¼ï¼štrue/false
+ * @param {boolean} options.devicefont 			è®¾ç½®é™æ€æ–‡æœ¬å¯¹è±¡æ˜¯å¦ä»¥è®¾å¤‡å­—ä½“å‘ˆç°ã€‚å…è®¸å€¼ï¼štrue/false
+ * @param {boolean} options.swliveconnect 		ç¬¬ä¸€æ¬¡åŠ è½½flashæ—¶æµè§ˆå™¨æ˜¯å¦åº”å¯åŠ¨Javaã€‚å…è®¸å€¼ï¼štrue/false
+ * @param {Object} 	options.vars 				è¦ä¼ é€’ç»™flashçš„å‚æ•°ï¼Œæ”¯æŒJSONæˆ–stringç±»å‹ã€‚
  * 
  * @see baidu.swf.create
  * @meta standard
- * @returns {string} flash¶ÔÏóµÄhtml×Ö·û´®
+ * @returns {string} flashå¯¹è±¡çš„htmlå­—ç¬¦ä¸²
  */
 baidu.swf.createHTML = function (options) {
     options = options || {};
@@ -421,37 +421,37 @@ baidu.swf.createHTML = function (options) {
 
 
 /**
- * ÔÚÒ³ÃæÖĞ´´½¨Ò»¸öflash¶ÔÏó
+ * åœ¨é¡µé¢ä¸­åˆ›å»ºä¸€ä¸ªflashå¯¹è±¡
  * @name baidu.swf.create
  * @function
  * @grammar baidu.swf.create(options[, container])
  * 
- * @param {Object} 	options 					´´½¨flashµÄÑ¡Ïî²ÎÊı
- * @param {string} 	options.id 					Òª´´½¨µÄflashµÄ±êÊ¶
- * @param {string} 	options.url 				flashÎÄ¼şµÄurl
- * @param {String} 	options.errorMessage 		Î´°²×°flash player»òflash player°æ±¾ºÅ¹ıµÍÊ±µÄÌáÊ¾
- * @param {string} 	options.ver 				×îµÍĞèÒªµÄflash player°æ±¾ºÅ
- * @param {string} 	options.width 				flashµÄ¿í¶È
- * @param {string} 	options.height 				flashµÄ¸ß¶È
- * @param {string} 	options.align 				flashµÄ¶ÔÆë·½Ê½£¬ÔÊĞíÖµ£ºmiddle/left/right/top/bottom
- * @param {string} 	options.base 				ÉèÖÃÓÃÓÚ½âÎöswfÎÄ¼şÖĞµÄËùÓĞÏà¶ÔÂ·¾¶Óï¾äµÄ»ù±¾Ä¿Â¼»òURL
- * @param {string} 	options.bgcolor 			swfÎÄ¼şµÄ±³¾°É«
- * @param {string} 	options.salign 				ÉèÖÃËõ·ÅµÄswfÎÄ¼şÔÚÓÉwidthºÍheightÉèÖÃ¶¨ÒåµÄÇøÓòÄÚµÄÎ»ÖÃ¡£ÔÊĞíÖµ£ºl/r/t/b/tl/tr/bl/br
- * @param {boolean} options.menu 				ÊÇ·ñÏÔÊ¾ÓÒ¼ü²Ëµ¥£¬ÔÊĞíÖµ£ºtrue/false
- * @param {boolean} options.loop 				²¥·Åµ½×îºóÒ»Ö¡Ê±ÊÇ·ñÖØĞÂ²¥·Å£¬ÔÊĞíÖµ£º true/false
- * @param {boolean} options.play 				flashÊÇ·ñÔÚä¯ÀÀÆ÷¼ÓÔØÊ±¾Í¿ªÊ¼²¥·Å¡£ÔÊĞíÖµ£ºtrue/false
- * @param {string} 	options.quality 			ÉèÖÃflash²¥·ÅµÄ»­ÖÊ£¬ÔÊĞíÖµ£ºlow/medium/high/autolow/autohigh/best
- * @param {string} 	options.scale 				ÉèÖÃflashÄÚÈİÈçºÎËõ·ÅÀ´ÊÊÓ¦ÉèÖÃµÄ¿í¸ß¡£ÔÊĞíÖµ£ºshowall/noborder/exactfit
- * @param {string} 	options.wmode 				ÉèÖÃflashµÄÏÔÊ¾Ä£Ê½¡£ÔÊĞíÖµ£ºwindow/opaque/transparent
- * @param {string} 	options.allowscriptaccess 	ÉèÖÃflashÓëÒ³ÃæµÄÍ¨ĞÅÈ¨ÏŞ¡£ÔÊĞíÖµ£ºalways/never/sameDomain
- * @param {string} 	options.allownetworking 	ÉèÖÃswfÎÄ¼şÖĞÔÊĞíÊ¹ÓÃµÄÍøÂçAPI¡£ÔÊĞíÖµ£ºall/internal/none
- * @param {boolean} options.allowfullscreen 	ÊÇ·ñÔÊĞíflashÈ«ÆÁ¡£ÔÊĞíÖµ£ºtrue/false
- * @param {boolean} options.seamlesstabbing 	ÔÊĞíÉèÖÃÖ´ĞĞÎŞ·ìÌø¸ñ£¬´Ó¶øÊ¹ÓÃ»§ÄÜÌø³öflashÓ¦ÓÃ³ÌĞò¡£¸Ã²ÎÊıÖ»ÄÜÔÚ°²×°Flash7¼°¸ü¸ß°æ±¾µÄWindowsÖĞÊ¹ÓÃ¡£ÔÊĞíÖµ£ºtrue/false
- * @param {boolean} options.devicefont 			ÉèÖÃ¾²Ì¬ÎÄ±¾¶ÔÏóÊÇ·ñÒÔÉè±¸×ÖÌå³ÊÏÖ¡£ÔÊĞíÖµ£ºtrue/false
- * @param {boolean} options.swliveconnect 		µÚÒ»´Î¼ÓÔØflashÊ±ä¯ÀÀÆ÷ÊÇ·ñÓ¦Æô¶¯Java¡£ÔÊĞíÖµ£ºtrue/false
- * @param {Object} 	options.vars 				Òª´«µİ¸øflashµÄ²ÎÊı£¬Ö§³ÖJSON»òstringÀàĞÍ¡£
+ * @param {Object} 	options 					åˆ›å»ºflashçš„é€‰é¡¹å‚æ•°
+ * @param {string} 	options.id 					è¦åˆ›å»ºçš„flashçš„æ ‡è¯†
+ * @param {string} 	options.url 				flashæ–‡ä»¶çš„url
+ * @param {String} 	options.errorMessage 		æœªå®‰è£…flash playeræˆ–flash playerç‰ˆæœ¬å·è¿‡ä½æ—¶çš„æç¤º
+ * @param {string} 	options.ver 				æœ€ä½éœ€è¦çš„flash playerç‰ˆæœ¬å·
+ * @param {string} 	options.width 				flashçš„å®½åº¦
+ * @param {string} 	options.height 				flashçš„é«˜åº¦
+ * @param {string} 	options.align 				flashçš„å¯¹é½æ–¹å¼ï¼Œå…è®¸å€¼ï¼šmiddle/left/right/top/bottom
+ * @param {string} 	options.base 				è®¾ç½®ç”¨äºè§£æswfæ–‡ä»¶ä¸­çš„æ‰€æœ‰ç›¸å¯¹è·¯å¾„è¯­å¥çš„åŸºæœ¬ç›®å½•æˆ–URL
+ * @param {string} 	options.bgcolor 			swfæ–‡ä»¶çš„èƒŒæ™¯è‰²
+ * @param {string} 	options.salign 				è®¾ç½®ç¼©æ”¾çš„swfæ–‡ä»¶åœ¨ç”±widthå’Œheightè®¾ç½®å®šä¹‰çš„åŒºåŸŸå†…çš„ä½ç½®ã€‚å…è®¸å€¼ï¼šl/r/t/b/tl/tr/bl/br
+ * @param {boolean} options.menu 				æ˜¯å¦æ˜¾ç¤ºå³é”®èœå•ï¼Œå…è®¸å€¼ï¼štrue/false
+ * @param {boolean} options.loop 				æ’­æ”¾åˆ°æœ€åä¸€å¸§æ—¶æ˜¯å¦é‡æ–°æ’­æ”¾ï¼Œå…è®¸å€¼ï¼š true/false
+ * @param {boolean} options.play 				flashæ˜¯å¦åœ¨æµè§ˆå™¨åŠ è½½æ—¶å°±å¼€å§‹æ’­æ”¾ã€‚å…è®¸å€¼ï¼štrue/false
+ * @param {string} 	options.quality 			è®¾ç½®flashæ’­æ”¾çš„ç”»è´¨ï¼Œå…è®¸å€¼ï¼šlow/medium/high/autolow/autohigh/best
+ * @param {string} 	options.scale 				è®¾ç½®flashå†…å®¹å¦‚ä½•ç¼©æ”¾æ¥é€‚åº”è®¾ç½®çš„å®½é«˜ã€‚å…è®¸å€¼ï¼šshowall/noborder/exactfit
+ * @param {string} 	options.wmode 				è®¾ç½®flashçš„æ˜¾ç¤ºæ¨¡å¼ã€‚å…è®¸å€¼ï¼šwindow/opaque/transparent
+ * @param {string} 	options.allowscriptaccess 	è®¾ç½®flashä¸é¡µé¢çš„é€šä¿¡æƒé™ã€‚å…è®¸å€¼ï¼šalways/never/sameDomain
+ * @param {string} 	options.allownetworking 	è®¾ç½®swfæ–‡ä»¶ä¸­å…è®¸ä½¿ç”¨çš„ç½‘ç»œAPIã€‚å…è®¸å€¼ï¼šall/internal/none
+ * @param {boolean} options.allowfullscreen 	æ˜¯å¦å…è®¸flashå…¨å±ã€‚å…è®¸å€¼ï¼štrue/false
+ * @param {boolean} options.seamlesstabbing 	å…è®¸è®¾ç½®æ‰§è¡Œæ— ç¼è·³æ ¼ï¼Œä»è€Œä½¿ç”¨æˆ·èƒ½è·³å‡ºflashåº”ç”¨ç¨‹åºã€‚è¯¥å‚æ•°åªèƒ½åœ¨å®‰è£…Flash7åŠæ›´é«˜ç‰ˆæœ¬çš„Windowsä¸­ä½¿ç”¨ã€‚å…è®¸å€¼ï¼štrue/false
+ * @param {boolean} options.devicefont 			è®¾ç½®é™æ€æ–‡æœ¬å¯¹è±¡æ˜¯å¦ä»¥è®¾å¤‡å­—ä½“å‘ˆç°ã€‚å…è®¸å€¼ï¼štrue/false
+ * @param {boolean} options.swliveconnect 		ç¬¬ä¸€æ¬¡åŠ è½½flashæ—¶æµè§ˆå™¨æ˜¯å¦åº”å¯åŠ¨Javaã€‚å…è®¸å€¼ï¼štrue/false
+ * @param {Object} 	options.vars 				è¦ä¼ é€’ç»™flashçš„å‚æ•°ï¼Œæ”¯æŒJSONæˆ–stringç±»å‹ã€‚
  * 
- * @param {HTMLElement|string} [container] 		flash¶ÔÏóµÄ¸¸ÈİÆ÷ÔªËØ£¬²»´«µİ¸Ã²ÎÊıÊ±ÔÚµ±Ç°´úÂëÎ»ÖÃ´´½¨flash¶ÔÏó¡£
+ * @param {HTMLElement|string} [container] 		flashå¯¹è±¡çš„çˆ¶å®¹å™¨å…ƒç´ ï¼Œä¸ä¼ é€’è¯¥å‚æ•°æ—¶åœ¨å½“å‰ä»£ç ä½ç½®åˆ›å»ºflashå¯¹è±¡ã€‚
  * @meta standard
  * @see baidu.swf.createHTML,baidu.swf.getMovie
  */
@@ -467,25 +467,25 @@ baidu.swf.create = function (options, target) {
     baidu.dom.insertHTML( target || document.body ,'beforeEnd',html );
 };
 /**
- * ÅĞ¶ÏÊÇ·ñÎªieä¯ÀÀÆ÷
+ * åˆ¤æ–­æ˜¯å¦ä¸ºieæµè§ˆå™¨
  * @name baidu.browser.ie
  * @field
  * @grammar baidu.browser.ie
- * @returns {Number} IE°æ±¾ºÅ
+ * @returns {Number} IEç‰ˆæœ¬å·
  */
 baidu.browser.ie = baidu.ie = /msie (\d+\.\d+)/i.test(navigator.userAgent) ? (document.documentMode || + RegExp['\x241']) : undefined;
 
 /**
- * ÒÆ³ıÊı×éÖĞµÄÏî
+ * ç§»é™¤æ•°ç»„ä¸­çš„é¡¹
  * @name baidu.array.remove
  * @function
  * @grammar baidu.array.remove(source, match)
- * @param {Array} source ĞèÒªÒÆ³ıÏîµÄÊı×é
- * @param {Any} match ÒªÒÆ³ıµÄÏî
+ * @param {Array} source éœ€è¦ç§»é™¤é¡¹çš„æ•°ç»„
+ * @param {Any} match è¦ç§»é™¤çš„é¡¹
  * @meta standard
  * @see baidu.array.removeAt
  *             
- * @returns {Array} ÒÆ³ıºóµÄÊı×é
+ * @returns {Array} ç§»é™¤åçš„æ•°ç»„
  */
 baidu.array.remove = function (source, match) {
     var len = source.length;
@@ -499,15 +499,15 @@ baidu.array.remove = function (source, match) {
 };
 
 /**
- * ÅĞ¶ÏÄ¿±ê²ÎÊıÊÇ·ñArray¶ÔÏó
+ * åˆ¤æ–­ç›®æ ‡å‚æ•°æ˜¯å¦Arrayå¯¹è±¡
  * @name baidu.lang.isArray
  * @function
  * @grammar baidu.lang.isArray(source)
- * @param {Any} source Ä¿±ê²ÎÊı
+ * @param {Any} source ç›®æ ‡å‚æ•°
  * @meta standard
  * @see baidu.lang.isString,baidu.lang.isObject,baidu.lang.isNumber,baidu.lang.isElement,baidu.lang.isBoolean,baidu.lang.isDate
  *             
- * @returns {boolean} ÀàĞÍÅĞ¶Ï½á¹û
+ * @returns {boolean} ç±»å‹åˆ¤æ–­ç»“æœ
  */
 baidu.lang.isArray = function (source) {
     return '[object Array]' == Object.prototype.toString.call(source);
@@ -516,14 +516,14 @@ baidu.lang.isArray = function (source) {
 
 
 /**
- * ½«Ò»¸ö±äÁ¿×ª»»³Éarray
+ * å°†ä¸€ä¸ªå˜é‡è½¬æ¢æˆarray
  * @name baidu.lang.toArray
  * @function
  * @grammar baidu.lang.toArray(source)
- * @param {mix} source ĞèÒª×ª»»³ÉarrayµÄ±äÁ¿
+ * @param {mix} source éœ€è¦è½¬æ¢æˆarrayçš„å˜é‡
  * @version 1.3
  * @meta standard
- * @returns {array} ×ª»»ºóµÄarray
+ * @returns {array} è½¬æ¢åçš„array
  */
 baidu.lang.toArray = function (source) {
     if (source === null || source === undefined)
@@ -544,14 +544,14 @@ baidu.lang.toArray = function (source) {
 };
 
 /**
- * »ñµÃflash¶ÔÏóµÄÊµÀı
+ * è·å¾—flashå¯¹è±¡çš„å®ä¾‹
  * @name baidu.swf.getMovie
  * @function
  * @grammar baidu.swf.getMovie(name)
- * @param {string} name flash¶ÔÏóµÄÃû³Æ
+ * @param {string} name flashå¯¹è±¡çš„åç§°
  * @see baidu.swf.create
  * @meta standard
- * @returns {HTMLElement} flash¶ÔÏóµÄÊµÀı
+ * @returns {HTMLElement} flashå¯¹è±¡çš„å®ä¾‹
  */
 baidu.swf.getMovie = function (name) {
 	var movie = document[name], ret;
@@ -570,7 +570,7 @@ baidu.flash._Base = (function(){
     var prefix = 'bd__flash__';
 
     /**
-     * ´´½¨Ò»¸öËæ»úµÄ×Ö·û´®
+     * åˆ›å»ºä¸€ä¸ªéšæœºçš„å­—ç¬¦ä¸²
      * @private
      * @return {String}
      */
@@ -579,9 +579,9 @@ baidu.flash._Base = (function(){
     };
    
     /**
-     * ¼ì²éflash×´Ì¬
+     * æ£€æŸ¥flashçŠ¶æ€
      * @private
-     * @param {Object} target flash¶ÔÏó
+     * @param {Object} target flashå¯¹è±¡
      * @return {Boolean}
      */
     function _checkReady(target){
@@ -593,10 +593,10 @@ baidu.flash._Base = (function(){
     };
 
     /**
-     * µ÷ÓÃÖ®Ç°½øĞĞÑ¹Õ»µÄº¯Êı
+     * è°ƒç”¨ä¹‹å‰è¿›è¡Œå‹æ ˆçš„å‡½æ•°
      * @private
-     * @param {Array} callQueue µ÷ÓÃ¶ÓÁĞ
-     * @param {Object} target flash¶ÔÏó
+     * @param {Array} callQueue è°ƒç”¨é˜Ÿåˆ—
+     * @param {Object} target flashå¯¹è±¡
      * @return {Null}
      */
     function _callFn(callQueue, target){
@@ -610,9 +610,9 @@ baidu.flash._Base = (function(){
     };
 
     /**
-     * Îª´«ÈëµÄÄäÃûº¯Êı´´½¨º¯ÊıÃû
+     * ä¸ºä¼ å…¥çš„åŒ¿åå‡½æ•°åˆ›å»ºå‡½æ•°å
      * @private
-     * @param {String|Function} fun ´«ÈëµÄÄäÃûº¯Êı»òÕßº¯ÊıÃû
+     * @param {String|Function} fun ä¼ å…¥çš„åŒ¿åå‡½æ•°æˆ–è€…å‡½æ•°å
      * @return {String}
      */
     function _createFunName(fun){
@@ -631,9 +631,9 @@ baidu.flash._Base = (function(){
     };
 
     /**
-     * »æÖÆflash
+     * ç»˜åˆ¶flash
      * @private
-     * @param {Object} options ´´½¨²ÎÊı
+     * @param {Object} options åˆ›å»ºå‚æ•°
      * @return {Object} 
      */
     function _render(options){
@@ -660,7 +660,7 @@ baidu.flash._Base = (function(){
             callBack = callBack || [];
 
         /**
-         * ½«flashÎÄ¼ş»æÖÆµ½Ò³ÃæÉÏ
+         * å°†flashæ–‡ä»¶ç»˜åˆ¶åˆ°é¡µé¢ä¸Š
          * @public
          * @return {Null}
          */
@@ -676,7 +676,7 @@ baidu.flash._Base = (function(){
         };
 
         /**
-         * ·µ»Øflash×´Ì¬
+         * è¿”å›flashçŠ¶æ€
          * @return {Boolean}
          */
         me.isReady = function(){
@@ -684,10 +684,10 @@ baidu.flash._Base = (function(){
         };
 
         /**
-         * µ÷ÓÃflash½Ó¿ÚµÄÍ³Ò»Èë¿Ú
-         * @param {String} fnName µ÷ÓÃµÄº¯ÊıÃû
-         * @param {Array} params ´«ÈëµÄ²ÎÊı×é³ÉµÄÊı×é,Èô²»ĞíÒª²ÎÊı£¬Ğè´«Èë¿ÕÊı×é
-         * @param {Function} [callBack] Òì²½µ÷ÓÃºó½«·µ»ØÖµ×÷Îª²ÎÊıµÄµ÷ÓÃ»Øµ÷º¯Êı£¬ÈçÎŞ·µ»ØÖµ£¬¿ÉÒÔ²»´«Èë´Ë²ÎÊı
+         * è°ƒç”¨flashæ¥å£çš„ç»Ÿä¸€å…¥å£
+         * @param {String} fnName è°ƒç”¨çš„å‡½æ•°å
+         * @param {Array} params ä¼ å…¥çš„å‚æ•°ç»„æˆçš„æ•°ç»„,è‹¥ä¸è®¸è¦å‚æ•°ï¼Œéœ€ä¼ å…¥ç©ºæ•°ç»„
+         * @param {Function} [callBack] å¼‚æ­¥è°ƒç”¨åå°†è¿”å›å€¼ä½œä¸ºå‚æ•°çš„è°ƒç”¨å›è°ƒå‡½æ•°ï¼Œå¦‚æ— è¿”å›å€¼ï¼Œå¯ä»¥ä¸ä¼ å…¥æ­¤å‚æ•°
          * @return {Null}
         */
         me.call = function(fnName, params, callBack){
@@ -711,9 +711,9 @@ baidu.flash._Base = (function(){
         };
     
         /**
-         * Îª´«ÈëµÄÄäÃûº¯Êı´´½¨º¯ÊıÃû
+         * ä¸ºä¼ å…¥çš„åŒ¿åå‡½æ•°åˆ›å»ºå‡½æ•°å
          * @public
-         * @param {String|Function} fun ´«ÈëµÄÄäÃûº¯Êı»òÕßº¯ÊıÃû
+         * @param {String|Function} fun ä¼ å…¥çš„åŒ¿åå‡½æ•°æˆ–è€…å‡½æ•°å
          * @return {String}
          */
         me.createFunName = function(fun){
@@ -721,7 +721,7 @@ baidu.flash._Base = (function(){
         };
 
         /**
-         * ¼ì²éflashÊÇ·ñready£¬ ²¢½øĞĞµ÷ÓÃ
+         * æ£€æŸ¥flashæ˜¯å¦readyï¼Œ å¹¶è¿›è¡Œè°ƒç”¨
          * @private
          * @return {Null}
          */
@@ -736,7 +736,7 @@ baidu.flash._Base = (function(){
         };
 
         /**
-         * µ÷ÓÃÖ®Ç°½øĞĞÑ¹Õ»µÄº¯Êı
+         * è°ƒç”¨ä¹‹å‰è¿›è¡Œå‹æ ˆçš„å‡½æ•°
          * @private
          * @return {Null}
          */
@@ -752,35 +752,35 @@ baidu.flash._Base = (function(){
 
 
 /**
- * ´´½¨flash based imageUploader
+ * åˆ›å»ºflash based imageUploader
  * @class
  * @grammar baidu.flash.imageUploader(options)
- * @param {Object} createOptions ´´½¨flashÊ±ĞèÒªµÄ²ÎÊı£¬Çë²ÎÕÕbaidu.swf.createÎÄµµ
- * @config {Object} vars ´´½¨imageUploaderÊ±ËùĞèÒªµÄ²ÎÊı
- * @config {Number} vars.gridWidth Ã¿Ò»¸öÔ¤ÀÀÍ¼Æ¬ËùÕ¼µÄ¿í¶È£¬Ó¦¸ÃÎªflashŒˆµÄÕû³ı
- * @config {Number} vars.gridHeight Ã¿Ò»¸öÔ¤ÀÀÍ¼Æ¬ËùÕ¼µÄ¸ß¶È£¬Ó¦¸ÃÎªflash¸ßµÄÕû³ı
- * @config {Number} vars.picWidth µ¥ÕÅÔ¤ÀÀÍ¼Æ¬µÄ¿í¶È
- * @config {Number} vars.picHeight µ¥ÕÅÔ¤ÀÀÍ¼Æ¬µÄ¸ß¶È
- * @config {String} vars.uploadDataFieldName POSTÇëÇóÖĞÍ¼Æ¬Êı¾İµÄkey,Ä¬ÈÏÖµ'picdata'
- * @config {String} vars.picDescFieldName POSTÇëÇóÖĞÍ¼Æ¬ÃèÊöµÄkey,Ä¬ÈÏÖµ'picDesc'
- * @config {Number} vars.maxSize ÎÄ¼şµÄ×î´óÌå»ı,µ¥Î»'MB'
- * @config {Number} vars.compressSize ÉÏ´«Ç°Èç¹ûÍ¼Æ¬Ìå»ı³¬¹ı¸ÃÖµ£¬»áÏÈÑ¹Ëõ
- * @config {Number} vars.maxNum:32 ×î´óÉÏ´«¶àÉÙ¸öÎÄ¼ş
- * @config {Number} vars.compressLength ÄÜ½ÓÊÜµÄ×î´ó±ß³¤£¬³¬¹ı¸ÃÖµ»áµÈ±ÈÑ¹Ëõ
- * @config {String} vars.url ÉÏ´«µÄurlµØÖ·
- * @config {Number} vars.mode mode == 0Ê±£¬ÊÇÊ¹ÓÃ¹ö¶¯Ìõ£¬mode == 1Ê±£¬À­Éìflash, Ä¬ÈÏÖµÎª0
+ * @param {Object} createOptions åˆ›å»ºflashæ—¶éœ€è¦çš„å‚æ•°ï¼Œè¯·å‚ç…§baidu.swf.createæ–‡æ¡£
+ * @config {Object} vars åˆ›å»ºimageUploaderæ—¶æ‰€éœ€è¦çš„å‚æ•°
+ * @config {Number} vars.gridWidth æ¯ä¸€ä¸ªé¢„è§ˆå›¾ç‰‡æ‰€å çš„å®½åº¦ï¼Œåº”è¯¥ä¸ºflashå¯›çš„æ•´é™¤
+ * @config {Number} vars.gridHeight æ¯ä¸€ä¸ªé¢„è§ˆå›¾ç‰‡æ‰€å çš„é«˜åº¦ï¼Œåº”è¯¥ä¸ºflashé«˜çš„æ•´é™¤
+ * @config {Number} vars.picWidth å•å¼ é¢„è§ˆå›¾ç‰‡çš„å®½åº¦
+ * @config {Number} vars.picHeight å•å¼ é¢„è§ˆå›¾ç‰‡çš„é«˜åº¦
+ * @config {String} vars.uploadDataFieldName POSTè¯·æ±‚ä¸­å›¾ç‰‡æ•°æ®çš„key,é»˜è®¤å€¼'picdata'
+ * @config {String} vars.picDescFieldName POSTè¯·æ±‚ä¸­å›¾ç‰‡æè¿°çš„key,é»˜è®¤å€¼'picDesc'
+ * @config {Number} vars.maxSize æ–‡ä»¶çš„æœ€å¤§ä½“ç§¯,å•ä½'MB'
+ * @config {Number} vars.compressSize ä¸Šä¼ å‰å¦‚æœå›¾ç‰‡ä½“ç§¯è¶…è¿‡è¯¥å€¼ï¼Œä¼šå…ˆå‹ç¼©
+ * @config {Number} vars.maxNum:32 æœ€å¤§ä¸Šä¼ å¤šå°‘ä¸ªæ–‡ä»¶
+ * @config {Number} vars.compressLength èƒ½æ¥å—çš„æœ€å¤§è¾¹é•¿ï¼Œè¶…è¿‡è¯¥å€¼ä¼šç­‰æ¯”å‹ç¼©
+ * @config {String} vars.url ä¸Šä¼ çš„urlåœ°å€
+ * @config {Number} vars.mode mode == 0æ—¶ï¼Œæ˜¯ä½¿ç”¨æ»šåŠ¨æ¡ï¼Œmode == 1æ—¶ï¼Œæ‹‰ä¼¸flash, é»˜è®¤å€¼ä¸º0
  * @see baidu.swf.createHTML
- * @param {String} backgroundUrl ±³¾°Í¼Æ¬Â·¾¶
- * @param {String} listBacgroundkUrl ²¼¾Ö¿Ø¼ş±³¾°
- * @param {String} buttonUrl °´Å¥Í¼Æ¬²»±³¾°
- * @param {String|Function} selectFileCallback Ñ¡ÔñÎÄ¼şµÄ»Øµ÷
- * @param {String|Function} exceedFileCallbackÎÄ¼ş³¬³öÏŞÖÆµÄ×î´óÌå»ıÊ±µÄ»Øµ÷
- * @param {String|Function} deleteFileCallback É¾³ıÎÄ¼şµÄ»Øµ÷
- * @param {String|Function} startUploadCallback ¿ªÊ¼ÉÏ´«Ä³¸öÎÄ¼şÊ±µÄ»Øµ÷
- * @param {String|Function} uploadCompleteCallback Ä³¸öÎÄ¼şÉÏ´«Íê³ÉµÄ»Øµ÷
- * @param {String|Function} uploadErrorCallback Ä³¸öÎÄ¼şÉÏ´«Ê§°ÜµÄ»Øµ÷
- * @param {String|Function} allCompleteCallback È«²¿ÉÏ´«Íê³ÉÊ±µÄ»Øµ÷
- * @param {String|Function} changeFlashHeight ¸Ä±äFlashµÄ¸ß¶È£¬mode==1µÄÊ±ºò²ÅÓĞÓÃ
+ * @param {String} backgroundUrl èƒŒæ™¯å›¾ç‰‡è·¯å¾„
+ * @param {String} listBacgroundkUrl å¸ƒå±€æ§ä»¶èƒŒæ™¯
+ * @param {String} buttonUrl æŒ‰é’®å›¾ç‰‡ä¸èƒŒæ™¯
+ * @param {String|Function} selectFileCallback é€‰æ‹©æ–‡ä»¶çš„å›è°ƒ
+ * @param {String|Function} exceedFileCallbackæ–‡ä»¶è¶…å‡ºé™åˆ¶çš„æœ€å¤§ä½“ç§¯æ—¶çš„å›è°ƒ
+ * @param {String|Function} deleteFileCallback åˆ é™¤æ–‡ä»¶çš„å›è°ƒ
+ * @param {String|Function} startUploadCallback å¼€å§‹ä¸Šä¼ æŸä¸ªæ–‡ä»¶æ—¶çš„å›è°ƒ
+ * @param {String|Function} uploadCompleteCallback æŸä¸ªæ–‡ä»¶ä¸Šä¼ å®Œæˆçš„å›è°ƒ
+ * @param {String|Function} uploadErrorCallback æŸä¸ªæ–‡ä»¶ä¸Šä¼ å¤±è´¥çš„å›è°ƒ
+ * @param {String|Function} allCompleteCallback å…¨éƒ¨ä¸Šä¼ å®Œæˆæ—¶çš„å›è°ƒ
+ * @param {String|Function} changeFlashHeight æ”¹å˜Flashçš„é«˜åº¦ï¼Œmode==1çš„æ—¶å€™æ‰æœ‰ç”¨
  */ 
 baidu.flash.imageUploader = baidu.flash.imageUploader || function(options){
    
@@ -797,7 +797,7 @@ baidu.flash.imageUploader = baidu.flash.imageUploader || function(options){
             'changeFlashHeight'
         ]);
     /**
-     * ¿ªÊ¼»ò»Ø¸´ÉÏ´«Í¼Æ¬
+     * å¼€å§‹æˆ–å›å¤ä¸Šä¼ å›¾ç‰‡
      * @public
      * @return {Null}
      */
@@ -806,7 +806,7 @@ baidu.flash.imageUploader = baidu.flash.imageUploader || function(options){
     };
 
     /**
-     * ÔİÍ£ÉÏ´«Í¼Æ¬
+     * æš‚åœä¸Šä¼ å›¾ç‰‡
      * @public
      * @return {Null}
      */
@@ -819,30 +819,30 @@ baidu.flash.imageUploader = baidu.flash.imageUploader || function(options){
 };
 
 /**
- * ²Ù×÷Ô­Éú¶ÔÏóµÄ·½·¨
+ * æ“ä½œåŸç”Ÿå¯¹è±¡çš„æ–¹æ³•
  * @namespace baidu.object
  */
 baidu.object = baidu.object || {};
 
 
 /**
- * ½«Ô´¶ÔÏóµÄËùÓĞÊôĞÔ¿½±´µ½Ä¿±ê¶ÔÏóÖĞ
+ * å°†æºå¯¹è±¡çš„æ‰€æœ‰å±æ€§æ‹·è´åˆ°ç›®æ ‡å¯¹è±¡ä¸­
  * @author erik
  * @name baidu.object.extend
  * @function
  * @grammar baidu.object.extend(target, source)
- * @param {Object} target Ä¿±ê¶ÔÏó
- * @param {Object} source Ô´¶ÔÏó
+ * @param {Object} target ç›®æ ‡å¯¹è±¡
+ * @param {Object} source æºå¯¹è±¡
  * @see baidu.array.merge
  * @remark
  * 
-1.Ä¿±ê¶ÔÏóÖĞ£¬ÓëÔ´¶ÔÏókeyÏàÍ¬µÄ³ÉÔ±½«»á±»¸²¸Ç¡£<br>
-2.Ô´¶ÔÏóµÄprototype³ÉÔ±²»»á¿½±´¡£
+1.ç›®æ ‡å¯¹è±¡ä¸­ï¼Œä¸æºå¯¹è±¡keyç›¸åŒçš„æˆå‘˜å°†ä¼šè¢«è¦†ç›–ã€‚<br>
+2.æºå¯¹è±¡çš„prototypeæˆå‘˜ä¸ä¼šæ‹·è´ã€‚
 		
  * @shortcut extend
  * @meta standard
  *             
- * @returns {Object} Ä¿±ê¶ÔÏó
+ * @returns {Object} ç›®æ ‡å¯¹è±¡
  */
 baidu.extend =
 baidu.object.extend = function (target, source) {
@@ -860,14 +860,14 @@ baidu.object.extend = function (target, source) {
 
 
 /**
- * ´´½¨flash based fileUploader
+ * åˆ›å»ºflash based fileUploader
  * @class
  * @grammar baidu.flash.fileUploader(options)
  * @param {Object} options
- * @config {Object} createOptions ´´½¨flashÊ±ĞèÒªµÄ²ÎÊı£¬Çë²ÎÕÕbaidu.swf.createÎÄµµ
+ * @config {Object} createOptions åˆ›å»ºflashæ—¶éœ€è¦çš„å‚æ•°ï¼Œè¯·å‚ç…§baidu.swf.createæ–‡æ¡£
  * @config {String} createOptions.width
  * @config {String} createOptions.height
- * @config {Number} maxNum ×î´ó¿ÉÑ¡ÎÄ¼şÊı
+ * @config {Number} maxNum æœ€å¤§å¯é€‰æ–‡ä»¶æ•°
  * @config {Function|String} selectFile
  * @config {Function|String} exceedMaxSize
  * @config {Function|String} deleteFile
@@ -897,7 +897,7 @@ baidu.flash.fileUploader = baidu.flash.fileUploader || function(options){
     _flash.call('setMaxNum', options.maxNum ? [options.maxNum] : [1]);
 
     /**
-     * ÉèÖÃµ±Êó±êÒÆ¶¯µ½flashÉÏÊ±£¬ÊÇ·ñ±ä³ÉÊÖĞÍ
+     * è®¾ç½®å½“é¼ æ ‡ç§»åŠ¨åˆ°flashä¸Šæ—¶ï¼Œæ˜¯å¦å˜æˆæ‰‹å‹
      * @public
      * @param {Boolean} isCursor
      * @return {Null}
@@ -907,7 +907,7 @@ baidu.flash.fileUploader = baidu.flash.fileUploader || function(options){
     };
 
     /**
-     * ÉèÖÃÊó±êÏàÓ¦º¯ÊıÃû
+     * è®¾ç½®é¼ æ ‡ç›¸åº”å‡½æ•°å
      * @param {String|Function} fun
      */
     me.setMSFunName = function(fun){
@@ -915,14 +915,14 @@ baidu.flash.fileUploader = baidu.flash.fileUploader || function(options){
     }; 
 
     /**
-     * Ö´ĞĞÉÏ´«²Ù×÷
-     * @param {String} url ÉÏ´«µÄurl
-     * @param {String} fieldName ÉÏ´«µÄ±íµ¥×Ö¶ÎÃû
-     * @param {Object} postData ¼üÖµ¶Ô£¬ÉÏ´«µÄPOSTÊı¾İ
-     * @param {Number|Array|null|-1} [index]ÉÏ´«µÄÎÄ¼şĞòÁĞ
-     *                            IntÖµÉÏ´«¸ÃÎÄ¼ş
-     *                            ArrayÒ»´Î´®ĞĞÉÏ´«¸ÃĞòÁĞÎÄ¼ş
-     *                            -1/nullÉÏ´«ËùÓĞÎÄ¼ş
+     * æ‰§è¡Œä¸Šä¼ æ“ä½œ
+     * @param {String} url ä¸Šä¼ çš„url
+     * @param {String} fieldName ä¸Šä¼ çš„è¡¨å•å­—æ®µå
+     * @param {Object} postData é”®å€¼å¯¹ï¼Œä¸Šä¼ çš„POSTæ•°æ®
+     * @param {Number|Array|null|-1} [index]ä¸Šä¼ çš„æ–‡ä»¶åºåˆ—
+     *                            Intå€¼ä¸Šä¼ è¯¥æ–‡ä»¶
+     *                            Arrayä¸€æ¬¡ä¸²è¡Œä¸Šä¼ è¯¥åºåˆ—æ–‡ä»¶
+     *                            -1/nullä¸Šä¼ æ‰€æœ‰æ–‡ä»¶
      * @return {Null}
      */
     me.upload = function(url, fieldName, postData, index){
@@ -934,7 +934,7 @@ baidu.flash.fileUploader = baidu.flash.fileUploader || function(options){
     };
 
     /**
-     * È¡ÏûÉÏ´«²Ù×÷
+     * å–æ¶ˆä¸Šä¼ æ“ä½œ
      * @public
      * @param {Number|-1} index
      */
@@ -944,9 +944,9 @@ baidu.flash.fileUploader = baidu.flash.fileUploader || function(options){
     };
 
     /**
-     * É¾³ıÎÄ¼ş
+     * åˆ é™¤æ–‡ä»¶
      * @public
-     * @param {Number|Array} [index] ÒªÉ¾³ıµÄindex£¬²»´«ÔòÈ«²¿É¾³ı
+     * @param {Number|Array} [index] è¦åˆ é™¤çš„indexï¼Œä¸ä¼ åˆ™å…¨éƒ¨åˆ é™¤
      * @param {Function} callBack
      * */
     me.deleteFile = function(index, callBack){
@@ -970,7 +970,7 @@ baidu.flash.fileUploader = baidu.flash.fileUploader || function(options){
     };
 
     /**
-     * Ìí¼ÓÎÄ¼şÀàĞÍ£¬Ö§³ÖmacType
+     * æ·»åŠ æ–‡ä»¶ç±»å‹ï¼Œæ”¯æŒmacType
      * @public
      * @param {Object|Array[Object]} type {description:String, extention:String}
      * @return {Null};
@@ -984,7 +984,7 @@ baidu.flash.fileUploader = baidu.flash.fileUploader || function(options){
     };
     
     /**
-     * ÉèÖÃÎÄ¼şÀàĞÍ£¬Ö§³ÖmacType
+     * è®¾ç½®æ–‡ä»¶ç±»å‹ï¼Œæ”¯æŒmacType
      * @public
      * @param {Object|Array[Object]} type {description:String, extention:String}
      * @return {Null};
@@ -998,7 +998,7 @@ baidu.flash.fileUploader = baidu.flash.fileUploader || function(options){
     };
 
     /**
-     * ÉèÖÃ¿ÉÑ¡ÎÄ¼şµÄÊıÁ¿ÏŞÖÆ
+     * è®¾ç½®å¯é€‰æ–‡ä»¶çš„æ•°é‡é™åˆ¶
      * @public
      * @param {Number} num
      * @return {Null}
@@ -1008,9 +1008,9 @@ baidu.flash.fileUploader = baidu.flash.fileUploader || function(options){
     };
 
     /**
-     * ÉèÖÃ¿ÉÑ¡ÎÄ¼ş´óĞ¡ÏŞÖÆ£¬ÒÔÕ×MÎªµ¥Î»
+     * è®¾ç½®å¯é€‰æ–‡ä»¶å¤§å°é™åˆ¶ï¼Œä»¥å…†Mä¸ºå•ä½
      * @public
-     * @param {Number} num,0ÎªÎŞÏŞÖÆ
+     * @param {Number} num,0ä¸ºæ— é™åˆ¶
      * @return {Null}
      */
     me.setMaxSize = function(num){
@@ -1044,16 +1044,16 @@ baidu.flash.fileUploader = baidu.flash.fileUploader || function(options){
 };
 
 /**
- * Ê¹ÓÃ¶¯Ì¬script±êÇ©ÇëÇó·şÎñÆ÷×ÊÔ´£¬°üÀ¨ÓÉ·şÎñÆ÷¶ËµÄ»Øµ÷ºÍä¯ÀÀÆ÷¶ËµÄ»Øµ÷
+ * ä½¿ç”¨åŠ¨æ€scriptæ ‡ç­¾è¯·æ±‚æœåŠ¡å™¨èµ„æºï¼ŒåŒ…æ‹¬ç”±æœåŠ¡å™¨ç«¯çš„å›è°ƒå’Œæµè§ˆå™¨ç«¯çš„å›è°ƒ
  * @namespace baidu.sio
  */
 baidu.sio = baidu.sio || {};
 
 /**
  * 
- * @param {HTMLElement} src script½Úµã
- * @param {String} url script½ÚµãµÄµØÖ·
- * @param {String} [charset] ±àÂë
+ * @param {HTMLElement} src scriptèŠ‚ç‚¹
+ * @param {String} url scriptèŠ‚ç‚¹çš„åœ°å€
+ * @param {String} [charset] ç¼–ç 
  */
 baidu.sio._createScriptTag = function(scr, url, charset){
     scr.setAttribute('type', 'text/javascript');
@@ -1063,9 +1063,9 @@ baidu.sio._createScriptTag = function(scr, url, charset){
 };
 
 /**
- * É¾³ıscriptµÄÊôĞÔ£¬ÔÙÉ¾³ıscript±êÇ©£¬ÒÔ½â¾öĞŞ¸´ÄÚ´æĞ¹Â©µÄÎÊÌâ
+ * åˆ é™¤scriptçš„å±æ€§ï¼Œå†åˆ é™¤scriptæ ‡ç­¾ï¼Œä»¥è§£å†³ä¿®å¤å†…å­˜æ³„æ¼çš„é—®é¢˜
  * 
- * @param {HTMLElement} src script½Úµã
+ * @param {HTMLElement} src scriptèŠ‚ç‚¹
  */
 baidu.sio._removeScriptTag = function(scr){
     if (scr.clearAttributes) {
@@ -1085,19 +1085,19 @@ baidu.sio._removeScriptTag = function(scr){
 
 
 /**
- * Í¨¹ıscript±êÇ©¼ÓÔØÊı¾İ£¬¼ÓÔØÍê³ÉÓÉä¯ÀÀÆ÷¶Ë´¥·¢»Øµ÷
+ * é€šè¿‡scriptæ ‡ç­¾åŠ è½½æ•°æ®ï¼ŒåŠ è½½å®Œæˆç”±æµè§ˆå™¨ç«¯è§¦å‘å›è°ƒ
  * @name baidu.sio.callByBrowser
  * @function
  * @grammar baidu.sio.callByBrowser(url, opt_callback, opt_options)
- * @param {string} url ¼ÓÔØÊı¾İµÄurl
- * @param {Function|string} opt_callback Êı¾İ¼ÓÔØ½áÊøÊ±µ÷ÓÃµÄº¯Êı»òº¯ÊıÃû
- * @param {Object} opt_options ÆäËû¿ÉÑ¡Ïî
- * @config {String} [charset] scriptµÄ×Ö·û¼¯
- * @config {Integer} [timeOut] ³¬Ê±Ê±¼ä£¬³¬¹ıÕâ¸öÊ±¼ä½«²»ÔÙÏìÓ¦±¾ÇëÇó£¬²¢´¥·¢onfailureº¯Êı
- * @config {Function} [onfailure] timeOutÉè¶¨ºó²ÅÉúĞ§£¬µ½´ï³¬Ê±Ê±¼äÊ±´¥·¢±¾º¯Êı
+ * @param {string} url åŠ è½½æ•°æ®çš„url
+ * @param {Function|string} opt_callback æ•°æ®åŠ è½½ç»“æŸæ—¶è°ƒç”¨çš„å‡½æ•°æˆ–å‡½æ•°å
+ * @param {Object} opt_options å…¶ä»–å¯é€‰é¡¹
+ * @config {String} [charset] scriptçš„å­—ç¬¦é›†
+ * @config {Integer} [timeOut] è¶…æ—¶æ—¶é—´ï¼Œè¶…è¿‡è¿™ä¸ªæ—¶é—´å°†ä¸å†å“åº”æœ¬è¯·æ±‚ï¼Œå¹¶è§¦å‘onfailureå‡½æ•°
+ * @config {Function} [onfailure] timeOutè®¾å®šåæ‰ç”Ÿæ•ˆï¼Œåˆ°è¾¾è¶…æ—¶æ—¶é—´æ—¶è§¦å‘æœ¬å‡½æ•°
  * @remark
- * 1¡¢ÓëcallByServer²»Í¬£¬callback²ÎÊıÖ»Ö§³ÖFunctionÀàĞÍ£¬²»Ö§³Östring¡£
- * 2¡¢Èç¹ûÇëÇóÁËÒ»¸ö²»´æÔÚµÄÒ³Ãæ£¬callbackº¯ÊıÔÚIE/operaÏÂÒ²»á±»µ÷ÓÃ£¬Òò´ËÊ¹ÓÃÕßĞèÒªÔÚonsuccessº¯ÊıÖĞÅĞ¶ÏÊı¾İÊÇ·ñÕıÈ·¼ÓÔØ¡£
+ * 1ã€ä¸callByServerä¸åŒï¼Œcallbackå‚æ•°åªæ”¯æŒFunctionç±»å‹ï¼Œä¸æ”¯æŒstringã€‚
+ * 2ã€å¦‚æœè¯·æ±‚äº†ä¸€ä¸ªä¸å­˜åœ¨çš„é¡µé¢ï¼Œcallbackå‡½æ•°åœ¨IE/operaä¸‹ä¹Ÿä¼šè¢«è°ƒç”¨ï¼Œå› æ­¤ä½¿ç”¨è€…éœ€è¦åœ¨onsuccesså‡½æ•°ä¸­åˆ¤æ–­æ•°æ®æ˜¯å¦æ­£ç¡®åŠ è½½ã€‚
  * @meta standard
  * @see baidu.sio.callByServer
  */
@@ -1141,19 +1141,19 @@ baidu.sio.callByBrowser = function (url, opt_callback, opt_options) {
 };
 
 /**
- * Í¨¹ıscript±êÇ©¼ÓÔØÊı¾İ£¬¼ÓÔØÍê³ÉÓÉ·şÎñÆ÷¶Ë´¥·¢»Øµ÷
+ * é€šè¿‡scriptæ ‡ç­¾åŠ è½½æ•°æ®ï¼ŒåŠ è½½å®Œæˆç”±æœåŠ¡å™¨ç«¯è§¦å‘å›è°ƒ
  * @name baidu.sio.callByServer
  * @function
  * @grammar baidu.sio.callByServer(url, callback[, opt_options])
- * @param {string} url ¼ÓÔØÊı¾İµÄurl.
- * @param {Function|string} callback ·şÎñÆ÷¶Ëµ÷ÓÃµÄº¯Êı»òº¯ÊıÃû¡£Èç¹ûÃ»ÓĞÖ¸¶¨±¾²ÎÊı£¬½«ÔÚURLÖĞÑ°ÕÒoptions['queryField']×öÎªcallbackµÄ·½·¨Ãû.
- * @param {Object} opt_options ¼ÓÔØÊı¾İÊ±µÄÑ¡Ïî.
- * @config {string} [charset] scriptµÄ×Ö·û¼¯
- * @config {string} [queryField] ·şÎñÆ÷¶ËcallbackÇëÇó×Ö¶ÎÃû£¬Ä¬ÈÏÎªcallback
- * @config {Integer} [timeOut] ³¬Ê±Ê±¼ä(µ¥Î»£ºms)£¬³¬¹ıÕâ¸öÊ±¼ä½«²»ÔÙÏìÓ¦±¾ÇëÇó£¬²¢´¥·¢onfailureº¯Êı
- * @config {Function} [onfailure] timeOutÉè¶¨ºó²ÅÉúĞ§£¬µ½´ï³¬Ê±Ê±¼äÊ±´¥·¢±¾º¯Êı
+ * @param {string} url åŠ è½½æ•°æ®çš„url.
+ * @param {Function|string} callback æœåŠ¡å™¨ç«¯è°ƒç”¨çš„å‡½æ•°æˆ–å‡½æ•°åã€‚å¦‚æœæ²¡æœ‰æŒ‡å®šæœ¬å‚æ•°ï¼Œå°†åœ¨URLä¸­å¯»æ‰¾options['queryField']åšä¸ºcallbackçš„æ–¹æ³•å.
+ * @param {Object} opt_options åŠ è½½æ•°æ®æ—¶çš„é€‰é¡¹.
+ * @config {string} [charset] scriptçš„å­—ç¬¦é›†
+ * @config {string} [queryField] æœåŠ¡å™¨ç«¯callbackè¯·æ±‚å­—æ®µåï¼Œé»˜è®¤ä¸ºcallback
+ * @config {Integer} [timeOut] è¶…æ—¶æ—¶é—´(å•ä½ï¼šms)ï¼Œè¶…è¿‡è¿™ä¸ªæ—¶é—´å°†ä¸å†å“åº”æœ¬è¯·æ±‚ï¼Œå¹¶è§¦å‘onfailureå‡½æ•°
+ * @config {Function} [onfailure] timeOutè®¾å®šåæ‰ç”Ÿæ•ˆï¼Œåˆ°è¾¾è¶…æ—¶æ—¶é—´æ—¶è§¦å‘æœ¬å‡½æ•°
  * @remark
- * Èç¹ûurlÖĞÒÑ¾­°üº¬keyÎª¡°options['queryField']¡±µÄqueryÏî£¬½«»á±»Ìæ»»³ÉcallbackÖĞ²ÎÊı´«µİ»ò×Ô¶¯Éú³ÉµÄº¯ÊıÃû¡£
+ * å¦‚æœurlä¸­å·²ç»åŒ…å«keyä¸ºâ€œoptions['queryField']â€çš„queryé¡¹ï¼Œå°†ä¼šè¢«æ›¿æ¢æˆcallbackä¸­å‚æ•°ä¼ é€’æˆ–è‡ªåŠ¨ç”Ÿæˆçš„å‡½æ•°åã€‚
  * @meta standard
  * @see baidu.sio.callByBrowser
  */
@@ -1192,7 +1192,7 @@ baidu.sio.callByServer = /**@function*/function(url, callback, opt_options) {
     baidu.sio._createScriptTag(scr, url, charset);
 
     /*
-     * ·µ»ØÒ»¸öº¯Êı£¬ÓÃÓÚÁ¢¼´£¨¹ÒÔÚwindowÉÏ£©»òÕß³¬Ê±£¨¹ÒÔÚsetTimeoutÖĞ£©Ê±Ö´ĞĞ
+     * è¿”å›ä¸€ä¸ªå‡½æ•°ï¼Œç”¨äºç«‹å³ï¼ˆæŒ‚åœ¨windowä¸Šï¼‰æˆ–è€…è¶…æ—¶ï¼ˆæŒ‚åœ¨setTimeoutä¸­ï¼‰æ—¶æ‰§è¡Œ
      */
     function getCallBack(onTimeOut){
         /*global callbackName, callback, scr, options;*/
@@ -1215,10 +1215,10 @@ baidu.sio.callByServer = /**@function*/function(url, callback, opt_options) {
 };
 
 /**
- * Í¨¹ıÇëÇóÒ»¸öÍ¼Æ¬µÄ·½Ê½Áî·şÎñÆ÷´æ´¢Ò»ÌõÈÕÖ¾
+ * é€šè¿‡è¯·æ±‚ä¸€ä¸ªå›¾ç‰‡çš„æ–¹å¼ä»¤æœåŠ¡å™¨å­˜å‚¨ä¸€æ¡æ—¥å¿—
  * @function
  * @grammar baidu.sio.log(url)
- * @param {string} url Òª·¢ËÍµÄµØÖ·.
+ * @param {string} url è¦å‘é€çš„åœ°å€.
  * @author: int08h,leeight
  */
 baidu.sio.log = function(url) {
@@ -1250,7 +1250,7 @@ baidu.sio.log = function(url) {
 
 
 /**
- * ²Ù×÷json¶ÔÏóµÄ·½·¨
+ * æ“ä½œjsonå¯¹è±¡çš„æ–¹æ³•
  * @namespace baidu.json
  */
 baidu.json = baidu.json || {};
@@ -1267,20 +1267,20 @@ baidu.json = baidu.json || {};
 
 
 /**
- * ½«×Ö·û´®½âÎö³Éjson¶ÔÏó¡£×¢£º²»»á×Ô¶¯ìî³ı¿Õ¸ñ
+ * å°†å­—ç¬¦ä¸²è§£ææˆjsonå¯¹è±¡ã€‚æ³¨ï¼šä¸ä¼šè‡ªåŠ¨ç¥›é™¤ç©ºæ ¼
  * @name baidu.json.parse
  * @function
  * @grammar baidu.json.parse(data)
- * @param {string} source ĞèÒª½âÎöµÄ×Ö·û´®
+ * @param {string} source éœ€è¦è§£æçš„å­—ç¬¦ä¸²
  * @remark
- * ¸Ã·½·¨µÄÊµÏÖÓëecma-262µÚÎå°æÖĞ¹æ¶¨µÄJSON.parse²»Í¬£¬ÔİÊ±Ö»Ö§³Ö´«ÈëÒ»¸ö²ÎÊı¡£ºóĞø»á½øĞĞ¹¦ÄÜ·á¸»¡£
+ * è¯¥æ–¹æ³•çš„å®ç°ä¸ecma-262ç¬¬äº”ç‰ˆä¸­è§„å®šçš„JSON.parseä¸åŒï¼Œæš‚æ—¶åªæ”¯æŒä¼ å…¥ä¸€ä¸ªå‚æ•°ã€‚åç»­ä¼šè¿›è¡ŒåŠŸèƒ½ä¸°å¯Œã€‚
  * @meta standard
  * @see baidu.json.stringify,baidu.json.decode
  *             
- * @returns {JSON} ½âÎö½á¹ûjson¶ÔÏó
+ * @returns {JSON} è§£æç»“æœjsonå¯¹è±¡
  */
 baidu.json.parse = function (data) {
-    //2010/12/09£º¸üĞÂÖÁ²»Ê¹ÓÃÔ­Éúparse£¬²»¼ì²âÓÃ»§ÊäÈëÊÇ·ñÕıÈ·
+    //2010/12/09ï¼šæ›´æ–°è‡³ä¸ä½¿ç”¨åŸç”Ÿparseï¼Œä¸æ£€æµ‹ç”¨æˆ·è¾“å…¥æ˜¯å¦æ­£ç¡®
     return (new Function("return (" + data + ")"))();
 };
 /*
@@ -1296,15 +1296,15 @@ baidu.json.parse = function (data) {
 
 
 /**
- * ½«×Ö·û´®½âÎö³Éjson¶ÔÏó£¬Îª¹ıÊ±½Ó¿Ú£¬½ñºó»á±»baidu.json.parse´úÌæ
+ * å°†å­—ç¬¦ä¸²è§£ææˆjsonå¯¹è±¡ï¼Œä¸ºè¿‡æ—¶æ¥å£ï¼Œä»Šåä¼šè¢«baidu.json.parseä»£æ›¿
  * @name baidu.json.decode
  * @function
  * @grammar baidu.json.decode(source)
- * @param {string} source ĞèÒª½âÎöµÄ×Ö·û´®
+ * @param {string} source éœ€è¦è§£æçš„å­—ç¬¦ä¸²
  * @meta out
  * @see baidu.json.encode,baidu.json.parse
  *             
- * @returns {JSON} ½âÎö½á¹ûjson¶ÔÏó
+ * @returns {JSON} è§£æç»“æœjsonå¯¹è±¡
  */
 baidu.json.decode = baidu.json.parse;
 /*
@@ -1320,21 +1320,21 @@ baidu.json.decode = baidu.json.parse;
 
 
 /**
- * ½«json¶ÔÏóĞòÁĞ»¯
+ * å°†jsonå¯¹è±¡åºåˆ—åŒ–
  * @name baidu.json.stringify
  * @function
  * @grammar baidu.json.stringify(value)
- * @param {JSON} value ĞèÒªĞòÁĞ»¯µÄjson¶ÔÏó
+ * @param {JSON} value éœ€è¦åºåˆ—åŒ–çš„jsonå¯¹è±¡
  * @remark
- * ¸Ã·½·¨µÄÊµÏÖÓëecma-262µÚÎå°æÖĞ¹æ¶¨µÄJSON.stringify²»Í¬£¬ÔİÊ±Ö»Ö§³Ö´«ÈëÒ»¸ö²ÎÊı¡£ºóĞø»á½øĞĞ¹¦ÄÜ·á¸»¡£
+ * è¯¥æ–¹æ³•çš„å®ç°ä¸ecma-262ç¬¬äº”ç‰ˆä¸­è§„å®šçš„JSON.stringifyä¸åŒï¼Œæš‚æ—¶åªæ”¯æŒä¼ å…¥ä¸€ä¸ªå‚æ•°ã€‚åç»­ä¼šè¿›è¡ŒåŠŸèƒ½ä¸°å¯Œã€‚
  * @meta standard
  * @see baidu.json.parse,baidu.json.encode
  *             
- * @returns {string} ĞòÁĞ»¯ºóµÄ×Ö·û´®
+ * @returns {string} åºåˆ—åŒ–åçš„å­—ç¬¦ä¸²
  */
 baidu.json.stringify = (function () {
     /**
-     * ×Ö·û´®´¦ÀíÊ±ĞèÒª×ªÒåµÄ×Ö·û±í
+     * å­—ç¬¦ä¸²å¤„ç†æ—¶éœ€è¦è½¬ä¹‰çš„å­—ç¬¦è¡¨
      * @private
      */
     var escapeMap = {
@@ -1348,7 +1348,7 @@ baidu.json.stringify = (function () {
     };
     
     /**
-     * ×Ö·û´®ĞòÁĞ»¯
+     * å­—ç¬¦ä¸²åºåˆ—åŒ–
      * @private
      */
     function encodeString(source) {
@@ -1370,7 +1370,7 @@ baidu.json.stringify = (function () {
     }
     
     /**
-     * Êı×éĞòÁĞ»¯
+     * æ•°ç»„åºåˆ—åŒ–
      * @private
      */
     function encodeArray(source) {
@@ -1399,7 +1399,7 @@ baidu.json.stringify = (function () {
     }
     
     /**
-     * ´¦ÀíÈÕÆÚĞòÁĞ»¯Ê±µÄ²¹Áã
+     * å¤„ç†æ—¥æœŸåºåˆ—åŒ–æ—¶çš„è¡¥é›¶
      * @private
      */
     function pad(source) {
@@ -1407,7 +1407,7 @@ baidu.json.stringify = (function () {
     }
     
     /**
-     * ÈÕÆÚĞòÁĞ»¯
+     * æ—¥æœŸåºåˆ—åŒ–
      * @private
      */
     function encodeDate(source){
@@ -1482,14 +1482,14 @@ baidu.json.stringify = (function () {
 
 
 /**
- * ½«json¶ÔÏóĞòÁĞ»¯£¬Îª¹ıÊ±½Ó¿Ú£¬½ñºó»á±»baidu.json.stringify´úÌæ
+ * å°†jsonå¯¹è±¡åºåˆ—åŒ–ï¼Œä¸ºè¿‡æ—¶æ¥å£ï¼Œä»Šåä¼šè¢«baidu.json.stringifyä»£æ›¿
  * @name baidu.json.encode
  * @function
  * @grammar baidu.json.encode(value)
- * @param {JSON} value ĞèÒªĞòÁĞ»¯µÄjson¶ÔÏó
+ * @param {JSON} value éœ€è¦åºåˆ—åŒ–çš„jsonå¯¹è±¡
  * @meta out
  * @see baidu.json.decode,baidu.json.stringify
  *             
- * @returns {string} ĞòÁĞ»¯ºóµÄ×Ö·û´®
+ * @returns {string} åºåˆ—åŒ–åçš„å­—ç¬¦ä¸²
  */
 baidu.json.encode = baidu.json.stringify;

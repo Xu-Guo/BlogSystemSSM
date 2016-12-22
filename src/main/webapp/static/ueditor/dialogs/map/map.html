@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <script type="text/javascript" src="../internal.js"></script>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.1&services=true"></script>
@@ -61,7 +61,7 @@
         });
         search.search(document.getElementById('address').value || document.getElementById('city').value);
     }
-    //»ñµÃ²ÎÊı
+    //è·å¾—å‚æ•°
     function getPars(str,par){
         var reg = new RegExp(par+"=((\\d+|[.,])*)","g");
         return reg.exec(str)[1];
@@ -88,10 +88,10 @@
             map.addControl(new BMap.NavigationControl());
             map.centerAndZoom(point, Number(getPars(url,"zoom")));
         }else{
-            point = new BMap.Point(116.404, 39.915);    // ´´½¨µã×ø±ê
+            point = new BMap.Point(116.404, 39.915);    // åˆ›å»ºç‚¹åæ ‡
             marker = new BMap.Marker(point);
             map.addControl(new BMap.NavigationControl());
-            map.centerAndZoom(point, 10);                     // ³õÊ¼»¯µØÍ¼,ÉèÖÃÖĞĞÄµã×ø±êºÍµØÍ¼¼¶±ğ¡£
+            map.centerAndZoom(point, 10);                     // åˆå§‹åŒ–åœ°å›¾,è®¾ç½®ä¸­å¿ƒç‚¹åæ ‡å’Œåœ°å›¾çº§åˆ«ã€‚
         }
         marker.enableDragging();
         map.addOverlay(marker);

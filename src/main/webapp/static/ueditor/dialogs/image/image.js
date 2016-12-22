@@ -1,8 +1,8 @@
 /**
  * User: Jinqn
  * Date: 14-04-08
- * Time: ÏÂÎç16:34
- * ÉÏ´«Í¼Æ¬¶Ô»°¿òÂß¼­´úÂë,°üÀ¨tab: Ô¶³ÌÍ¼Æ¬/ÉÏ´«Í¼Æ¬/ÔÚÏßÍ¼Æ¬/ËÑË÷Í¼Æ¬
+ * Time: ä¸‹åˆ16:34
+ * ä¸Šä¼ å›¾ç‰‡å¯¹è¯æ¡†é€»è¾‘ä»£ç ,åŒ…æ‹¬tab: è¿œç¨‹å›¾ç‰‡/ä¸Šä¼ å›¾ç‰‡/åœ¨çº¿å›¾ç‰‡/æœç´¢å›¾ç‰‡
  */
 
 (function () {
@@ -18,7 +18,7 @@
         initButtons();
     };
 
-    /* ³õÊ¼»¯tab±êÇ© */
+    /* åˆå§‹åŒ–tabæ ‡ç­¾ */
     function initTabs() {
         var tabs = $G('tabhead').children;
         for (var i = 0; i < tabs.length; i++) {
@@ -36,7 +36,7 @@
         }
     }
 
-    /* ³õÊ¼»¯tabbody */
+    /* åˆå§‹åŒ–tabbody */
     function setTabFocus(id) {
         if(!id) return;
         var i, bodyId, tabs = $G('tabhead').children;
@@ -70,7 +70,7 @@
         }
     }
 
-    /* ³õÊ¼»¯onokÊÂ¼ş */
+    /* åˆå§‹åŒ–onokäº‹ä»¶ */
     function initButtons() {
 
         dialog.onok = function () {
@@ -90,7 +90,7 @@
                     list = uploadImage.getInsertList();
                     var count = uploadImage.getQueueCount();
                     if (count) {
-                        $('.info', '#queueList').html('<span style="color:red;">' + '»¹ÓĞ2¸öÎ´ÉÏ´«ÎÄ¼ş'.replace(/[\d]/, count) + '</span>');
+                        $('.info', '#queueList').html('<span style="color:red;">' + 'è¿˜æœ‰2ä¸ªæœªä¸Šä¼ æ–‡ä»¶'.replace(/[\d]/, count) + '</span>');
                         return false;
                     }
                     break;
@@ -111,9 +111,9 @@
     }
 
 
-    /* ³õÊ¼»¯¶ÔÆä·½Ê½µÄµã»÷ÊÂ¼ş */
+    /* åˆå§‹åŒ–å¯¹å…¶æ–¹å¼çš„ç‚¹å‡»äº‹ä»¶ */
     function initAlign(){
-        /* µã»÷alignÍ¼±ê */
+        /* ç‚¹å‡»alignå›¾æ ‡ */
         domUtils.on($G("alignIcon"), 'click', function(e){
             var target = e.target || e.srcElement;
             if(target.className && target.className.indexOf('-align') != -1) {
@@ -122,7 +122,7 @@
         });
     }
 
-    /* ÉèÖÃ¶ÔÆë·½Ê½ */
+    /* è®¾ç½®å¯¹é½æ–¹å¼ */
     function setAlign(align){
         align = align || 'none';
         var aligns = $G("alignIcon").children;
@@ -135,14 +135,14 @@
             }
         }
     }
-    /* »ñÈ¡¶ÔÆë·½Ê½ */
+    /* è·å–å¯¹é½æ–¹å¼ */
     function getAlign(){
         var align = $G("align").value || 'none';
         return align == 'none' ? '':align;
     }
 
 
-    /* ÔÚÏßÍ¼Æ¬ */
+    /* åœ¨çº¿å›¾ç‰‡ */
     function RemoteImage(target) {
         this.container = utils.isString(target) ? document.getElementById(target) : target;
         this.init();
@@ -171,7 +171,7 @@
             var _this = this,
                 locker = $G('lock');
 
-            /* ¸Ä±äurl */
+            /* æ”¹å˜url */
             domUtils.on($G("url"), 'keyup', updatePreview);
             domUtils.on($G("border"), 'keyup', updatePreview);
             domUtils.on($G("title"), 'keyup', updatePreview);
@@ -217,17 +217,17 @@
             }
         },
         setImage: function(img){
-            /* ²»ÊÇÕı³£µÄÍ¼Æ¬ */
+            /* ä¸æ˜¯æ­£å¸¸çš„å›¾ç‰‡ */
             if (!img.tagName || img.tagName.toLowerCase() != 'img' && !img.getAttribute("src") || !img.src) return;
 
             var wordImgFlag = img.getAttribute("word_img"),
                 src = wordImgFlag ? wordImgFlag.replace("&amp;", "&") : (img.getAttribute('_src') || img.getAttribute("src", 2).replace("&amp;", "&")),
                 align = editor.queryCommandValue("imageFloat");
 
-            /* ·ÀÖ¹onchangeÊÂ¼şÑ­»·µ÷ÓÃ */
+            /* é˜²æ­¢onchangeäº‹ä»¶å¾ªç¯è°ƒç”¨ */
             if (src !== $G("url").value) $G("url").value = src;
             if(src) {
-                /* ÉèÖÃ±íµ¥ÄÚÈİ */
+                /* è®¾ç½®è¡¨å•å†…å®¹ */
                 $G("width").value = img.width || '';
                 $G("height").value = img.height || '';
                 $G("border").value = img.getAttribute("border") || '0';
@@ -247,13 +247,16 @@
         },
         setPreview: function(){
             var url = $G('url').value,
-                ow = $G('width').value,
-                oh = $G('height').value,
-                border = $G('border').value,
+                ow = parseInt($G('width').value, 10) || 0,
+                oh = parseInt($G('height').value, 10) || 0,
+                border = parseInt($G('border').value, 10) || 0,
                 title = $G('title').value,
                 preview = $G('preview'),
                 width,
                 height;
+
+            url = utils.unhtmlForUrl(url);
+            title = utils.unhtml(title);
 
             width = ((!ow || !oh) ? preview.offsetWidth:Math.min(ow, preview.offsetWidth));
             width = width+(border*2) > preview.offsetWidth ? width:(preview.offsetWidth - (border*2));
@@ -286,7 +289,7 @@
 
 
 
-    /* ÉÏ´«Í¼Æ¬ */
+    /* ä¸Šä¼ å›¾ç‰‡ */
     function UploadImage(target) {
         this.$wrap = target.constructor == String ? $('#' + target) : $(target);
         this.init();
@@ -300,39 +303,39 @@
         initContainer: function () {
             this.$queue = this.$wrap.find('.filelist');
         },
-        /* ³õÊ¼»¯ÈİÆ÷ */
+        /* åˆå§‹åŒ–å®¹å™¨ */
         initUploader: function () {
             var _this = this,
                 $ = jQuery,    // just in case. Make sure it's not an other libaray.
                 $wrap = _this.$wrap,
-            // Í¼Æ¬ÈİÆ÷
+            // å›¾ç‰‡å®¹å™¨
                 $queue = $wrap.find('.filelist'),
-            // ×´Ì¬À¸£¬°üÀ¨½ø¶ÈºÍ¿ØÖÆ°´Å¥
+            // çŠ¶æ€æ ï¼ŒåŒ…æ‹¬è¿›åº¦å’Œæ§åˆ¶æŒ‰é’®
                 $statusBar = $wrap.find('.statusBar'),
-            // ÎÄ¼ş×ÜÌåÑ¡ÔñĞÅÏ¢¡£
+            // æ–‡ä»¶æ€»ä½“é€‰æ‹©ä¿¡æ¯ã€‚
                 $info = $statusBar.find('.info'),
-            // ÉÏ´«°´Å¥
+            // ä¸Šä¼ æŒ‰é’®
                 $upload = $wrap.find('.uploadBtn'),
-            // ÉÏ´«°´Å¥
+            // ä¸Šä¼ æŒ‰é’®
                 $filePickerBtn = $wrap.find('.filePickerBtn'),
-            // ÉÏ´«°´Å¥
+            // ä¸Šä¼ æŒ‰é’®
                 $filePickerBlock = $wrap.find('.filePickerBlock'),
-            // Ã»Ñ¡ÔñÎÄ¼şÖ®Ç°µÄÄÚÈİ¡£
+            // æ²¡é€‰æ‹©æ–‡ä»¶ä¹‹å‰çš„å†…å®¹ã€‚
                 $placeHolder = $wrap.find('.placeholder'),
-            // ×ÜÌå½ø¶ÈÌõ
+            // æ€»ä½“è¿›åº¦æ¡
                 $progress = $statusBar.find('.progress').hide(),
-            // Ìí¼ÓµÄÎÄ¼şÊıÁ¿
+            // æ·»åŠ çš„æ–‡ä»¶æ•°é‡
                 fileCount = 0,
-            // Ìí¼ÓµÄÎÄ¼ş×Ü´óĞ¡
+            // æ·»åŠ çš„æ–‡ä»¶æ€»å¤§å°
                 fileSize = 0,
-            // ÓÅ»¯retina, ÔÚretinaÏÂÕâ¸öÖµÊÇ2
+            // ä¼˜åŒ–retina, åœ¨retinaä¸‹è¿™ä¸ªå€¼æ˜¯2
                 ratio = window.devicePixelRatio || 1,
-            // ËõÂÔÍ¼´óĞ¡
+            // ç¼©ç•¥å›¾å¤§å°
                 thumbnailWidth = 113 * ratio,
                 thumbnailHeight = 113 * ratio,
-            // ¿ÉÄÜÓĞpedding, ready, uploading, confirm, done.
+            // å¯èƒ½æœ‰pedding, ready, uploading, confirm, done.
                 state = '',
-            // ËùÓĞÎÄ¼şµÄ½ø¶ÈĞÅÏ¢£¬keyÎªfile id
+            // æ‰€æœ‰æ–‡ä»¶çš„è¿›åº¦ä¿¡æ¯ï¼Œkeyä¸ºfile id
                 percentages = {},
                 supportTransition = (function () {
                     var s = document.createElement('p').style,
@@ -344,7 +347,7 @@
                     s = null;
                     return r;
                 })(),
-            // WebUploaderÊµÀı
+            // WebUploaderå®ä¾‹
                 uploader,
                 actionUrl = editor.getActionUrl(editor.getOpt('imageActionName')),
                 acceptExtensions = (editor.getOpt('imageAllowFiles') || []).join('').replace(/\./g, ',').replace(/^[,]/, ''),
@@ -373,17 +376,17 @@
                 server: actionUrl,
                 fileVal: editor.getOpt('imageFieldName'),
                 duplicate: true,
-                fileSingleSizeLimit: imageMaxSize,    // Ä¬ÈÏ 2 M
+                fileSingleSizeLimit: imageMaxSize,    // é»˜è®¤ 2 M
                 compress: editor.getOpt('imageCompressEnable') ? {
                     width: imageCompressBorder,
                     height: imageCompressBorder,
-                    // Í¼Æ¬ÖÊÁ¿£¬Ö»ÓĞtypeÎª`image/jpeg`µÄÊ±ºò²ÅÓĞĞ§¡£
+                    // å›¾ç‰‡è´¨é‡ï¼Œåªæœ‰typeä¸º`image/jpeg`çš„æ—¶å€™æ‰æœ‰æ•ˆã€‚
                     quality: 90,
-                    // ÊÇ·ñÔÊĞí·Å´ó£¬Èç¹ûÏëÒªÉú³ÉĞ¡Í¼µÄÊ±ºò²»Ê§Õæ£¬´ËÑ¡ÏîÓ¦¸ÃÉèÖÃÎªfalse.
+                    // æ˜¯å¦å…è®¸æ”¾å¤§ï¼Œå¦‚æœæƒ³è¦ç”Ÿæˆå°å›¾çš„æ—¶å€™ä¸å¤±çœŸï¼Œæ­¤é€‰é¡¹åº”è¯¥è®¾ç½®ä¸ºfalse.
                     allowMagnify: false,
-                    // ÊÇ·ñÔÊĞí²Ã¼ô¡£
+                    // æ˜¯å¦å…è®¸è£å‰ªã€‚
                     crop: false,
-                    // ÊÇ·ñ±£ÁôÍ·²¿metaĞÅÏ¢¡£
+                    // æ˜¯å¦ä¿ç•™å¤´éƒ¨metaä¿¡æ¯ã€‚
                     preserveHeaders: true
                 }:false
             });
@@ -397,7 +400,7 @@
 
             setState('pedding');
 
-            // µ±ÓĞÎÄ¼şÌí¼Ó½øÀ´Ê±Ö´ĞĞ£¬¸ºÔğviewµÄ´´½¨
+            // å½“æœ‰æ–‡ä»¶æ·»åŠ è¿›æ¥æ—¶æ‰§è¡Œï¼Œè´Ÿè´£viewçš„åˆ›å»º
             function addFile(file) {
                 var $li = $('<li id="' + file.id + '">' +
                         '<p class="title">' + file.name + '</p>' +
@@ -456,7 +459,7 @@
                     percentages[ file.id ] = [ file.size, 0 ];
                     file.rotation = 0;
 
-                    /* ¼ì²éÎÄ¼ş¸ñÊ½ */
+                    /* æ£€æŸ¥æ–‡ä»¶æ ¼å¼ */
                     if (!file.ext || acceptExtensions.indexOf(file.ext.toLowerCase()) == -1) {
                         showError('not_allow_type');
                         uploader.removeFile(file);
@@ -470,7 +473,7 @@
                         $li.off('mouseenter mouseleave');
                         $btns.remove();
                     }
-                    // ³É¹¦
+                    // æˆåŠŸ
                     if (cur === 'error' || cur === 'invalid') {
                         showError(file.statusText);
                         percentages[ file.id ][ 1 ] = 1;
@@ -527,7 +530,7 @@
                 $li.insertBefore($filePickerBlock);
             }
 
-            // ¸ºÔğviewµÄÏú»Ù
+            // è´Ÿè´£viewçš„é”€æ¯
             function removeFile(file) {
                 var $li = $('#' + file.id);
                 delete percentages[ file.id ];
@@ -564,7 +567,7 @@
 
                     switch (val) {
 
-                        /* Î´Ñ¡ÔñÎÄ¼ş */
+                        /* æœªé€‰æ‹©æ–‡ä»¶ */
                         case 'pedding':
                             $queue.addClass('element-invisible');
                             $statusBar.addClass('element-invisible');
@@ -573,7 +576,7 @@
                             uploader.refresh();
                             break;
 
-                        /* ¿ÉÒÔ¿ªÊ¼ÉÏ´« */
+                        /* å¯ä»¥å¼€å§‹ä¸Šä¼  */
                         case 'ready':
                             $placeHolder.addClass('element-invisible');
                             $queue.removeClass('element-invisible');
@@ -583,13 +586,13 @@
                             uploader.refresh();
                             break;
 
-                        /* ÉÏ´«ÖĞ */
+                        /* ä¸Šä¼ ä¸­ */
                         case 'uploading':
                             $progress.show(); $info.hide();
                             $upload.text(lang.uploadPause);
                             break;
 
-                        /* ÔİÍ£ÉÏ´« */
+                        /* æš‚åœä¸Šä¼  */
                         case 'paused':
                             $progress.show(); $info.hide();
                             $upload.text(lang.uploadContinue);
@@ -686,9 +689,9 @@
                         setState('confirm', files);
                         break;
                     case 'startUpload':
-                        /* Ìí¼Ó¶îÍâµÄGET²ÎÊı */
+                        /* æ·»åŠ é¢å¤–çš„GETå‚æ•° */
                         var params = utils.serializeParam(editor.queryCommandValue('serverparam')) || '',
-                            url = utils.formatUrl(actionUrl + (actionUrl.indexOf('?') == -1 ? '?':'&') + 'encode=gbk&' + params);
+                            url = utils.formatUrl(actionUrl + (actionUrl.indexOf('?') == -1 ? '?':'&') + 'encode=utf-8&' + params);
                         uploader.option('server', url);
                         setState('uploading', files);
                         break;
@@ -699,7 +702,7 @@
             });
 
             uploader.on('uploadBeforeSend', function (file, data, header) {
-                //ÕâÀï¿ÉÒÔÍ¨¹ıdata¶ÔÏóÌí¼ÓPOST²ÎÊı
+                //è¿™é‡Œå¯ä»¥é€šè¿‡dataå¯¹è±¡æ·»åŠ POSTå‚æ•°
                 header['X_Requested_With'] = 'XMLHttpRequest';
             });
 
@@ -785,7 +788,7 @@
     };
 
 
-    /* ÔÚÏßÍ¼Æ¬ */
+    /* åœ¨çº¿å›¾ç‰‡ */
     function OnlineImage(target) {
         this.container = utils.isString(target) ? document.getElementById(target) : target;
         this.init();
@@ -795,7 +798,7 @@
             this.reset();
             this.initEvents();
         },
-        /* ³õÊ¼»¯ÈİÆ÷ */
+        /* åˆå§‹åŒ–å®¹å™¨ */
         initContainer: function () {
             this.container.innerHTML = '';
             this.list = document.createElement('ul');
@@ -807,18 +810,18 @@
             this.list.appendChild(this.clearFloat);
             this.container.appendChild(this.list);
         },
-        /* ³õÊ¼»¯¹ö¶¯ÊÂ¼ş,¹ö¶¯µ½µØ²½×Ô¶¯À­È¡Êı¾İ */
+        /* åˆå§‹åŒ–æ»šåŠ¨äº‹ä»¶,æ»šåŠ¨åˆ°åœ°æ­¥è‡ªåŠ¨æ‹‰å–æ•°æ® */
         initEvents: function () {
             var _this = this;
 
-            /* ¹ö¶¯À­È¡Í¼Æ¬ */
+            /* æ»šåŠ¨æ‹‰å–å›¾ç‰‡ */
             domUtils.on($G('imageList'), 'scroll', function(e){
                 var panel = this;
                 if (panel.scrollHeight - (panel.offsetHeight + panel.scrollTop) < 10) {
                     _this.getImageData();
                 }
             });
-            /* Ñ¡ÖĞÍ¼Æ¬ */
+            /* é€‰ä¸­å›¾ç‰‡ */
             domUtils.on(this.container, 'click', function (e) {
                 var target = e.target || e.srcElement,
                     li = target.parentNode;
@@ -832,24 +835,24 @@
                 }
             });
         },
-        /* ³õÊ¼»¯µÚÒ»´ÎµÄÊı¾İ */
+        /* åˆå§‹åŒ–ç¬¬ä¸€æ¬¡çš„æ•°æ® */
         initData: function () {
 
-            /* À­È¡Êı¾İĞèÒªÊ¹ÓÃµÄÖµ */
+            /* æ‹‰å–æ•°æ®éœ€è¦ä½¿ç”¨çš„å€¼ */
             this.state = 0;
             this.listSize = editor.getOpt('imageManagerListSize');
             this.listIndex = 0;
             this.listEnd = false;
 
-            /* µÚÒ»´ÎÀ­È¡Êı¾İ */
+            /* ç¬¬ä¸€æ¬¡æ‹‰å–æ•°æ® */
             this.getImageData();
         },
-        /* ÖØÖÃ½çÃæ */
+        /* é‡ç½®ç•Œé¢ */
         reset: function() {
             this.initContainer();
             this.initData();
         },
-        /* ÏòºóÌ¨À­È¡Í¼Æ¬ÁĞ±íÊı¾İ */
+        /* å‘åå°æ‹‰å–å›¾ç‰‡åˆ—è¡¨æ•°æ® */
         getImageData: function () {
             var _this = this;
 
@@ -892,7 +895,7 @@
                 });
             }
         },
-        /* Ìí¼ÓÍ¼Æ¬µ½ÁĞ±í½çÃæÉÏ */
+        /* æ·»åŠ å›¾ç‰‡åˆ°åˆ—è¡¨ç•Œé¢ä¸Š */
         pushData: function (list) {
             var i, item, img, icon, _this = this,
                 urlPrefix = editor.getOpt('imageManagerUrlPrefix');
@@ -918,7 +921,7 @@
                 }
             }
         },
-        /* ¸Ä±äÍ¼Æ¬´óĞ¡ */
+        /* æ”¹å˜å›¾ç‰‡å¤§å° */
         scale: function (img, w, h, type) {
             var ow = img.width,
                 oh = img.height;
@@ -964,7 +967,7 @@
         }
     };
 
-    /*ËÑË÷Í¼Æ¬ */
+    /*æœç´¢å›¾ç‰‡ */
     function SearchImage() {
         this.init();
     }
@@ -975,27 +978,27 @@
         initEvents: function(){
             var _this = this;
 
-            /* µã»÷ËÑË÷°´Å¥ */
+            /* ç‚¹å‡»æœç´¢æŒ‰é’® */
             domUtils.on($G('searchBtn'), 'click', function(){
                 var key = $G('searchTxt').value;
                 if(key && key != lang.searchRemind) {
                     _this.getImageData();
                 }
             });
-            /* µã»÷Çå³ıæ¤ */
+            /* ç‚¹å‡»æ¸…é™¤å¦ */
             domUtils.on($G('searchReset'), 'click', function(){
                 $G('searchTxt').value = lang.searchRemind;
                 $G('searchListUl').innerHTML = '';
                 $G('searchType').selectedIndex = 0;
             });
-            /* ËÑË÷¿ò¾Û½¹ */
+            /* æœç´¢æ¡†èšç„¦ */
             domUtils.on($G('searchTxt'), 'focus', function(){
                 var key = $G('searchTxt').value;
                 if(key && key == lang.searchRemind) {
                     $G('searchTxt').value = '';
                 }
             });
-            /* ËÑË÷¿ò»Ø³µ¼üËÑË÷ */
+            /* æœç´¢æ¡†å›è½¦é”®æœç´¢ */
             domUtils.on($G('searchTxt'), 'keydown', function(e){
                 var keyCode = e.keyCode || e.which;
                 if (keyCode == 13) {
@@ -1003,7 +1006,7 @@
                 }
             });
 
-            /* Ñ¡ÖĞÍ¼Æ¬ */
+            /* é€‰ä¸­å›¾ç‰‡ */
             domUtils.on($G('searchList'), 'click', function(e){
                 var target = e.target || e.srcElement,
                     li = target.parentNode.parentNode;
@@ -1035,7 +1038,7 @@
             }
             return strOut;
         },
-        /* ¸Ä±äÍ¼Æ¬´óĞ¡ */
+        /* æ”¹å˜å›¾ç‰‡å¤§å° */
         scale: function (img, w, h) {
             var ow = img.width,
                 oh = img.height;
@@ -1081,7 +1084,7 @@
                 }
             });
         },
-        /* Ìí¼ÓÍ¼Æ¬µ½ÁĞ±í½çÃæÉÏ */
+        /* æ·»åŠ å›¾ç‰‡åˆ°åˆ—è¡¨ç•Œé¢ä¸Š */
         setList: function (list) {
             var i, item, p, img, link, _this = this,
                 listUl = $G('searchListUl');

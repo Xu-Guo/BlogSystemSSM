@@ -3,7 +3,7 @@
 <html>
 <head>
     <title></title>
-    <meta http-equiv="Content-Type" content="text/html;charset=gbk"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <script type="text/javascript" src="../internal.js"></script>
     <style type="text/css">
         *{margin:0;padding:0;color: #838383;}
@@ -81,8 +81,8 @@
                 'title' : $G("title").value.replace(/^\s+|\s+$/g, ''),
                 '_href':href
             };
-            //ĞŞ¸ÄÁ´½ÓÄÚÈİµÄÇé¿öÌ«ÌØÊâÁË£¬ËùÒÔÏÈ×öµ½ÕâÀïÁË
-            //todo:Çé¿ö¶àµÄÊ±ºò£¬×öµ½commandÀï
+            //ä¿®æ”¹é“¾æ¥å†…å®¹çš„æƒ…å†µå¤ªç‰¹æ®Šäº†ï¼Œæ‰€ä»¥å…ˆåšåˆ°è¿™é‡Œäº†
+            //todo:æƒ…å†µå¤šçš„æ—¶å€™ï¼Œåšåˆ°commandé‡Œ
             if(orgText && text.value != orgText){
                 link[browser.ie ? 'innerText' : 'textContent'] =  obj.textValue = text.value;
                 range.selectNode(link).select()
