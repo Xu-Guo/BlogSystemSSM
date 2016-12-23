@@ -12,10 +12,12 @@ import org.springframework.context.annotation.ImportResource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.xuguo.entity.Blog;
 import com.xuguo.entity.Comment;
+import com.xuguo.lucene.BlogIndex;
 import com.xuguo.service.BlogService;
 import com.xuguo.service.CommentService;
 import com.xuguo.util.StringUtil;
@@ -34,6 +36,9 @@ public class BlogController {
 	
 	@Resource
 	private CommentService commentService;
+	
+	
+	private BlogIndex blogIndex=new BlogIndex();
 	
 	
 	/**
@@ -96,4 +101,38 @@ public class BlogController {
 		}
 		return pageCode.toString();
 	}
+	
+	
+	/**
+	 * search blog by keyword
+	 * @param q
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping("/q")
+	public ModelAndView search(@RequestParam(value="q", required=false) String q)throws Exception{
+		
+		ModelAndView modelAndView = new ModelAndView();
+		
+		modelAndView.addObject("pageTitle", "result page of searching the keyword'" + q + "'");
+		modelAndView.addObject("mainPage", "foreground/blog/result.jsp");
+		List<Blog> blogList = blogIndex.searchBlog(q);
+		modelAndView.addObject("blogList", blogList);
+		modelAndView.addObject("q",q);
+		modelAndView.addObject("resultTotal",blogList.size());
+		modelAndView.setViewName("mainTemp");
+		
+		return modelAndView;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
