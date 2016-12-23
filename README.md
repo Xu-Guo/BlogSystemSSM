@@ -19,8 +19,5 @@ Spring:
 Power application framework implements inversion of control container and aop for the Java platform. Spring helps store and manage Java beans and transfors the controll from programmer to the framework itself. With aop, those application which handles large amount of object are also easily handled by the framework.
 
 MyBatis:
-At the same layer with Hibernate, the difference between then is that Mybatis matches customized requiements more than Hibernate. 
-
-*  Customized SQL and help increase the efficiency of accessing database.
-*  Manage SQL with xml, easy for debug and optimize.
+At the same layer with Hibernate, the difference between then is that Mybatis matches customized requiements more than Hibernate. Customized SQL and help increase the efficiency of accessing database.Manage SQL with xml, easy for debug and optimize.
 
