@@ -1,5 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<script type="text/javascript">
+	
+	function checkData(){
+		var q=document.getElementById("q").value.trim();
+		if(q==null || q==""){
+			alert("请输入您要查询的关键字！");
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+</script>
 <div class="row" style="padding-top:20px;">
 	<div class="col-md-12">
 		<nav class="navbar navbar-default" role="navigation" >
@@ -21,9 +34,9 @@
 		        <li ><a href="${pageContext.request.contextPath}/blogger/aboutMe.html"><font color="black"><strong>Author</strong></font></a></li>
 		        <li ><a href="${pageContext.request.contextPath}/download.html"><font color="black"><strong>Source Code</strong></font></a></li>
 		      </ul>
-		      <form class="navbar-form navbar-right" role="search">
+		      <form action="${pageContext.request.contextPath}/blog/q.html" class="navbar-form navbar-right" role="search" method="post" onsubmit="return checkData()">
 		        <div class="form-group">
-		          <input type="text" class="form-control" placeholder="Search">
+		          <input type="text" id="q" name="q" value="${q}" class="form-control" placeholder="Search">
 		        </div>
 		        <button type="submit" class="btn btn-default">Search</button>
 		      </form>
