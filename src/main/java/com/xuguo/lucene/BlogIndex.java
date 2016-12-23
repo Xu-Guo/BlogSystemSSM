@@ -7,8 +7,7 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
-
-
+import org.apache.commons.lang.StringEscapeUtils;
 import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.cn.smart.SmartChineseAnalyzer;
 import org.apache.lucene.document.Document;
@@ -112,7 +111,8 @@ public class BlogIndex {
 			blog.setId(Integer.parseInt(document.get("id")));
 			blog.setReleaseDateStr(document.get("releaseDate"));
 			String title = document.get("title");
-			String content = document.get("content");
+			//filter html content in string
+			String content = StringEscapeUtils.escapeHtml(document.get("content"));
 			if(title!=null){
 				TokenStream tokenStream=analyzer.tokenStream("title", new StringReader(title));
 				String hTitle = highlighter.getBestFragment(tokenStream, title);
