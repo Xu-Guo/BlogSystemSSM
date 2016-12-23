@@ -14,14 +14,42 @@
 	function formatTitle(val,row){
 		return "<a target='_blank' href='${pageContext.request.contextPath}/blog/articles/"+row.id+".html'>"+val+"</a>";
 	}
+	
 	function formatBlogType(val,row){
 		return val.typeName;
 	}
+	
 	function searchBlog(){
 		$("#dg").datagrid('load',{
 			"title":$("#s_title").val()			
 		});
 	}
+	
+	function deleteBlog(){
+		var selectedRows = $("#dg").datagrid("getSelections");
+		if(selectedRows.length==0){
+			$.messager.alert("System","Please select records to delete.");
+			return;
+		}
+		var strIds=[];
+		for(var i = 0; i<selectedRows.length; i++){
+			strIds.push(selectedRows[i].id);
+		}
+		var ids=strIds.join(",");
+		$.messager.confirm("System","Please confirm to delete <font color=red>"+selectedRows.length+"</font> records.", function(r){
+			if(r){
+				$.post("${pageContext.request.contextPath}/admin/blog/delete.do", {ids:ids}, function(result){
+					if(result.success){
+						$.messager.alert("System","Records deleted!");
+						$("#dg").datagrid("reload");
+					}else{
+						$$.messager.alert("System","Delete records failed!");
+					}
+				}, "json")
+			}
+		});
+	}
+	
 </script>
 </head>
 <body style="margin : 1px">
@@ -32,12 +60,16 @@
 			<th field="cd" checkbox="true" align="center"></th>
 			<th field="id" width="20" align="center">ID</th>
 			<th field="title" width="200" align="center" formatter="formatTitle">Title</th>
-			<th field="releaseDate" width="50" align="center">Publish date</th>
+			<th field="releaseDate" width="50" align="center">Publish Date</th>
 			<th field="blogType" width="50" align="center" formatter="formatBlogType">Blog Type</th>
 		</tr>
 	</thead>
 </table>
 <div id="tb">
+	<div>
+		<a href="javascript:openBlogModifyTab()" class="easyui-linkbutton" iconCls="icon-edit" plain="true">Edit</a>
+		<a href="javascript:deleteBlog()" class="easyui-linkbutton" iconCls="icon-remove" plain="true">Delete</a>
+	</div>
 	<div>
 		&nbsp;Title&nbsp;<input type="text" id="s_title" size="20" onkeydown="if(event.keyCode==13) searchBlog()"/>
 		<a href="javascript:searchBlog()" class="easyui-linkbutton" iconCls="icon-search" plain="true">Search</a>

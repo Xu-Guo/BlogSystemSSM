@@ -18,6 +18,7 @@ import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
+import org.apache.lucene.index.Term;
 import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.BooleanClause;
 import org.apache.lucene.search.BooleanQuery;
@@ -77,8 +78,24 @@ public class BlogIndex {
 	
 	
 	/**
+	 * delete lucene index of a particular blog or blogs
+	 * @param blogId
+	 * @throws Exception
+	 */
+	public void deleteIndex(String blogId)throws Exception{
+		IndexWriter writer = getWriter();
+		writer.deleteDocuments(new Term("id", blogId));
+		writer.forceMergeDeletes();//force delete at once
+		writer.commit();
+		writer.close();
+	}
+	
+	
+	
+	
+	/**
 	 * search blog using lucene
-	 * @param q
+	 * @param q : String to search
 	 * @return
 	 * @throws Exception
 	 */

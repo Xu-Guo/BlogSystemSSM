@@ -24,32 +24,32 @@ public class BlogServiceImpl implements BlogService{
 	private BlogDao blogDao;
 
 	public List<Blog> countList() {
-		// TODO Auto-generated method stub
+
 		return blogDao.countList();
 	}
 
 	public List<Blog> list(Map<String, Object> map) {
-		// TODO Auto-generated method stub
+
 		return blogDao.list(map);
 	}
 
 	public Long getTotal(Map<String, Object> map) {
-		// TODO Auto-generated method stub
+
 		return blogDao.getTotal(map);
 	}
 
 	public Blog findById(Integer id) {
-		// TODO Auto-generated method stub
+
 		return blogDao.findById(id);
 	}
 
 	public Integer update(Blog blog) {
-		// TODO Auto-generated method stub
+
 		return blogDao.update(blog);
 	}
 
 	public Blog getLastBlog(Integer id) {
-		// TODO Auto-generated method stub
+
 		return blogDao.getLastBlog(id);
 	}
 
@@ -59,8 +59,14 @@ public class BlogServiceImpl implements BlogService{
 	}
 
 	public Integer add(Blog blog) {
-		// TODO Auto-generated method stub
+
 		return blogDao.add(blog);
+	}
+
+	@Override
+	public Integer delete(Integer id) {
+
+		return blogDao.delete(id);
 	}
 
 

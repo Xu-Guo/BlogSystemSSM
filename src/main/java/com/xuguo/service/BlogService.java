@@ -70,4 +70,12 @@ public interface BlogService {
 	 * @return
 	 */
 	public Integer add(Blog blog);
+	
+	
+	/**
+	 * Delete blog
+	 * @param id
+	 * @return
+	 */
+	public Integer delete(Integer id);
 }

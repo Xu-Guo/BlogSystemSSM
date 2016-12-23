@@ -70,4 +70,11 @@ public interface BlogDao {
 	 * @return
 	 */
 	public Integer add(Blog blog);
+	
+	/**
+	 * Delete blog
+	 * @param id
+	 * @return
+	 */
+	public Integer delete(Integer id);
 }
