@@ -56,7 +56,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where id=#{id}
 	</update>
 
-	
+	<delete id="delete" parameterType="Integer">
+		delete from t_comment where id=#{id}
+	</delete>
 	
 		
 </mapper> 

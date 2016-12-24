@@ -41,4 +41,11 @@ public interface CommentService {
 	 * @return
 	 */
 	public int update(Comment comment);
+	
+	/**
+	 * delete comment
+	 * @param id
+	 * @return
+	 */
+	public Integer delete(Integer id);
 }

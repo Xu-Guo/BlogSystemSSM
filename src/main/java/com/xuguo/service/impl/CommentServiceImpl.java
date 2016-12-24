@@ -53,4 +53,9 @@ public class CommentServiceImpl implements CommentService{
 		return commentDao.update(comment);
 	}
 
+	@Override
+	public Integer delete(Integer id) {
+		return commentDao.delete(id);
+	}
+
 }
