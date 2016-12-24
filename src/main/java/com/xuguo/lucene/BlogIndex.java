@@ -90,6 +90,21 @@ public class BlogIndex {
 		writer.close();
 	}
 	
+	/**
+	 * 
+	 * @param blog
+	 * @throws Exception
+	 */
+	public void updateIndex(Blog blog)throws Exception{
+		IndexWriter writer = getWriter();
+		Document document = new Document();
+		document.add(new StringField("id", String.valueOf(blog.getId()), Field.Store.YES));
+		document.add(new TextField("title",blog.getTitle(),Field.Store.YES));
+		document.add(new StringField("releaseDate", DateUtil.formatDate(new Date(), "yyyy-MM-dd"), Field.Store.YES));
+		document.add(new TextField("content", blog.getContentNoTag(),Field.Store.YES));
+		writer.updateDocument(new Term("id",String.valueOf(blog.getId())), document);
+		writer.close();
+	}
 	
 	
 	
