@@ -1,7 +1,8 @@
 package com.xuguo.service.impl;
 
 
-import java.util.List; 
+import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -25,9 +26,21 @@ public class BlogTypeServiceImpl implements BlogTypeService{
 	private BlogTypeDao blogTypeDao;
 
 
-	public List<BlogType> countList() {
-		// TODO Auto-generated method stub
-		
+	public List<BlogType> countList(){
 		return blogTypeDao.countList();
+	}
+
+
+	@Override
+	public List<BlogType> list(Map<String, Object> map) {
+
+		return blogTypeDao.list(map);
+	}
+
+
+	@Override
+	public Long getTotal(Map<String, Object> map) {
+
+		return blogTypeDao.getTotal(map);
 	}
 }
