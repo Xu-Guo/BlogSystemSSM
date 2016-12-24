@@ -27,4 +27,18 @@ public interface CommentService {
 	 * @return
 	 */
 	public int add(Comment comment);
+	
+	/**
+	 * get total number of comments
+	 * @param map
+	 * @return
+	 */
+	public Long getTotal(Map<String, Object> map);
+	
+	/**
+	 * Edit comments
+	 * @param comment
+	 * @return
+	 */
+	public int update(Comment comment);
 }

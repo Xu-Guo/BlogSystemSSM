@@ -64,7 +64,7 @@
 			<a href="javascript:openTab('Manage Blog Type','blogTypeManage.jsp','icon-bklb')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-bklb'" style="width: 150px;">Manage Blog Type</a>
 		</div>
 		<div title="Manage Comments"  data-options="iconCls:'icon-plgl'" style="padding:10px">
-			<a href="javascript:openTab('View Comments','commentReview.jsp','icon-review')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-review'" style="width: 150px">View Comments</a>
+			<a href="javascript:openTab('View Comments','commentReview.jsp','icon-review')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-review'" style="width: 150px">Review Comments</a>
 			<a href="javascript:openTab('Manage Comments','commentManage.jsp','icon-plgl')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-plgl'" style="width: 150px;">Manage Comments</a>
 		</div>
 		<div title="Manage User Information"  data-options="iconCls:'icon-grxx'" style="padding:10px">

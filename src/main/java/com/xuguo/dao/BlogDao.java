@@ -28,7 +28,7 @@ public interface BlogDao {
 	
 	
 	/**
-	 * get total number of pages
+	 * get total number of blogs
 	 * @param map
 	 * @return
 	 */

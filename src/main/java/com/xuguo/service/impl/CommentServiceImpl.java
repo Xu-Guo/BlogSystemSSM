@@ -43,4 +43,14 @@ public class CommentServiceImpl implements CommentService{
 		return commentDao.add(comment);
 	}
 
+	@Override
+	public Long getTotal(Map<String, Object> map) {
+		return commentDao.getTotal(map);
+	}
+
+	@Override
+	public int update(Comment comment) {		
+		return commentDao.update(comment);
+	}
+
 }

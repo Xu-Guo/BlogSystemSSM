@@ -84,10 +84,6 @@ public class BlogAdminController {
 		map.put("start", pageBean.getStart());
 		map.put("size", pageBean.getPageSize());
 		List<Blog> blogList = blogService.list(map);
-		System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%"+blogList.size() +"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
-		for (Blog blog : blogList) {
-			System.out.println(blog.getTitle());
-		}
 		Long total = blogService.getTotal(map);
 		JSONObject result = new JSONObject();
 		JsonConfig jsonConfig = new JsonConfig();

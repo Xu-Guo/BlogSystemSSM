@@ -22,6 +22,7 @@
     	}else{
     		$.post("${pageContext.request.contextPath}/comment/save.do",{"content":content,'imageCode':imageCode,'blog.id':'${blog.id}'},function(result){
     			if(result.success){
+    				window.location.reload();
     				alert("Comment submit success and will be displayed when pass the check!");
     			}else{
     				alert(result.errorInfo);
