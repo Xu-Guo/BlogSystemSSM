@@ -53,7 +53,7 @@
 	function openBlogModifyTab(){
 		var selectedRows = $("#dg").datagrid("getSelections");
 		if(selectedRows.length!=1){
-			$.messager.alert("System","Please select one record to Edit!");
+			$.messager.alert("System","Please select one record to edit!");
 			return;
 		}
 		var row = selectedRows[0];

@@ -105,5 +105,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</delete>
 	
 	
+	<select id="getBlogCountByTypeId" parameterType="Integer" resultType="Integer">
+		select count(*) from t_blog where typeId=#{typeId}
+	</select>
+	
 		
 </mapper> 

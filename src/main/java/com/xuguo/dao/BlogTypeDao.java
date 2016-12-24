@@ -39,4 +39,28 @@ public interface BlogTypeDao {
 	 * @return
 	 */
 	public Long getTotal(Map<String, Object> map);
+	
+	
+	/**
+	 * add blogType
+	 * @param blogType
+	 * @return
+	 */
+	public Integer add(BlogType blogType);
+	
+	
+	/**
+	 * edit blogType
+	 * @param blogType
+	 * @return
+	 */
+	public Integer update(BlogType blogType);
+	
+	
+	/**
+	 * delete blogType
+	 * @param id
+	 * @return
+	 */
+	public Integer delete(Integer id);
 }

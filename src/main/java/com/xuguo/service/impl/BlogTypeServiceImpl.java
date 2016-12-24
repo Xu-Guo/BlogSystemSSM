@@ -43,4 +43,25 @@ public class BlogTypeServiceImpl implements BlogTypeService{
 
 		return blogTypeDao.getTotal(map);
 	}
+
+
+	@Override
+	public Integer add(BlogType blogType) {
+		
+		return blogTypeDao.add(blogType);
+	}
+
+
+	@Override
+	public Integer update(BlogType blogType) {
+		
+		return blogTypeDao.update(blogType);
+	}
+
+
+	@Override
+	public Integer delete(Integer id) {
+		
+		return blogTypeDao.delete(id);
+	}
 }

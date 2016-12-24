@@ -38,6 +38,13 @@ public class BlogAdminController {
 	
 	private BlogIndex blogIndex = new BlogIndex();
 	
+	/**
+	 * add/update blog information
+	 * @param blog
+	 * @param response
+	 * @return
+	 * @throws Exception
+	 */
 	@RequestMapping("/save")
 	public String save(Blog blog, HttpServletResponse response) throws Exception{
 		int resultTotal = 0;

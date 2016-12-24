@@ -54,7 +54,7 @@ public class BlogServiceImpl implements BlogService{
 	}
 
 	public Blog getNextBlog(Integer id) {
-		// TODO Auto-generated method stub
+
 		return blogDao.getNextBlog(id);
 	}
 
@@ -67,6 +67,11 @@ public class BlogServiceImpl implements BlogService{
 	public Integer delete(Integer id) {
 
 		return blogDao.delete(id);
+	}
+
+	@Override
+	public Integer getBlogCountByTypeId(Integer typeId) {
+		return blogDao.getBlogCountByTypeId(typeId);
 	}
 
 
