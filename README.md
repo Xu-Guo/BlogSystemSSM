@@ -46,14 +46,11 @@ Install steps:
 3. Right click on the project and select ->Run as-> Maven install. Maven will help download all the dependencies, check the pom.xml to learn more. If IDE couldn't find the complier, the problem can be fixed by: Clicking->Project->properties->Java Build Path->Libraries -> add library->JRE System library[JavaSE 1.8]->Apply ->OK.
 4. Add Tomcat 8.5 server and add your application named BlogSystemSSM to the server.
 5. Find the server on the project panel, go to server.xml change the path="/", so that you can use localhost:8080 as your root url.
-
 ```
 <Context docBase="BlogSystemSSM" path="/" reloadable="true" source="org.eclipse.jst.jee.server:BlogSystemSSM"/>
 ```
 
-6. Create a new MySQL database name it db_blog, and use useful.sql to create tables and import test data. SQL will be uploaded later.
-7. Configure dataSource with Spring applicationContext.xml file
-
+6. Create a new MySQL database name it db_blog, and use useful.sql to create tables and import test data. SQL will be uploaded later. Configure dataSource with Spring applicationContext.xml file
 ```
 <!-- config dataSource -->
 <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
