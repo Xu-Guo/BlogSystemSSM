@@ -63,6 +63,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="update" parameterType="Blog">
 		update t_blog
 		<set>
+			<if test="title!=null and title!=''">
+				title=#{title},
+			</if>
+			<if test="summary!=null and summary!=''">
+				summary=#{summary},
+			</if>
+			<if test="content!=null and content!=''">
+				content=#{content},
+			</if>
+			<if test="keyWord!=null and keyWord!=''">
+				keyWord=#{keyWord},
+			</if>
+			<if test="blogType.id!=null">
+				typeId=#{blogType.id},
+			</if>
 			<if test="clickHit!=null">
 				clickHit=#{clickHit},
 			</if>
@@ -89,6 +104,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		delete from t_blog where id=#{id}
 	</delete>
 	
+	
+	<select id="getBlogCountByTypeId" parameterType="Integer" resultType="Integer">
+		select count(*) from t_blog where typeId=#{typeId}
+	</select>
 	
 		
 </mapper> 

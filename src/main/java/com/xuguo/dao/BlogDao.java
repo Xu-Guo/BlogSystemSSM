@@ -28,7 +28,7 @@ public interface BlogDao {
 	
 	
 	/**
-	 * get total number of pages
+	 * get total number of blogs
 	 * @param map
 	 * @return
 	 */
@@ -77,4 +77,12 @@ public interface BlogDao {
 	 * @return
 	 */
 	public Integer delete(Integer id);
+	
+	
+	/**
+	 * get numbers of blogs under given blog typeId
+	 * @param typeId
+	 * @return
+	 */
+	public Integer getBlogCountByTypeId(Integer typeId);
 }

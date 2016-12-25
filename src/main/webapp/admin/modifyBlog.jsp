@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Write New Blog</title>
+<title>Edit Blog</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/jquery-easyui-1.3.3/themes/default/easyui.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/jquery-easyui-1.3.3/themes/icon.css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/jquery-easyui-1.3.3/jquery.min.js"></script>
@@ -19,53 +19,43 @@
 <script type="text/javascript" charset="gbk" src="${pageContext.request.contextPath}/static/ueditor/lang/en/en.js"></script>
 
 <script type="text/javascript">
-
+	
 	function submitData(){
 		var title=$("#title").val();
-		var blogTypeId=$("#blogTypeId").combobox("getValue");
-		var content=UE.getEditor('editor').getContent();
+		var blogTypeId=$("#blogTypeId").combobox("getValue")
+		var content=UE.getEditor('editor').getContent()
 		var keyWord=$("#keyWord").val();
 		
-		if(title==null || title == ''){
+		if(title==null || title==''){
 			alert("Please input title!");
-		}else if(blogTypeId==null || blogTypeId=='' ){
+		}else if(blogTypeId==null || blogTypeId==''){
 			alert("Please select a blog type!");
-		}else if(content == null || content == ''){
+		}else if(content==null || content==''){
 			alert("Please write some content!");
 		}else{
-			$.post("${pageContext.request.contextPath}/admin/blog/save.do",{
-			'title':title,
-			'blogType.id':blogTypeId,
-			'contentNoTag':UE.getEditor('editor').getContentTxt(),
-			'content':content,
-			'summary':UE.getEditor('editor').getContentTxt().substr(0,155),
-			'keyWord':keyWord},
-			function(result){
+			$.post("${pageContext.request.contextPath}/admin/blog/save.do",{'id':'${param.id}','title':title,'blogType.id':blogTypeId,
+				'contentNoTag':UE.getEditor('editor').getContentTxt(),
+				'content':content,'summary':UE.getEditor('editor').getContentTxt().substr(0,155),'keyWord':keyWord},function(result){
 				if(result.success){
-					alert("Publish blog success!");
+					alert("Edit blog success!");
 				}else{
-					alert("Publish blog failed!");
-					resultValue();
+					alert("Edit blog failed!");
 				}
-				},"json");
+			},"json");
 		}
 	}
 	
-	function resultValue(){
-		$("#title").val("");
-		$("#blogTypeId").combobox("setValue","");
-		UE.getEditor('editor').setContent('');
-		$("#keyWord").val("");
-	}
+
 </script>
 </head>
 <body style="margin: 10px">
-<div id="p" class="easyui-panel" title="New Blog" style="padding: 10px">
+
+<div id="p" class="easyui-panel" title="Edit Blog" style="padding: 10px">
 	<table cellspacing="20px">
 		<tr>
 			<td width="80px">Blog Title:</td>
 			<td>
-				<input type="text" id="title" name="title" style="width:400px"/>	
+				<input type="text" id="title" name="title" style="width: 400px"/>
 			</td>
 		</tr>
 		<tr>
@@ -73,15 +63,11 @@
 			<td>
 				<select class="easyui-combobox" style="width: 154px" id="blogTypeId" name="blogType.id" editable="false" panelHeight="auto">
 					<option value="">Please select a blog type...</option>
-					<c:forEach var="blogType" items="${blogTypeCountList}">
-						<option value="${blogType.id}">${blogType.typeName}</option>
+					<c:forEach var="blogType" items="${blogTypeCountList }">
+						<option value="${blogType.id }">${blogType.typeName }</option>
 					</c:forEach>
 				</select>
 			</td>
-		</tr>
-		<tr>
-			<td></td>
-			<td></td>
 		</tr>
 		<tr>
 			<td valign="top">Content:</td>
@@ -104,9 +90,29 @@
 	</table>
 </div>
 
+<!-- instance uedit -->
 <script type="text/javascript">
     var ue = UE.getEditor('editor');
+    
+    ue.addListener("ready",function(){
+    	// ajax request data
+    	UE.ajax.request("${pageContext.request.contextPath}/admin/blog/findById.do",
+			{
+				method:"post",
+				async:false,
+				data:{"id":"${param.id}"},
+				onsuccess:function(result){
+					result=eval("("+result.responseText+")");
+					$("#title").val(result.title);
+					$("#keyWord").val(result.keyWord);
+					$("#blogTypeId").combobox("setValue",result.blogType.id);
+					UE.getEditor('editor').setContent(result.content);
+				}
+			});
+    });
 </script>
+
+
 
 </body>
 </html>

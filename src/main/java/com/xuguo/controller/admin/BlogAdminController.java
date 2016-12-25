@@ -38,15 +38,22 @@ public class BlogAdminController {
 	
 	private BlogIndex blogIndex = new BlogIndex();
 	
+	/**
+	 * add/update blog information
+	 * @param blog
+	 * @param response
+	 * @return
+	 * @throws Exception
+	 */
 	@RequestMapping("/save")
 	public String save(Blog blog, HttpServletResponse response) throws Exception{
 		int resultTotal = 0;
 		if(blog.getId()==null){
 			resultTotal = blogService.add(blog);
-			blogIndex.addIndex(blog);
-			
+			blogIndex.addIndex(blog);			
 		}else{
-			
+			resultTotal = blogService.update(blog);
+			blogIndex.updateIndex(blog);
 		}
 		
 		JSONObject result = new JSONObject();
@@ -77,10 +84,6 @@ public class BlogAdminController {
 		map.put("start", pageBean.getStart());
 		map.put("size", pageBean.getPageSize());
 		List<Blog> blogList = blogService.list(map);
-		System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%"+blogList.size() +"&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
-		for (Blog blog : blogList) {
-			System.out.println(blog.getTitle());
-		}
 		Long total = blogService.getTotal(map);
 		JSONObject result = new JSONObject();
 		JsonConfig jsonConfig = new JsonConfig();
@@ -109,6 +112,21 @@ public class BlogAdminController {
 		}
 		JSONObject result = new JSONObject();
 		result.put("success", true);
+		ResponseUtil.write(response, result);
+		return null;
+	}
+	
+	/**
+	 * get blog entity by Id
+	 * @param id
+	 * @param response
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping("/findById")
+	public String findById(@RequestParam(value="id")String id, HttpServletResponse response)throws Exception{
+		Blog blog = blogService.findById(Integer.parseInt(id));
+		JSONObject result = JSONObject.fromObject(blog);
 		ResponseUtil.write(response, result);
 		return null;
 	}

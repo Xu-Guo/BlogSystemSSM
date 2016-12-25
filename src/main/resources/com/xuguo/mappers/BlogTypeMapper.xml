@@ -19,4 +19,36 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from t_blogType where id=#{id}
 	</select>
 	
+	<select id="list" parameterType="Map" resultMap="BlogTypeResult">
+		select * from t_blogType
+		<if test="start!=null and size!=null">
+			limit #{start},#{size}
+		</if>
+	</select>
+	
+	<select id="getTotal" parameterType="Map" resultType="Long">
+		select count(*) from t_blogType
+	</select>
+	
+	<insert id="add" parameterType="BlogType" >
+		insert into t_blogType values(null, #{typeName}, #{orderNo})
+	</insert>
+	
+	<update id="update" parameterType="BlogType">
+		update t_blogType
+		<set>
+			<if test="typeName!=null and typeName!=''">
+				typeName=#{typeName},
+			</if>
+			<if test="orderNo!=null">
+				orderNo=#{orderNo},
+			</if>
+		</set>
+		where id=#{id}
+	</update>
+	
+	<delete id="delete" parameterType="Integer">
+		delete from t_blogType where id=#{id}
+	</delete>
+	
 </mapper> 

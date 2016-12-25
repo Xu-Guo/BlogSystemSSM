@@ -50,6 +50,17 @@
 		});
 	}
 	
+	function openBlogModifyTab(){
+		var selectedRows = $("#dg").datagrid("getSelections");
+		if(selectedRows.length!=1){
+			$.messager.alert("System","Please select one record to edit!");
+			return;
+		}
+		var row = selectedRows[0];
+		window.parent.openTab('Edit Blog', 'modifyBlog.jsp?id='+row.id,'icon-writeblog');
+	}
+	
+	
 </script>
 </head>
 <body style="margin : 1px">

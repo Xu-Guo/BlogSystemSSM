@@ -12,19 +12,81 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/jquery-easyui-1.3.3/locale/easyui-lang-zh_CN.js"></script>
 <script type="text/javascript">
 
-	function openTab(text,url,iconCls){
-		if($("#tabs").tabs("exists",text)){
-			$("#tabs").tabs("select",text);
-		}else{
-			var content="<iframe frameborder=0 scrolling='auto' style='width:100%;height:100%' src='/admin/"+url+"'></iframe>";
-			$("#tabs").tabs("add",{
-				title:text,
-				iconCls:iconCls,
-				closable:true,
-				content:content
-			});
-		}
+function openTab(text,url,iconCls){
+	if($("#tabs").tabs("exists",text)){
+		$("#tabs").tabs("select",text);
+	}else{
+		var content="<iframe frameborder=0 scrolling='auto' style='width:100%;height:100%' src='/admin/"+url+"'></iframe>";
+		$("#tabs").tabs("add",{
+			title:text,
+			iconCls:iconCls,
+			closable:true,
+			content:content
+		});
 	}
+}
+
+function openPasswordModifyDialog(){
+	$("#dlg").dialog("open").dialog("setTitle","Change Password");
+	url="${pageContext.request.contextPath}/admin/blogger/modifyPassword.do";
+}
+
+function modifyPassword(){
+	$("#fm").form("submit",{
+		url:url,
+		onSubmit:function(){
+			var newPassword=$("#newPassword").val();
+			var newPassword2=$("#newPassword2").val();
+			if(!$(this).form("validate")){
+				return false;
+			}
+			if(newPassword!=newPassword2){
+				$.messager.alert("System","New password not match!");
+				return false;
+			}
+			return true;
+		},
+		success:function(result){
+			var result=eval('('+result+')');
+			if(result.success){
+				$.messager.alert("System","Password changed!");
+				resetValue();
+				$("#dlg").dialog("close");
+			}else{
+				$.messager.alert("System","Change password failed!");
+				return;
+			}
+		}
+	});
+}
+
+function closePasswordModifyDialog(){
+	resetValue();
+	$("#dlg").dialog("close");
+}
+
+function resetValue(){
+	$("#newPassword").val("");
+	$("#newPassword2").val("");
+}
+
+function refreshSystem(){
+	$.post("${pageContext.request.contextPath}/admin/system/refreshSystem.do",{},function(result){
+		if(result.success){
+			$.messager.alert("System", "System cache refreshed!");
+		}else{
+			$.messager.alert("System", "Refresh system cache failed!");
+		}
+	},"json");
+}
+
+function logout(){
+	$.messager.confirm("System", "Please confirm to logout from system!", function(r){
+		if(r){
+			window.location.href="${pageContext.request.contextPath}/admin/blogger/logout.do";
+		}
+	});
+}
 
 </script>
 </head>
@@ -52,7 +114,7 @@
 
 <div region="west" style="width: 200px" title="Menu" split="true">
 	<div class="easyui-accordion" data-options="fit:true,border:false">
-		<div title="Common operations" data-options="selected:true,iconCls:'icon-item'" style="padding: 10px">
+		<div title="Common Operations" data-options="selected:true,iconCls:'icon-item'" style="padding: 10px">
 			<a href="javascript:openTab('New Blog','writeBlog.jsp','icon-writeblog')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-writeblog'" style="width: 150px">New Blog</a>
 			<a href="javascript:openTab('View comments','commentReview.jsp','icon-review')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-review'" style="width: 150px">View comments</a>
 		</div>
@@ -64,7 +126,7 @@
 			<a href="javascript:openTab('Manage Blog Type','blogTypeManage.jsp','icon-bklb')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-bklb'" style="width: 150px;">Manage Blog Type</a>
 		</div>
 		<div title="Manage Comments"  data-options="iconCls:'icon-plgl'" style="padding:10px">
-			<a href="javascript:openTab('View Comments','commentReview.jsp','icon-review')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-review'" style="width: 150px">View Comments</a>
+			<a href="javascript:openTab('View Comments','commentReview.jsp','icon-review')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-review'" style="width: 150px">Review Comments</a>
 			<a href="javascript:openTab('Manage Comments','commentManage.jsp','icon-plgl')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-plgl'" style="width: 150px;">Manage Comments</a>
 		</div>
 		<div title="Manage User Information"  data-options="iconCls:'icon-grxx'" style="padding:10px">
@@ -82,6 +144,34 @@
 
 <div region="south" style="height: 25px;padding: 5px" align="center">
 	Copyright © 2012-2016 Xu-Guo
-
+</div>
+<div id="dlg" class="easyui-dialog" style="width:400px; height:200px; padding:10px 20px" closed="true" buttons="#dlg-buttons">
+	<form id="fm" method="post">
+		<table cellspacing="8px">
+			<tr>
+				<td>User Name:</td>
+				<td>
+					<input type="text" id="userName" name="userName" value="${currentUser.userName}" readonly="readonly" style="width:200px"/>	
+				</td>
+			</tr>
+			<tr>
+				<td>New Password:</td>
+				<td>
+					<input type="password" id="newPassword" name="newPassword" class="easyui-validatebox" required="true" style="width:200px"/>	
+				</td>
+			</tr>
+			<tr>
+				<td>Confirm Password:</td>
+				<td>
+					<input type="password" id="newPassword2" name="newPassword2" class="easyui-numberbox" required="true" style="width: 200px"/>
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>
+<div id="dlg-buttons">
+	<a href="javascript:modifyPassword()" class="easyui-linkbutton" iconCls="icon-ok">Save</a>
+	<a href="javascript:closePasswordModifyDialog()" class="easyui-linkbutton" iconCls="icon-cancel">Cancel</a>
+</div>
 </body>
 </html>

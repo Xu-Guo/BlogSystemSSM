@@ -28,14 +28,37 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			</if>
 		</where>
 		order by commentDate desc
+		<if test="start!=null and size!=null">
+			limit #{start},#{size}
+		</if>
+	</select>
+	
+	<select id="getTotal" parameterType="Map" resultType="Long">
+		select count(*) from t_comment
+		<where>
+			<if test="state!=null">
+				and state=#{state}
+			</if>
+		</where>
 	</select>
 	
 	<insert id="add" parameterType="Comment">
 		insert into t_comment values(null,#{userIp},#{blog.id},#{content},now(),0);
 	</insert>
 	
+	<update id="update" parameterType="Comment" >
+		update t_comment
+		<set>
+			<if test="state!=null">
+				state=#{state}
+			</if>
+		</set>
+		where id=#{id}
+	</update>
 
-	
+	<delete id="delete" parameterType="Integer">
+		delete from t_comment where id=#{id}
+	</delete>
 	
 		
 </mapper> 

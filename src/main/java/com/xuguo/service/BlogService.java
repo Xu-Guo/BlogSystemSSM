@@ -78,4 +78,11 @@ public interface BlogService {
 	 * @return
 	 */
 	public Integer delete(Integer id);
+	
+	/**
+	 * get numbers of blogs under given blog typeId
+	 * @param typeId
+	 * @return
+	 */
+	public Integer getBlogCountByTypeId(Integer typeId);
 }

@@ -22,7 +22,8 @@
     	}else{
     		$.post("${pageContext.request.contextPath}/comment/save.do",{"content":content,'imageCode':imageCode,'blog.id':'${blog.id}'},function(result){
     			if(result.success){
-    				alert("Commit submit success and will be displayed when pass the check!");
+    				window.location.reload();
+    				alert("Comment submit success and will be displayed when pass the check!");
     			}else{
     				alert(result.errorInfo);
     			}
@@ -61,14 +62,14 @@
 	<div class="blog_content">
 		${blog.content }
 		<div class="blog_keyWord">
-			<font><strong>Key Word:</strong></font>
+			<font><strong>Keyword:</strong></font>
 			<c:choose>
 				<c:when test="${keyWords==null}">
 					&nbsp;&nbsp;No keyword.
 				</c:when>
 				<c:otherwise>
 					<c:forEach var="keyWord" items="${keyWords}">
-						&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" target="_blank">${keyWord }</a>&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;<a href="${pageContext.request.contextPath}/blog/q.html?q=${keyWord}" target="_blank">${keyWord }</a>&nbsp;&nbsp;
 					</c:forEach>
 				</c:otherwise>
 			</c:choose>
