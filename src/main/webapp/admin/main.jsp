@@ -80,6 +80,14 @@ function refreshSystem(){
 	},"json");
 }
 
+function logout(){
+	$.messager.confirm("System", "Please confirm to logout from system!", function(r){
+		if(r){
+			window.location.href="${pageContext.request.contextPath}/admin/blogger/logout.do";
+		}
+	});
+}
+
 </script>
 </head>
 <body class="easyui-layout">
@@ -106,7 +114,7 @@ function refreshSystem(){
 
 <div region="west" style="width: 200px" title="Menu" split="true">
 	<div class="easyui-accordion" data-options="fit:true,border:false">
-		<div title="Common operations" data-options="selected:true,iconCls:'icon-item'" style="padding: 10px">
+		<div title="Common Operations" data-options="selected:true,iconCls:'icon-item'" style="padding: 10px">
 			<a href="javascript:openTab('New Blog','writeBlog.jsp','icon-writeblog')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-writeblog'" style="width: 150px">New Blog</a>
 			<a href="javascript:openTab('View comments','commentReview.jsp','icon-review')" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-review'" style="width: 150px">View comments</a>
 		</div>
