@@ -39,7 +39,7 @@ What things you need to install the software and how to install them
 
 
 ### Installing
-Install steps:
+Eclipse setup:
 
 1. Download the project from github
 2. Import existing maven project into Eclipse : image1
@@ -49,8 +49,10 @@ Install steps:
 ```
 <Context docBase="BlogSystemSSM" path="/" reloadable="true" source="org.eclipse.jst.jee.server:BlogSystemSSM"/>
 ```
+Database setup:
 
-6. Create a new MySQL database name it db_blog, and use useful.sql to create tables and import test data. SQL will be uploaded later. Configure dataSource with Spring applicationContext.xml file
+1. Create a new MySQL database name it db_blog, and use useful.sql to create tables and import test data. SQL will be uploaded later. 
+2. Configure dataSource with Spring applicationContext.xml file
 ```
 <!-- config dataSource -->
 <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
