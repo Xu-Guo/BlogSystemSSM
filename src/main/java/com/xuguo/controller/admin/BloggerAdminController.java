@@ -16,6 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.xuguo.entity.Blogger;
 import com.xuguo.service.BloggerService;
+import com.xuguo.util.CryptographyUtil;
 import com.xuguo.util.DateUtil;
 import com.xuguo.util.ResponseUtil;
 
@@ -70,6 +71,29 @@ public class BloggerAdminController {
 			result.append("<script language='javascript'>alert('Edit Failed!');</script>");
 		}
 		ResponseUtil.write(response, result.toString());
+		return null;
+	}
+	
+	/**
+	 * change password
+	 * @param newPassword
+	 * @param response
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping("/modifyPassword")
+	public String modifyPassword(String newPassword, HttpServletResponse response)throws Exception{
+		Blogger blogger = new Blogger();
+		blogger.setPassword(CryptographyUtil.md5(newPassword, "java1234"));
+		int resultTotal = bloggerService.update(blogger);
+		JSONObject result = new JSONObject();
+		
+		if(resultTotal > 0){
+			result.put("success", true);
+		}else{
+			result.put("success", false);
+		}
+		ResponseUtil.write(response, result);
 		return null;
 	}
 }
