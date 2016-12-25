@@ -15,17 +15,31 @@
 <script type="text/javascript" charset="gbk" src="${pageContext.request.contextPath}/static/ueditor/ueditor.config.js"></script>
 <script type="text/javascript" charset="gbk" src="${pageContext.request.contextPath}/static/ueditor/ueditor.all.min.js"> </script>
 <!-- Set English  -->
-<script type="text/javascript" charset="gbk" src="${pageContext.request.contextPath}/static/ueditor/lang/en/en.js"></script>t>
+<script type="text/javascript" charset="gbk" src="${pageContext.request.contextPath}/static/ueditor/lang/en/en.js"></script>
 
 <script type="text/javascript">
-	
+	function submitData(){
+		var nickName=$("#nickName").val();
+		var sign=$("#sign").val();
+		var profile=UE.getEditor('profile').getContent();
+		if(nickName==null || nickName==''){
+			alert("Please input nickname!");
+		}else if(sign==null || sign==''){
+			alert("Please input sign!");
+		}else if(profile==null || profile==''){
+			alert("Please input profile!");
+		}else{
+			$("#pF").val(profile);
+			$("#form1").submit();
+		}
+	}	
 
 </script>
 </head>
 <body style="margin: 10px">
 
 <div id="p" class="easyui-panel" title="Edit Information" style="padding: 10px">
-	<form action="" method="post" enctype="multipart/form-data">
+	<form id="form1" action="${pageContext.request.contextPath}/admin/blogger/save.do" method="post" enctype="multipart/form-data">
 		<table cellspacing="20px">
 			<tr>
 				<td width="80px">User Name:</td>
@@ -37,13 +51,13 @@
 			<tr>
 				<td>Nick Name</td>
 				<td>
-					<input type="text" id="nickName" name="nickName" style="width: 200px" value="${currentUser.nickName }" />
+					<input type="text" id="nickName" name="nickName" style="width: 200px"  />
 				</td>
 			</tr>
 			<tr>
 				<td>Sign:</td>
 				<td>
-					<input type="text" id="sign" name="sign" style="width: 400px" value="${currentUser.sign }" />
+					<input type="text" id="sign" name="sign" style="width: 400px"  />
 				</td>
 			</tr>
 			<tr>
@@ -55,7 +69,8 @@
 			<tr>
 				<td valign="top">User Information:</td>
 				<td>
-					<script id="profile" name="profile" type="text/plain" style="width:100%;height:500px;"></script>
+					<script id="profile" type="text/plain" style="width:100%;height:500px;"></script>
+					<input type="hidden" id="pF" name="profile"/>
 				</td>
 			</tr>
 			<tr>
@@ -82,7 +97,10 @@
     				data:{},
     				onsuccess:function(result){
     					result=eval("("+result.responseText+")");
+    					$("#nickName").val(result.nickName);
+    					$("#sign").val(result.sign);
     					UE.getEditor('profile').setContent(result.profile);
+    					
     				}
    			});
     });

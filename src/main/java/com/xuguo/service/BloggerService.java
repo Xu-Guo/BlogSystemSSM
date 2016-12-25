@@ -22,4 +22,12 @@ public interface BloggerService {
 	 * @return
 	 */
 	public Blogger find();
+	
+	
+	/**
+	 * update blogger information
+	 * @param blogger
+	 * @return
+	 */
+    public Integer update(Blogger blogger);
 }
