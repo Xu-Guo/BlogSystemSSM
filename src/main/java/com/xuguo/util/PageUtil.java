@@ -28,7 +28,7 @@ public class PageUtil {
 			if(currentPage>1){
 				pageCode.append("<li><a href='"+targetUrl+"?page="+(currentPage-1)+"&"+param+"'>Previous</a></li>");			
 			}else{
-				pageCode.append("<li class='disabled'><a href='#'>Previous</a></li>");//current page <=1£¬no pre£¬disable ¡°pre¡±		
+				pageCode.append("<li class='disabled'><a href='#'>Previous</a></li>");//current page <=1 no pre disable pre	
 			}
 			
 			//only display 5 page (page-2, page-1, page, page+1, page+2)
@@ -48,7 +48,7 @@ public class PageUtil {
 			if(currentPage<totalPage){//has next page, current page is not last page
 				pageCode.append("<li><a href='"+targetUrl+"?page="+(currentPage+1)+"&"+param+"'>Next</a></li>");		
 			}else{
-				pageCode.append("<li class='disabled'><a href='#'>Next</a></li>"); //current page >=total page£¬no next£¬ disable ¡°next¡±.
+				pageCode.append("<li class='disabled'><a href='#'>Next</a></li>"); //current page >=total page no next  disable next
 			}
 			pageCode.append("<li><a href='"+targetUrl+"?page="+totalPage+"&"+param+"'>Last</a></li>");//add next page link
 			return pageCode.toString();
