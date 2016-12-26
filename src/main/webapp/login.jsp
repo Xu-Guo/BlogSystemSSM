@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Java Blog system login-Powered by java1234</title>
+<title>Java Blog system login-Powered by XuGuo</title>
 <%-- <c:set var="myContext" value="${pageContext.request.contextPath}"/> --%>
 <script src="${pageContext.request.contextPath}/static/bootstrap3/js/jquery-1.11.2.min.js"></script>
 <STYLE>
@@ -117,7 +117,7 @@ a{
      
 <SCRIPT type="text/javascript">
 $(function(){
-	//得到焦点
+	//get focus
 	$("#password").focus(function(){
 		$("#left_hand").animate({
 			left: "150",
@@ -136,7 +136,7 @@ $(function(){
 			}
 		}}, 2000);
 	});
-	//失去焦点
+	//lose focus
 	$("#password").blur(function(){
 		$("#left_hand").attr("class","initial_left_hand");
 		$("#left_hand").attr("style","left:100px;top:-12px;");
@@ -193,7 +193,7 @@ function checkForm(){
 	</DIV>
 </form>
 <div style="text-align:center;padding-top: 30px">
-Copyright © 2012-2016 Xu-Guo
+Copyright © 2016 Xu-Guo
 </div>
 </body>
 </html>

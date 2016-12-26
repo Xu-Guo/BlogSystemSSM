@@ -143,7 +143,7 @@ function logout(){
 
 
 <div region="south" style="height: 25px;padding: 5px" align="center">
-	Copyright © 2012-2016 Xu-Guo
+	Copyright © 2016 Xu-Guo
 </div>
 <div id="dlg" class="easyui-dialog" style="width:400px; height:200px; padding:10px 20px" closed="true" buttons="#dlg-buttons">
 	<form id="fm" method="post">

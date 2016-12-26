@@ -5,7 +5,7 @@
 	function checkData(){
 		var q=document.getElementById("q").value.trim();
 		if(q==null || q==""){
-			alert("请输入您要查询的关键字！");
+			alert("Please input the keyword to search!");
 			return false;
 		}else{
 			return true;
