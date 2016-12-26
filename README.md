@@ -61,3 +61,12 @@ Database setup:
     <property name="password" value="[your data base password]"/>
 </bean>
 ```
+### Project demo image
+
+Blog system home page:
+
+![image](https://github.com/Xu-Guo/BlogSystemSSM/blob/master/projectImage/homepage.jpg)
+
+Blog system admin page:
+
+![image](https://github.com/Xu-Guo/BlogSystemSSM/blob/master/projectImage/admin%20page.jpg)
