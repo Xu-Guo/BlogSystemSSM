@@ -21,6 +21,7 @@ public class Blog {
 	private String keyWord; //keyWord divided with space
 	private Integer blogCount; //numbers of blogs£¬ not a blog entity property, used when search the numbers of blogs grouped by releaseDate
 	private String releaseDateStr; //string of releaseDate, year and month only	
+	
 	private List<String> imageList=new LinkedList<String>(); // url of images included in the blog
 
 	
