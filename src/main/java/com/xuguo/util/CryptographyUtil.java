@@ -20,10 +20,4 @@ public class CryptographyUtil {
 		return new Md5Hash(str,salt).toString();
 	}
 	
-//	public static void main(String[] args) {
-//		
-//		String password="123456";
-//		
-//		System.out.println("Md5encrypt£º"+CryptographyUtil.md5(password, "java1234"));
-//	}
 }

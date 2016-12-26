@@ -1,6 +1,6 @@
 package com.xuguo.service.impl;
 
-import java.util.List;
+import java.util.List; 
 
 import javax.servlet.ServletContext; 
 import javax.servlet.ServletContextEvent;
@@ -30,7 +30,6 @@ public class InitComponent implements ServletContextListener,ApplicationContextA
 	private static ApplicationContext applicationContext;
 	
 	
-	//≥ı ºªØ
 	public void contextInitialized(ServletContextEvent sce) {
 		// TODO Auto-generated method stub
 		
