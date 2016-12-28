@@ -1,6 +1,7 @@
 package com.xuguo.lucene;
 
 
+import java.io.File;
 import java.io.StringReader;
 import java.nio.file.Paths; 
 import java.util.Date;
@@ -33,6 +34,7 @@ import org.apache.lucene.search.highlight.SimpleHTMLFormatter;
 import org.apache.lucene.search.highlight.SimpleSpanFragmenter;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
+import org.aspectj.lang.annotation.Pointcut;
 
 import com.xuguo.entity.Blog;
 import com.xuguo.util.DateUtil;
@@ -47,6 +49,8 @@ public class BlogIndex {
 	
 	private Directory directory;
 	
+	String indexDir = "/opt/apache-tomcat-8.0.39/webapps/luceneweb/index";
+	String winIndex = "D://lucene";//windows
 	
 	/**
 	 * get IndexWrite instance
@@ -54,7 +58,8 @@ public class BlogIndex {
 	 * @throws Exception
 	 */
 	private IndexWriter getWriter()throws Exception{
-		directory = FSDirectory.open(Paths.get("D://lucene"));
+		System.out.println(indexDir);
+		directory = FSDirectory.open(Paths.get(indexDir));
 		SmartChineseAnalyzer analyzer = new SmartChineseAnalyzer();
 		IndexWriterConfig indexWriterConfig = new IndexWriterConfig(analyzer);
 		IndexWriter writer = new IndexWriter(directory, indexWriterConfig);
@@ -115,7 +120,7 @@ public class BlogIndex {
 	 * @throws Exception
 	 */
 	public List<Blog> searchBlog(String q) throws Exception{
-		directory = FSDirectory.open(Paths.get("D://lucene"));
+		directory = FSDirectory.open(Paths.get(indexDir));
 		IndexReader reader = DirectoryReader.open(directory);
 		IndexSearcher indexSearcher = new IndexSearcher(reader);
 		BooleanQuery.Builder booleanQuery= new BooleanQuery.Builder();
